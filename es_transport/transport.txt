@@ -1,0 +1,54 @@
+2.4版本
+
+@Test
+    public void testScroll(){
+    	// 获取Client
+        TransportClient client = EsClientFactory.getTransportClient();
+    	SearchResponse scrollResp = client.prepareSearch("base-20170303")
+                .addSort("_id", SortOrder.DESC)
+                .setScroll(new TimeValue(60000))
+                .setQuery(QueryBuilders.matchAllQuery())
+                .setSize(10000).execute().actionGet(); //100 hits per shard will be returned for each scroll
+        //Scroll until no hits are returned
+        while (true) {
+
+            BulkRequestBuilder bulkRequest = client.prepareBulk();
+            System.out.println(scrollResp.getHits().getTotalHits());
+            for (SearchHit hit : scrollResp.getHits().getHits()) {
+                IndexRequestBuilder indexRequest = client
+                        .prepareIndex("base-back", hit.getType())
+                        // 指定不重复的ID
+                        .setSource(hit.getSource());
+                // 添加到builder中
+                bulkRequest.add(indexRequest);
+            }
+            BulkResponse bulkResponse = bulkRequest.get();
+            System.out.println(bulkResponse.hasFailures());
+            scrollResp = client.prepareSearchScroll(scrollResp.getScrollId()).setScroll(new TimeValue(60000)).execute().actionGet();
+            //Break condition: No hits are returned
+            if (scrollResp.getHits().getHits().length == 0) {
+                break;
+            }
+        }
+    }
+
+1.7版本
+QueryBuilder qb = termQuery("multi", "test");
+
+SearchResponse scrollResp = client.prepareSearch(test)
+        .setSearchType(SearchType.SCAN)
+        .setScroll(new TimeValue(60000))
+        .setQuery(qb)
+        .setSize(100).execute().actionGet(); //100 hits per shard will be returned for each scroll
+//Scroll until no hits are returned
+while (true) {
+
+    for (SearchHit hit : scrollResp.getHits().getHits()) {
+        //Handle the hit...
+    }
+    scrollResp = client.prepareSearchScroll(scrollResp.getScrollId()).setScroll(new TimeValue(600000)).execute().actionGet();
+    //Break condition: No hits are returned
+    if (scrollResp.getHits().getHits().length == 0) {
+        break;
+    }
+}
