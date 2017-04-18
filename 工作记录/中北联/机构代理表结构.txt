@@ -1,0 +1,71 @@
+//创建政府采购代理单位详细表
+http://10.5.28.13:9200/procure/procure_proxy_org/_search(
+uuid string comment 'uuid',
+orgId string comment '机构id',
+agentNm string comment '机构名称',
+corpTel string comment '联系电话',
+contactNm string comment '联系人',
+legalNm string comment '法人名称',
+regAddr string comment '注册地址',
+auditPlaceAddr string comment '评审场地地址',
+auditPlaceArea string comment '评审场地面积',
+regValidDataStr string comment '登记日期',
+auditPlace string comment '登记地点',
+year3Outlaw string comment '进三年有无重大违法记录',
+publicRemark string comment '备注',
+corpDesc string comment '机构简介',
+soledutyStaffSum string comment '专职人员总数',
+middleJobtitleSum string comment '中级以上职称人员总数',
+advJobtitleSum string comment '参加政府采购培训人员总数',
+middleJobitlePer string comment '中级占专职人员总数比例',
+advJobtilePer string comment '培训人占专职人员总数比例'
+)
+;
+
+---采购代理单位业绩表
+http://10.5.28.13:9200/procure/procure_proxy_org_score/_search(
+uuid string comment 'uuid',
+orgId string comment '机构id',
+projNm string comment '项目名称',
+entrustUnitNm string comment '委托单位',
+bidcallNo string comment '采购文件编号',
+bidconfirmUnitNm string comment '中标或成标单位',
+noticedatestr string comment '中标通知发出的时间',
+bidconfirmAmount string comment '中标成交金额'
+)
+;
+
+---采购费标流标公告
+http://10.5.28.13:9200/procure/procure_fblb_bulletin/_search(
+projectNum string comment '项目编号',
+projectName string comment '项目名称',
+projectContact string comment '项目联系人',
+contact string comment '联系方式',
+purchaseName string comment '采购人名称',
+purchaseAddr string comment '采购人地址',
+purchaseContact string comment '采购人联系方式',
+purchaseAgentName string comment '采购代理名称',
+purchaseAgentAddr string comment '采购代理地址',
+purchaseAgentContact string comment '采购代理联系方式',
+fblbDate string comment '流标日期',
+fblbSeason string comment '费标流标原因',
+type string comment '中央还是地方公告（zy,df）',
+url string comment 'url地址'
+);
+
+
+---政府采购违法行为信息
+http://10.5.28.13:9200/procure/procure_illegal_act/_search(
+compNum string comment '序号',
+compName string comment '企业名车工',
+compAddress string comment '企业地址',
+content string comment '违法行为具体情形',
+punishResult string comment '处罚结果',
+punishReason string comment '处罚依据',
+punishDate string comment '处罚日期',
+punishEndDate string comment '处罚截至日期',
+executeOrg string comment '执法单位'
+);
+
+
+

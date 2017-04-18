@@ -1,0 +1,6 @@
+hadoop19
+/home/zx_t/merzx/merzx_import_wb_merzx.sh
+/home/zx_t/merzx/wbpos.sql
+
+hadoop16
+/home/hdfs/wbpos_atmtxnjnl_work/cronjob_wbpos_atmt.sh

@@ -1,0 +1,182 @@
+<html >
+<head>
+	<meta http-equiv='Content-Type' content='text/html' charset='UTF-8' />
+	<link type="text/css" rel="stylesheet" href="/resources/css/style.css"></link>
+	
+  <title>终端用户数据</title>
+	<script type="text/javascript" src="/resources/js/My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery-1.4.2.js"></script>
+	  <script type="text/javascript">
+			$(document).ready(function() { 
+			$('#changecolor tr').addClass('odd'); 
+			$('#changecolor tr:even').addClass('even'); //奇偶变色，添加样式 
+			}); 		
+	  </script>
+	  
+	  <style> 
+		#changecolor tr:hover{ 
+		background-color:#dff4fc; 
+		} 
+		
+		.odd { 
+		background-color: #ffffff; /* pale yellow for odd rows */ 
+		} 
+		.even { 
+		background-color: #fcf1fe; /* pale blue for even rows */ 
+		} 
+	  </style> 
+</head>
+
+<body>
+	<fieldset style="width=95%">
+		<legend>用户命令使用排行 查询条件:</legend>
+		<form action="/imeiDetail.do" method="post">
+		<table width="50%" cellpadding="1" cellspacing="1" border="0" align="center">
+			<tr>
+				<td class="STYLE6">
+				    <input id="d421" name="datestr" class="Wdate" type="text" 
+				    	onfocus="WdatePicker({minDate:'2012-03-31',maxDate:'%y-%M-#{%d-1}',readOnly:true})"/>
+			    </td>
+			     <td class="STYLE6">
+			    	<input type="submit" name="submit" value="查询">			 
+			    </td>
+			</tr>
+		</table>
+		</form>
+	</fieldset>    		
+</br>
+    				
+	<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" id="changecolor">
+        <tr style="font-weight: bold;background: #d3eaef;">    
+          <td bgcolor="d3eaef" class="STYLE_IMEI2">终端IMEI号</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI2">语音控命令使用数数</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50079</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50077</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50011</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">0</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50031</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50510</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50050</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50511</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50130</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50073</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50030</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50135</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50010</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50099</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50061</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50072</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50082</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50051</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50083</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50111</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50131</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50054</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50074</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50055</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50056</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50101</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50088</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50514</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50080</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50140</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50121</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50020</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50084</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50112</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50085</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50090</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50042</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50091</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50142</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50145</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50062</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50122</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50092</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50102</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50057</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50053</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50146</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50040</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50120</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50512</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50513</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50043</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50089</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50098</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50518</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50052</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50103</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50515</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50516</td>
+	      <td bgcolor="d3eaef" class="STYLE_IMEI1">50517</td>	      
+        </tr>
+		#foreach($ls in $listImeiDetail)       
+          <tr>
+          	<td  class="STYLE_IMEI1_DATA">${ls.imei}</td>
+	          <td  class="STYLE_IMEI2_DATA" title="命令总数">${ls.actionIdCount}</td>
+	          <td  class="STYLE_IMEI2_DATA" title="50079">$!ls.get("50079")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50077">$!ls.get("50077")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50011">$!ls.get("50011")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="0">$!ls.get("0")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50031">$!ls.get("50031")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50510">$!ls.get("50510")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50050">$!ls.get("50050")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50511">$!ls.get("50511")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50130">$!ls.get("50130")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50073">$!ls.get("50073")</td>
+			  <td  class="STYLE_IMEI1_DATA" title="50030">$!ls.get("50030")</td>
+			  <td  class="STYLE_IMEI1_DATA" title="50135">$!ls.get("50135")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50010">$!ls.get("50010")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50099">$!ls.get("50099")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50061">$!ls.get("50061")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50072">$!ls.get("50072")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50082">$!ls.get("50082")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50051">$!ls.get("50051")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50083">$!ls.get("50083")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50111">$!ls.get("50111")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50131">$!ls.get("50131")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50054">$!ls.get("50054")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50074">$!ls.get("50074")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50055">$!ls.get("50055")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50056">$!ls.get("50056")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50101">$!ls.get("50101")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50088">$!ls.get("50088")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50514">$!ls.get("50514")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50080">$!ls.get("50080")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50140">$!ls.get("50140")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50121">$!ls.get("50121")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50020">$!ls.get("50020")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50084">$!ls.get("50084")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50112">$!ls.get("50112")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50085">$!ls.get("50085")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50090">$!ls.get("50090")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50042">$!ls.get("50042")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50091">$!ls.get("50091")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50142">$!ls.get("50142")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50145">$!ls.get("50145")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50062">$!ls.get("50062")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50122">$!ls.get("50122")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50092">$!ls.get("50092")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50102">$!ls.get("50102")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50057">$!ls.get("50057")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50053">$!ls.get("50053")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50146">$!ls.get("50146")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50040">$!ls.get("50040")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50120">$!ls.get("50120")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50512">$!ls.get("50512")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50513">$!ls.get("50513")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50043">$!ls.get("50043")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50089">$!ls.get("50089")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50098">$!ls.get("50098")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50518">$!ls.get("50518")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50052">$!ls.get("50052")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50103">$!ls.get("50103")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50515">$!ls.get("50515")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50516">$!ls.get("50516")</td>
+	          <td  class="STYLE_IMEI1_DATA" title="50517">$!ls.get("50517")</td>
+          </tr>
+        #end
+	</table>
+</body>
+</html>

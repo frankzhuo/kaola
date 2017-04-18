@@ -1,0 +1,27 @@
+ESÉ¾³ý
+²éÑ¯¼ÇÂ¼
+/law_personmore/c_personmore/_search   post
+{"query":{"bool":{"must":[{"multi_match":{"query":"4201061978****4432","type":"phrase","fields":["cardnum"]}}]}},"size":1000,"from":0}
+»ñÈ¡ID $id
+
+É¾³ý¼ÇÂ¼
+/law_personmore/c_personmore/$id   delete
+
+
+hiveÉ¾³ý
+hive
+use  spss;
+desc c_personmore
+
+set hive.exec.dynamic.partition.mode=nonstrict; 
+set hive.exec.dynamic.partition=true;
+set hive.exec.max.dynamic.partitions=5000;
+set hive.exec.max.dynamic.partitions.pernode=5000;
+set hive.exec.parallel=true;
+set hive.exec.parallel.thread.number=5;
+set hive.exec.max.created.files=655350;
+set mapreduce.map.memory.mb=5000;
+set mapreduce.reduce.memory.mb=5000;
+set mapreduce.map.java.opts=-Djava.net.preferIPv4Stack=true -Xms3000m -Xmx3000m;
+
+insert overwrite table spss.c_personmore partition (ymd) select * from  spss.c_personmore  where cardnum <> '4201061978****4432';

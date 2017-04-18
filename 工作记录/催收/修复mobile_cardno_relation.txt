@@ -1,0 +1,149 @@
+﻿//hadoop13
+sudo -u hdfs hive <<EOF
+use hdm;
+add jar /home/hdfs/lakala_udf.jar;
+create temporary function IDCard as 'com.lkl.hive.udf.IDCard';
+create temporary function mobile as 'com.lkl.hive.udf.Mobile';
+
+insert overwrite table mid_mobile_cardno_relation partition (ymd='20170320_2')
+select a.mobile,
+c.identity_card,
+c.real_name,
+a.cardno,
+a.card_type,
+a.bank_name,
+b.account_name,
+a.trans_cnt,
+a.trans_amt,
+a.first_trans_date,
+a.last_trans_date,
+'out' as flag,
+from_unixtime(unix_timestamp(),'yyyy-MM-dd HH:mm:ss') as systime
+from
+ (select mobile_num as mobile,
+         outcdno cardno,
+         out_card_type card_type,out_bank_name bank_name,
+         count(*) as trans_cnt,
+         sum(case when tcat_lv3_code<>'A030013' and tcat_lv3_code<>'A030014' then total_am end) as trans_amt,
+         min(ymd) first_trans_date,max(ymd) last_trans_date
+ from hdm.f_fact_trans_success_new_details 
+ where mobile(mobile_num)=1 and (out_card_type='XYK' or out_card_type='JJK')
+ group by mobile_num,outcdno,out_card_type,out_bank_name 
+) a
+left join (select * from cardno_real_name where id=1) b on a.cardno=b.cardno
+left join hdm.u_user_identity_info c on a.mobile=c.mobile;
+
+
+
+
+
+insert into table mid_mobile_cardno_relation partition (ymd='20170320_in')
+select a.mobile,
+c.identity_card,
+c.real_name,
+a.cardno,
+a.card_type,
+a.bank_name,
+b.account_name,
+a.trans_cnt,
+a.trans_amt,
+a.first_trans_date,
+a.last_trans_date,
+'in' as flag,
+from_unixtime(unix_timestamp(),'yyyy-MM-dd HH:mm:ss') as systime
+from
+ (select mobile_num as mobile,
+         incdno cardno,
+         in_card_type card_type,in_bank_name bank_name,
+         count(*) as trans_cnt,
+         sum(case when tcat_lv3_code<>'A030013' and tcat_lv3_code<>'A030014' then total_am end) as trans_amt,
+         min(ymd) first_trans_date,max(ymd) last_trans_date
+ from hdm.f_fact_trans_success_new_details
+ where mobile(mobile_num)=1 and (in_card_type='XYK' or in_card_type='JJK')
+ group by mobile_num,incdno,in_card_type,in_bank_name
+) a
+left join (select * from cardno_real_name where id=1) b on a.cardno=b.cardno
+left join hdm.u_user_identity_info c on a.mobile=c.mobile;
+
+
+
+
+
+
+insert overwrite table mid_mobile_cardno_relation partition (ymd='20170319_bank')
+select mobile,
+identity_card,
+real_name,
+cardno,
+card_type,
+bank_name,
+account_name,
+trans_cnt,
+trans_amt,
+first_trans_date,
+last_trans_date,
+flag,
+systime
+from mid_mobile_cardno_relation where ymd= '20170319';
+
+insert overwrite table mid_mobile_cardno_relation partition (ymd='20170319')
+select mobile,
+identity_card,
+real_name,
+cardno,
+card_type,
+bank_name,
+account_name,
+trans_cnt,
+trans_amt,
+first_trans_date,
+last_trans_date,
+flag,
+systime
+from mid_mobile_cardno_relation where ymd= '20170320_2';
+
+insert into table mid_mobile_cardno_relation partition (ymd='20170319')
+select mobile,
+identity_card,
+real_name,
+cardno,
+card_type,
+bank_name,
+account_name,
+trans_cnt,
+trans_amt,
+first_trans_date,
+last_trans_date,
+flag,
+systime
+from mid_mobile_cardno_relation where ymd= '20170320_in';
+
+
+
+
+
+
+
+
+
+insert overwrite table mobile_cardno_relation partition (ymd='20170317')
+select mobile,
+identity_card,
+real_name,
+cardno,
+nvl(account_name,'无') as name,
+case when card_type='JJK' then '0' else '1' end as cardtype,
+bank_name,
+sum(case when flag='in' then trans_cnt else 0 end) as in_usedcount,
+sum(case when flag='in' then trans_amt else 0.0 end) as in_usedamount,
+max(case when flag='in' then first_trans_date end) as in_firstuseddate,
+max(case when flag='in' then last_trans_date end) as in_lastuseddate,
+sum(case when flag='out' then trans_cnt else 0 end) as out_usedcount,
+sum(case when flag='out' then trans_amt else 0.0 end) as out_usedamount,
+max(case when flag='out' then first_trans_date end) as out_firstuseddate,
+max(case when flag='out' then last_trans_date end) as out_lastuseddate,
+from_unixtime(unix_timestamp(),'yyyyMMddHHmmss') as statisticaldate
+from mid_mobile_cardno_relation
+where ymd='20170319'
+group by mobile,identity_card,real_name,cardno,account_name,card_type,bank_name;
+

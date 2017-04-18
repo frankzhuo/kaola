@@ -1,0 +1,5 @@
+spark-shell  --master yarn-client
+
+spark-shell --jars /opt/cloudera/parcels/CDH/lib/spark/lib/HiveAuthHook.jar --master yarn-client  --num-executors 20  --executor-memory 4g
+
+spark-submit   --jars /opt/cloudera/parcels/CDH/lib/spark/lib/HiveAuthHook.jar --master yarn-client --name MerzxTaoxian --class  MerzxTaoxian  etl.jar  --num-executors 20  --executor-memory 2g

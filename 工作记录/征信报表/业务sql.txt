@@ -1,0 +1,74 @@
+1.日活 月活
+insert overwrite table zhengxin.zx_report_day_act select '2017-02-28' as day ,'day_act_num' type,count(distinct userid) ctnum  from zhengxin.accesslog where time = '2017-02-28' ;
+
+select '2017-02-28' as day,'month_act_num' type,count(distinct userid) as ctnum from zhengxin.accesslog where time between '2017-02-27' and '2017-02-28' ;
+
+2. 次日留存率，7日留存率，30日留存率 
+select '2017-02-28' as day,'second_stay_num' type,count(distinct userid) ctnum  from zhengxin.accesslog l
+where l.userid in (
+select e.userid from zhengxin.euser  e where opentime = '2017-02-27' 
+)
+and time = '2017-02-28' ;
+
+
+select '2017-02-28' as day,'seven_stay_num' type,count(distinct userid) ctnum  from zhengxin.accesslog l
+where l.userid in (
+select e.userid from zhengxin.euser  e where opentime = '2017-02-22' 
+)
+and time = '2017-02-28' ;
+
+
+select '2017-02-28' as day,'thirty_stay_num' type,count(distinct userid) ctnum  from zhengxin.accesslog l
+where l.userid in (
+select e.userid from zhengxin.euser  e where opentime = '2017-01-28' 
+)
+and time = '2017-02-28' ;
+
+3.新增注册用户数
+select '2017-02-28' as day,'reg_num' type,count(distinct mobile) ctnum from zhengxin.procdt_scorelog  p,zhengxin.euser e 
+where p.mobile = e.mobilephone
+and date_time  like '2017-02%'
+and source not in ('20005','60003','60004','30018')
+and e.opentime = '2017-02-28';
+
+-------------------------------------------------
+1中间临时表 
+create table zhengxin.zx_report_mid_data(
+day string,
+type string,
+day_act_num string
+);
+
+2.sh
+sudo -u hdfs hive <<EOF
+set hive.auto.convert.join=false;
+set mapreduce.reduce.shuffle.input.buffer.percent=0.1;
+set mapreduce.reduce.shuffle.parallelcopies=9;
+insert overwrite table zhengxin.zx_report_mid_data select '${TODAYF_1D}' as day,'day_act_num' type,count(distinct userid) ctnum from zhengxin.accesslog where time = '${TODAYF_1D}';
+
+insert into table zhengxin.zx_report_mid_data select '${TODAYF_1D}' as day,'month_act_num' type,count(distinct userid) as ctnum from zhengxin.accesslog where time between '${TODAYF_1M_01}' and '${TODAYF_1M_31}';
+
+insert into table zhengxin.zx_report_mid_data select '${TODAYF_1D}' as day,'second_stay_num' type,count(distinct userid) ctnum  from zhengxin.accesslog l
+where l.userid in (
+select e.userid from zhengxin.euser  e where opentime = '${TODAYF_2D}' 
+)
+and time = '${TODAYF_1D}' ;
+
+insert into table zhengxin.zx_report_mid_data select '${TODAYF_1D}' as day,'seven_stay_num' type,count(distinct userid) ctnum  from zhengxin.accesslog l
+where l.userid in (
+select e.userid from zhengxin.euser  e where opentime = '${TODAYF_7D}' 
+)
+and time = '${TODAYF_1D}' ;
+
+insert into table zhengxin.zx_report_mid_data select '${TODAYF_1D}' as day,'thirty_stay_num' type,count(distinct userid) ctnum  from zhengxin.accesslog l
+where l.userid in (
+select e.userid from zhengxin.euser  e where opentime = '${TODAYF_30D}' 
+)
+and time = '${TODAYF_1D}' ;
+
+insert into table zhengxin.zx_report_mid_data select '${TODAYF_1D}' as day,'reg_num' type,count(distinct mobile) ctnum from zhengxin.procdt_scorelog  p,zhengxin.euser e 
+where p.mobile = e.mobilephone
+and date_time  between '${TODAYF_0D_01}' and '${TODAYF_0D_31}'
+and source not in ('20005','60003','60004','30018')
+and e.opentime = '${TODAYF_1D}';
+EOF

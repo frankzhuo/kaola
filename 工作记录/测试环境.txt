@@ -1,0 +1,80 @@
+数据部测试集群
+
+hadoop001	10.5.13.21
+hadoop002	10.5.13.22
+hadoop003	10.5.13.23
+hadoop004	10.5.13.24
+
+root/sjlkl_123
+
+
+考拉征信测试集群
+
+trs-11		10.5.28.11
+trs-12		10.5.28.12
+trs-13		10.5.28.13
+trs-14		10.5.28.14
+
+root/trs@lakala
+
+
+cloudera manager
+		http://trs-13:7180/cmf/login
+		admin/hadoop@kaola
+		
+cm 服务启动
+trs-13@cd /etc/init.d 
+service cloudera-scm-server start
+service cloudera-scm-server-db start
+
+hue
+		http://trs-13:8888/
+		admin/hadoop@kaola
+		
+		
+		
+正式环境（ES）
+10.1.80.181/182   123_lakala
+cd /es/apache-flume-1.6.0-bin && nohup sh start.sh &
+scp root@10.5.28.14:/data/crawler/works/works2.txt ./
+
+正式环境（hadoop集群）
+10.1.80.* root/lakala@123321
+
+#模型运行(征信测试组商户评分，与18的merzx目录一致)
+10.5.28.13@/home/hdfs/shanghu
+merzx_import.sh (18:/home/hdfs/merzx/merzx_import_waibu_select.sh)
+merzx.sh
+merzx_export.sh (18:/home/hdfs/merzx/merzx_export_shangxian.sh)
+
+跑完后 每天23点在hadoop13上/home/hdfs/merzx_waibu/export_orcale.sh （hadoop13作为测试网到正式网的跳板机）
+
+和预授信
+mer_limit_result_za.sql
+mer_limit_result_export.sql
+
+
+#数据模型业务
+1.个人评分  /home/hdfs/creditck(hadoop08)
+2.商户
+3.小贷
+4.银联
+
+#正式网内{外}部商户（拉卡拉），信盈卡预售信，商户评分报告，
+10.1.80.173(hadoop18)@/home/hdfs/merzx 
+merzx_export_shangxian.sh
+#正式网外部商户
+10.1.80.163(hadoop13)@/home/hdfs/merzx
+#正式网 黑名单
+10.1.80.69(hadoop10)@/home/hdfs/hdm/hdm_u_user_blacklist.sh
+
+#正式网的跳板机(能上网)
+10.2.60.1  sjb_0601^&*1412
+
+scp /root/peoplecountbulletin/PeopleCourtBulletinSpider.class root@10.2.60.1:/data/KaolaCrawler-7/seimi/classes/com/kaola/crawlers/
+
+#jena
+http://10.5.28.12:3030/manage.html   /jena
+
+
+

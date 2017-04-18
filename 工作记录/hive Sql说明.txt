@@ -1,0 +1,77 @@
+---登陆到tr11上
+use zhengxin;
+---创建政府采购代理单位详细表
+create table if not exists zhengxin.procure_proxy_org(
+uuid string comment 'uuid',
+orgId string comment '机构id',
+agentNm string comment '机构名称',
+corpTel string comment '联系电话',
+contactNm string comment '联系人',
+legalNm string comment '法人名称',
+regAddr string comment '注册地址',
+auditPlaceAddr string comment '评审场地地址',
+auditPlaceArea string comment '评审场地面积',
+regValidDataStr string comment '登记日期',
+auditPlace string comment '登记地点',
+year3Outlaw string comment '进三年有无重大违法记录',
+publicRemark string comment '备注',
+corpDesc string comment '机构简介',
+soledutyStaffSum string comment '专职人员总数',
+middleJobtitleSum string comment '中级以上职称人员总数',
+advJobtitleSum string comment '参加政府采购培训人员总数',
+middleJobitlePer string comment '中级占专职人员总数比例',
+advJobtilePer string comment '培训人占专职人员总数比例'
+)
+row format delimited fields terminated by '\001';
+
+hadoop fs -put /root/jyk/procureproxyorg.txt hdfs://trs-13:8020/user/hive/warehouse/zhengxin.db/procure_proxy_org/
+
+---采购代理单位业绩表
+create table if not exists zhengxin.procure_proxy_org_score(
+uuid string comment 'uuid',
+orgId string comment '机构id',
+projNm string comment '项目名称',
+entrustUnitNm string comment '委托单位',
+bidcallNo string comment '采购文件编号',
+bidconfirmUnitNm string comment '中标或成标单位',
+noticedatestr string comment '中标通知发出的时间',
+bidconfirmAmount string comment '中标成交金额'
+)
+row format delimited fields terminated by '\001';
+
+hadoop fs -put /root/jyk/procureproxyorg_score.txt hdfs://trs-13:8020/user/hive/warehouse/zhengxin.db/procure_proxy_org_score/
+
+---采购费标流标公告
+create table if not exists zhengxin.procure_fblb_bulletin(
+projectNum string comment '项目编号',
+projectName string comment '项目名称',
+projectContact string comment '项目联系人',
+contact string comment '联系方式',
+purchaseName string comment '采购人名称',
+purchaseAddr string comment '采购人地址',
+purchaseContact string comment '采购人联系方式',
+purchaseAgentName string comment '采购代理名称',
+purchaseAgentAddr string comment '采购代理地址',
+purchaseAgentContact string comment '采购代理联系方式',
+fblbDate string comment '流标日期',
+fblbSeason string comment '费标流标原因',
+type string comment '中央还是地方公告（zy,df）',
+url string comment 'url地址'
+)
+row format delimited fields terminated by '\001';
+
+hadoop fs -put /root/jyk/*fblfgg.txt hdfs://trs-13:8020/user/hive/warehouse/zhengxin.db/procure_fblb_bulletin/
+
+use zhengxin;
+---大众点评商户表
+create table if not exists zhengxin.dianping_merchant_info(
+shanghuid string comment '商户id',
+city string comment '所在地市',
+navigator string comment '商户导航',
+shopname string comment '商户名称',
+evalute string comment '评价',
+address string comment '地址',
+contact string comment '联系方式',
+note string comment '补充说明'
+)
+row format delimited fields terminated by '\001';

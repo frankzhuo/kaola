@@ -1,0 +1,71 @@
+1> wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.2.tar.gz
+
+2>tar -xvf elasticsearch-1.7.2.tar.gz
+
+3>安装插件
+cd elasticsearch-1.7.2/bin
+./plugin -install mobz/elasticsearch-head
+./plugin -install lukas-vlcek/bigdesk
+
+
+4>配置
+elasticsearch-1.7.2/config
+vi elasticsearch.yml 
+修改如
+cluster.name: lakala
+node.name: "node1"
+
+5>启动服务
+cd bin
+./elasticsearch -d
+
+6>访问
+http://10.5.28.11:9200
+
+head插件
+http://10.5.28.11:9200/_plugin/head
+bigdesk插件
+http://10.5.28.11:9200/_plugin/bigdesk
+
+7>集群安装
+ 1.把elasticsearch-1.7.2目录同步到其他服务器
+ 2.修改配置
+elasticsearch-1.7.2/config
+一定要保持cluster.name是一致的
+vi elasticsearch.yml 
+node.name: "nodeX"
+cd bin
+./elasticsearch
+
+
+
+yum 安装方式
+
+1>rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+
+2>cd /etc/yum.repos.d/ 
+vi es.repo
+[elasticsearch-1.7]
+name=Elasticsearch repository for 1.7.x packages
+baseurl=http://packages.elastic.co/elasticsearch/1.7/centos
+gpgcheck=1
+gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+
+3>yum install elasticsearch
+
+4>chkconfig --add elasticsearch
+
+5>
+cd /usr/share/elasticsearch/bin
+./plugin -install mobz/elasticsearch-head
+./plugin -install lukas-vlcek/bigdesk
+
+6>修改配置
+/etc/elasticsearch/
+一定要保持cluster.name是一致的
+vi elasticsearch.yml 
+node.name: "nodeX"
+
+7>service  elasticsearch start
+

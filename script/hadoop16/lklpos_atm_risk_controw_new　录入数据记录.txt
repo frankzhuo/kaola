@@ -1,0 +1,60 @@
+sudo -u hbase hadoop jar /opt/cloudera/parcels/CDH/lib/hbase/hbase-server-1.0.0-cdh5.6.0.jar   completebulkload /user/hbase/out lklpos_atm_risk_control_new
+sudo -u hbase hadoop fs -rm -r /user/hbase/out
+
+sudo -u hbase hadoop jar /opt/cloudera/parcels/CDH/lib/hbase/hbase-server-1.0.0-cdh5.6.0.jar importtsv -DXmx4000m -Dimporttsv.rowkey.index=0,4,7 -Dhbase.zookeeper.quorum=hadoop01,hadoop06,hadoop16,hadoop22,hadoop02 -Dimporttsv.avro=false -Dimporttsv.columns=HBASE_ROW_KEY,cf:col -Dimporttsv.bulk.output=/user/hbase/out -Dimporttsv.timestamp.index=4 -Dimporttsv.rowkey.append.str=detail  -Dimporttsv.separator=, -Dimporttsv.mapper.class=com.lkl.hbase.HFileMapper lklpos_atm_risk_control_new /user/hive/warehouse/merzx.db/bank_gd_lklpos_atmtxnjnl_jyk3
+
+sudo -u hbase hadoop jar /opt/cloudera/parcels/CDH/lib/hbase/hbase-server-1.0.0-cdh5.6.0.jar importtsv -DXmx4000m -Dimporttsv.rowkey.index=0,4,7 -Dhbase.zookeeper.quorum=hadoop01,hadoop06,hadoop16,hadoop22,hadoop02 -Dimporttsv.avro=false -Dimporttsv.columns=HBASE_ROW_KEY,cf:col -Dimporttsv.bulk.output=/user/hbase/out -Dimporttsv.timestamp.index=4 -Dimporttsv.rowkey.append.str=detail  -Dimporttsv.separator=, -Dimporttsv.mapper.class=com.lkl.hbase.HFileMapper lklpos_atm_risk_control_new /user/hive/warehouse/merzx.db/bank_gd_lklpos_atmtxnjnl_jyk4
+
+hadoop fs -mv /user/hive/warehouse/merzx.db/bank_gd_lklpos_atmtxnjnl_jyk3/0002*_0 /user/hive/warehouse/merzx.db/bank_gd_lklpos_atmtxnjnl_jyk4/
+
+sudo -u hbase hadoop jar /opt/cloudera/parcels/CDH/lib/hbase/hbase-server-1.0.0-cdh5.6.0.jar importtsv -DXmx4000m -Dimporttsv.rowkey.index=0,4,7 -Dhbase.zookeeper.quorum=hadoop01,hadoop06,hadoop16,hadoop22,hadoop02 -Dimporttsv.avro=false -Dimporttsv.columns=HBASE_ROW_KEY,cf:col -Dimporttsv.bulk.output=/user/hbase/out -Dimporttsv.timestamp.index=4 -Dimporttsv.rowkey.append.str=detail  -Dimporttsv.separator=, -Dimporttsv.mapper.class=com.lkl.hbase.HFileMapper lklpos_atm_risk_control_new /user/hive/warehouse/merzx.db/bank_gd_lklpos_atmtxnjnl_jyk2
+
+
+
+sudo -u hbase hadoop jar /opt/cloudera/parcels/CDH/lib/hbase/hbase-server-1.0.0-cdh5.6.0.jar importtsv -Dimporttsv.rowkey.index=1,0,9 -Dhbase.zookeeper.quorum=hadoop01,hadoop06,hadoop02,hadoop16,hadoop22 -Dimporttsv.avro=false -Dimporttsv.columns=HBASE_ROW_KEY,cf:col -Dimporttsv.bulk.output=/user/hbase/rcc -Dimporttsv.timestamp.index=2 -Dimporttsv.timestamp.format=yyyyMMdd -Dimporttsv.separator=, -Dimporttsv.rowkey.append.str=rk -Dimporttsv.mapper.class=com.lkl.hbase.HFileMapper lklpos_atm_risk_control_new /user/hive/warehouse/merzx.db/risk_control_consulation/
+
+
+sudo -u hbase hadoop jar /opt/cloudera/parcels/CDH/lib/hbase/hbase-server-1.0.0-cdh5.6.0.jar importtsv -Dimporttsv.rowkey.index=0,4,7 -Dhbase.zookeeper.quorum=hadoop01,hadoop06,hadoop16,hadoop22,hadoop02 -Dimporttsv.avro=false -Dimporttsv.columns=HBASE_ROW_KEY,cf:col -Dimporttsv.bulk.output=/user/hbase/wbpos -Dimporttsv.timestamp.index=4 -Dimporttsv.rowkey.append.str=detail  -Dimporttsv.separator=, -Dimporttsv.mapper.class=com.lkl.hbase.HFileMapper lklpos_atm_risk_control_new /user/hive/warehouse/merzx.db/wbpos_atmtxnjnl
+
+sudo -u hdfs hive<<EOF
+insert overwrite  table merzx.bank_gd_lklpos_atmtxnjnl_jyk2  
+select mer_id,card_type,bank_short_name,trans_amt,txn_data,ccycod,
+case
+   when txn_nm like '%退款%' then 1
+   else 0 end as refund_identification,
+log_no,txn_sts,txn_cd
+from hdw.lklpos_atmtxnjnl where ymd >='20160430' and ymd <='20161130';
+EOF
+
+
+sudo -u hdfs hive<<EOF
+insert overwrite  table merzx.bank_gd_lklpos_atmtxnjnl_jyk3  
+select mer_id,card_type,bank_short_name,trans_amt,txn_data,ccycod,
+case
+   when txn_nm like '%退款%' then 1
+   else 0 end as refund_identification,
+log_no,txn_sts,txn_cd
+from hdw.lklpos_atmtxnjnl where ymd <'20160430';
+EOF
+
+
+create table if not exists merzx.bank_gd_lklpos_atmtxnjnl_jyk4(
+mer_id string COMMENT '商户编号',
+cardflg string COMMENT '交易银行卡类型',
+bank_code string COMMENT '发卡方',
+trans_amt int COMMENT '交易金额',
+txn_data string COMMENT '交易时间戳',
+ccycod string COMMENT '清算币种',
+refund_identification int COMMENT '退单交易标识,退款用1标识，没有退款用0标识',
+log_no string COMMENT '交易流水号',
+txn_sts string COMMENT '交易状态代码',
+txn_cd string COMMENT '交易代码'
+)
+row format delimited 
+fields terminated by ',';
+
+
+
+
+
+1489515568

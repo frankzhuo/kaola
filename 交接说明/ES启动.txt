@@ -1,0 +1,8 @@
+#es≤‚ ‘ª∑æ≥∆Ù∂Ø
+10.5.28.11  service elasticsearch restart
+10.5.28.13  cd /root/elasticsearch-1.7.2/bin     ./elasticsearch -d
+
+
+10.1.80.181
+10.1.80.182
+/es/elasticsearch-1.7.2/bin     ./elasticsearch -d

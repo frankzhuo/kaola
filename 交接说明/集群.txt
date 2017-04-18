@@ -1,0 +1,12 @@
+http://10.1.80.65:7180/cmf/home  admin/hadoop@lakala
+http://hadoop15:8888/accounts/login/?next=/      hdfs/hadoop@lakala
+
+
+
+http://10.5.28.13:7180/cmf/home admin/hadoop@kaola
+http://trs-13:8888/     hdfs/hadoop@kaola
+
+
+
+
+

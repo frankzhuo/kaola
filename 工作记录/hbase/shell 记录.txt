@@ -1,0 +1,51 @@
+'822891054110022','822731054112354','822690058120608','822581059985656','822498054114209','822391057229396','822296157222233','822295857226307','822223072300006','822168054110715',
+
+
+scan 'lklpos_atm_risk_control' ,{FILTER=>SingleColumnValueFilter(Bytes.toBytes('cf'),Bytes.toBytes('col'),Bytes.toBytes('='),Bytes.toBytes('regexstring:00000262ea8d68abdb45eded1b1b4ffe.*'))}
+scan 'lklpos_atm_risk_control' ,{COLUMNS=>'cf:col',FILTER=>SingleColumnValueFilter.new(Bytes.toBytes('cf'),Bytes.toBytes('col'),CompareFilter::CompareOp.valueOf('EQUAL'),SubstringComparator.new('822501058130073,'))}
+
+scan 'lklpos_atm_risk_control' ,{COLUMNS=>'cf:col',FILTER=>"ValueFilter(=,'substring:00000262ea8d68abdb45eded1b1b4ffe')"}
+
+
+import org.apache.hadoop.hbase.util.Bytes
+import org.apache.hadoop.hbase.filter.SingleColumnValueFilter
+import org.apache.hadoop.hbase.filter.CompareFilter
+import org.apache.hadoop.hbase.filter.SubstringComparator
+
+
+
+scan 'lklpos_atm_risk_control',{FILTER=>org.apache.hadoop.hbase.filter.PrefixFilter.new(org.apache.hadoop.hbase.util.Bytes.toBytes('c26428b826be1316232bb3e6a27a0f51'))}
+
+scan 'lklpos_atm_risk_control',{FILTER => "(PrefixFilter('c26428b826be1316232bb3e6a27a0f51_detail_'))"}
+
+
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('c26428b826be1316232bb3e6a27a0f51')"}
+
+ System.out.println(md5.code("822891054110022"));
+ 
+ System.out.println(md5.code("822731054112354"));
+ System.out.println(md5.code("822690058120608"));
+ System.out.println(md5.code("822581059985656"));
+ System.out.println(md5.code("822498054114209"));
+ System.out.println(md5.code("822391057229396"));
+ System.out.println(md5.code("822296157222233"));
+ System.out.println(md5.code("822295857226307"));
+ System.out.println(md5.code("822223072300006"));
+ System.out.println(md5.code("822168054110715"));
+
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('c26428b826be1316232bb3e6a27a0f51')"}
+
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('057761ec4da7d408b4c7859a0e6f847b')"}
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('26b42e3191e24d541a65fac61be0ded4')"}
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('bd3df106faeb6338495301d47bff5502')"}
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('0fcd5628ab999c04b47a23ae2a62a124')"}
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('1cb045258640ee60914ecffad0dcf2a3')"}
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('3aa842fd4643866b87dbb3b730095b55')"}
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('af8f799f2759d2dd35e0a3dd456aa715')"}
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('dc8ca4f11ff7f840c3a60311b27e2766')"}
+scan 'lklpos_atm_risk_control',{FILTER => "PrefixFilter('3d38ab8bf28b46ff042ec18fb56611dc')"}
+
+
+057761ec4da7d408b4c7859a0e6f847b
+
+get 'lklpos_atm_risk_control', '925f8e74c7570d7326fb8c1684899fe2_detail_1456381274'

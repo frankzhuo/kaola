@@ -1,0 +1,387 @@
+<html >
+<head>
+	<meta http-equiv='Content-Type' content='text/html' charset='UTF-8' />
+	<link type="text/css" rel="stylesheet" href="/resources/css/style.css"></link>
+	
+  <title>乐语音后台统计</title>
+<script type="text/javascript" src="/resources/js/jquery.js"></script>
+<script type="text/javascript" src="/resources/js/jquery.form.js"></script>
+<script type="text/javascript" src="/resources/js/jquery-1.4.2.js"></script>
+<script type="text/javascript"
+	src="/resources/js/My97DatePicker/WdatePicker.js"></script>
+</head>
+<script type="text/javascript">
+	$(function () {
+		/*当前各机型用户数量总量和分布情况*/
+	  	pie();
+		 /* 每周各机型用户数量变化情况 - 折线图*/
+		line();
+		 /*本月各机型活动用户数量占总用户数百分比排名 - 折线图*/
+ 		line2();
+		/*本月各版本活动用户占数量排名总用户数百分比排名 - 折线图*/
+		line3();
+		/*本月各版本活动用户数量排名 - 柱状图*/
+		column();
+	});
+	/*当前各机型用户数量总量和分布情况*/
+	function pie() {
+		/* ----  获取参数 -------*/
+		var c=new Array(); 
+
+		/* 名称 */
+		var name ="${models}" ;
+		/* 百分比 */
+		var num ="${nums}" ;
+		
+		var nameArr = name.split(",");
+		var numArr = num.split(",");
+		for (i = 0; i < nameArr.length; i++) {
+			var a = nameArr[i];
+			var b = parseFloat(numArr[i]);
+			c[i] =  [a, b];
+		}
+		/* ----  pie 图 -------*/
+		var chart;
+		    $(document).ready(function() {
+		    	
+		        chart = new Highcharts.Chart({
+		            chart: {
+		                renderTo: 'container',
+		                plotBackgroundColor: null,
+		                plotBorderWidth: null,
+		                plotShadow: false
+		            },
+		            title: {
+		                text: '当前各机型用户数量总量和分布情况'
+		            },
+		            tooltip: {
+		            	 formatter: function() {
+		             		return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.percentage, 2) +'% ('+
+		                          Highcharts.numberFormat(this.y, 0, ',') +')';
+		          			}
+		            },
+		            plotOptions: {
+		                pie: {
+		                    allowPointSelect: true,
+		                    cursor: 'pointer',
+		                    dataLabels: {
+		                        enabled: true,
+		                        color: '#000000',
+		                        connectorColor: '#000000',
+		                        formatter: function() {
+		                            return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.percentage, 2) +'%';
+		                        }
+		                    }
+		                }
+		            },
+		            series: [{
+		                type: 'pie',
+		                name: '机型数量',
+		                data: c
+		            }]
+		        });
+		    });
+	}
+	
+	function line() {
+		var json = ${jsonStringLine};
+	//-----
+		var chart;
+		$(document).ready(function() {
+			chart = new Highcharts.Chart({
+				chart: {
+					renderTo: 'containerLine',
+			                type: 'line'
+			       //         marginRight: 130,
+			      //          marginBottom: 25
+			            },
+			            title: {
+			            	align:'left',
+			                text: '各机型用户数量变化情况',
+			                x: -2 //center
+					
+			            },
+			            subtitle: {
+			                text: '',
+			                x: -20
+			            },
+			            xAxis: {
+			                categories: json.categories
+			            },
+			            yAxis: {
+			                title: {
+			                    text: '用户数 (个)'
+			                },
+			                plotLines: [{
+			                    value: 0,
+			                    width: 1,
+			                    color: '#808080'
+			                }]
+			            },
+			            tooltip: {
+			                formatter: function() {
+			                        return '<b>'+ this.series.name +'</b><br/>'+
+			                        this.x +': '+ this.y +'个';
+			                }
+			            },
+			            legend: {
+			                align: 'right',
+			                verticalAlign: 'top',
+			                y: 6,
+			                floating: true,
+			                borderWidth: 0
+			            },
+			            series: json.list
+			            
+			  });
+		});
+		//------
+	}
+	
+	
+	function line2() {
+		var json = ${jsonStringLine2};
+			//-----
+		var chart;
+		$(document).ready(function() {
+			    chart = new Highcharts.Chart({
+				chart: {
+				    renderTo: 'containerLine2',
+				    type: 'line'
+			   //         marginRight: 130,
+			  //          marginBottom: 25
+				},
+				title: {
+					align:'left',
+				    text: '本月各机型活动用户数量占总用户数百分比',
+				    x: -2 //center
+				},
+				subtitle: {
+				    text: '',
+				    x: -20
+				},
+				xAxis: {
+				    categories: json.categories
+				},
+				yAxis: {
+				    title: {
+					text: '百分比 (%)'
+				    },
+				    plotLines: [{
+					value: 0,
+					width: 1,
+					color: '#808080'
+				    }]
+				},
+				tooltip: {
+				    formatter: function() {
+					    return '<b>'+ this.series.name +'</b><br/>'+
+					    this.x +': '+ this.y +'%';
+				    }
+				},
+				legend: {
+				    align: 'right',
+				    verticalAlign: 'top',
+				    y: 6,
+				    floating: true,
+				    borderWidth: 0
+				},
+				series: json.list
+				
+			    });
+		});
+	//-----  
+	}
+	
+	function line3() {
+		var json = ${jsonStringLine3};
+		var chart;
+		$(document).ready(function() {
+		    chart = new Highcharts.Chart({
+			chart: {
+			    renderTo: 'containerLine3',
+			    type: 'line'
+		   //         marginRight: 130,
+		  //          marginBottom: 25
+			},
+			title: {
+				align:'left',
+			    text: '本月各版本活动用户数占总用户数百分比',
+			    x: -2 //center
+			   
+			},
+			subtitle: {
+			    text: '',
+			    x: -20
+			},
+			xAxis: {
+			    categories: json.categories
+			},
+			yAxis: {
+			    title: {
+				text: '百分比 (%)'
+			    },
+			    plotLines: [{
+				value: 0,
+				width: 1,
+				color: '#808080'
+			    }]
+			},
+			tooltip: {
+			    formatter: function() {
+				    return '<b>'+ this.series.name +'</b><br/>'+
+				    this.x +': '+ this.y +'%';
+			    }
+			},
+			legend: {
+			    align: 'right',
+			    verticalAlign: 'top',
+			    y: 6,
+			    floating: true,
+			    borderWidth: 0
+			},
+			series: json.list
+		    });
+		});
+		  
+	}
+	
+	
+	function column() {
+		var json = ${jsonStringColumn};
+		 var chart;
+		  $(document).ready(function() {
+		      chart = new Highcharts.Chart({
+			  chart: {
+			      renderTo: 'containerColumn',
+			      type: 'column'
+			  },
+			  title: {
+			      text: '本月各版本活动用户数量排名'
+			  },
+			  subtitle: {
+			      text: ''
+			  },
+			  xAxis: {
+				 categories: json.categories
+			  },
+			  yAxis: {
+			      min: 0,
+			      title: {
+				  text: '数量 (个)'
+			      }
+			  },
+			  legend: {
+			      layout: 'vertical',
+			      backgroundColor: '#FFFFFF',
+			      align: 'left',
+			      verticalAlign: 'top',
+			      x: 70,
+			      y: 60,
+			      floating: true,
+			      shadow: true
+			  },
+			  tooltip: {
+			      formatter: function() {
+				  return ''+
+				      this.x +': '+ this.y +' 个';
+			      }
+			  },
+			  plotOptions: {
+			      column: {
+				  pointPadding: 0.2,
+				  borderWidth: 0
+			      }
+			  },
+			  series: json.list
+		      });
+		  });	
+   
+	}
+	
+</script>
+<body>
+	<table width="99.8%" border="0" cellpadding="1" cellspacing="1"
+		bgcolor="#a8c7ce">
+		<tr>
+			<td width="50%"  align="left" valign="top">
+				<div id="container" style="min-width: 200px; height: 350px; margin: 0 auto"></div>
+			</td>
+			<td rowspan="5" align="left" valign="top" >
+			<table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#a8c7ce">
+			    <tr style="font-weight: bold; background: #d3eaef;">
+				<td bgcolor="d3eaef" class="STYLE6" colspan="2">各机型上不同软件版本的分布情况（占本机型总用户数量百分比,top3）</td>
+			    </tr>
+			    
+			     #foreach($al in $mvList) 
+				<tr bgcolor="#ffffff">
+					<td style="text-align: left;" class="STYLE19" colspan="2">${al.model}</td>
+				</tr>
+				    #foreach($lsv in $al.lsvList) 
+					<tr bgcolor="#ffffff">
+					    <td class="STYLE19" >${lsv.fullVersion}</td>
+					    <td class="STYLE19" >${lsv.percent}%</td>
+					</tr>
+				    #end
+				<tr bgcolor="#ffffff">
+				</tr>
+			      #end
+			</table>
+			<br>
+			<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce">
+				<tr style="font-weight: bold; background: #d3eaef;">
+					<td colspan="5" class="STYLE6">本月活动用户使用的top5的功能</td>
+				</tr>
+				<tr style="font-weight: bold; background: #d3eaef;">
+					<td bgcolor="d3eaef" class="STYLE6">排名</td>
+					<td bgcolor="d3eaef" class="STYLE6">语音控命令ID</td>
+					<td bgcolor="d3eaef" class="STYLE6">语音控命令名称</td>
+					<td bgcolor="d3eaef" class="STYLE6">使用该命令所有终端数</td>
+					<td bgcolor="d3eaef" class="STYLE6">命令次数</td>
+				</tr>
+				#foreach($al in $actionList) 
+					<tr bgcolor="#ffffff">
+						<td class="STYLE19">${al.rank}</td>
+						<td class="STYLE19">${al.actionId}</td>
+						<td class="STYLE19">${al.actionName}</td>
+						<td class="STYLE19">${al.imeiCount}</td>
+						<td class="STYLE19">${al.actionIdCount}</td>
+					</tr>
+				#end
+			</table>
+			<td>
+		</tr>
+		<tr>
+			<td >
+				<div id="containerLine" style="min-width: 200px; height: 350px; margin: 0 auto"></div>
+			</td>
+			
+		</tr>
+		<tr>
+			<td width="50%"><div id="containerLine2" style="min-width: 200px; height: 350px; margin: 0 auto"></div></td>
+			
+		</tr>
+		<tr>
+			<td><div id="containerLine3" style="min-width: 200px; height: 350px; margin: 0 auto"></div></td>
+			
+		</tr>
+		<tr>
+			<td><div id="containerColumn" style="min-width: 200px; height: 350px; margin: 0 auto"></div></td>
+			
+		</tr>
+	</table>
+<table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#a8c7ce">
+	<tr>
+		<td>			
+			
+		</td>
+		<td align="left" valign="top">
+			
+		</td>
+	</tr>
+</table>		
+	
+</body>
+<script type="text/javascript" src="/resources/js/hightcharts/highcharts.js"></script>
+<script type="text/javascript" src="/resources/js/hightcharts/exporting.js"></script>
+</html>

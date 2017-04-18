@@ -1,0 +1,140 @@
+http://10.1.80.181:9200/law_personmore/
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "query_string": {
+            "default_field": "name",
+            "query": "柯连技"
+          }
+        },
+        {
+          "prefix": {
+            "cardnum": "4202221987"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "age": "asc",
+    "sys_time": "asc"
+  }
+}
+
+
+
+------------------------------------------------------
+	{
+  "_source": {
+    "include": [
+      "body.jtype",
+      "body.jnum",
+      "body.people",
+      "body.yuangao",
+      "body.yid",
+      "body.ytpye",
+      "body.beigao",
+      "body.bid",
+      "body.btpye",
+      "body.result_str",
+      "body.spy",
+      "body.judge_date",
+      "body.sjy"
+    ]
+  },
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "prefix": {
+            "judgement.body.court": "西藏"
+          }
+        },
+        {
+          "term": {
+            "judgement.body.beigao": "公司"
+          }
+        },
+        {
+          "prefix": {
+            "judgement.body.jdate": "2016-10-12"
+          }
+        }
+      ],
+      "must_not": [],
+      "should": []
+    }
+  },
+  "from": 0,
+  "size": 20,
+  "sort": [],
+  "facets": {}
+}
+
+
+http://10.1.80.181:9200/law_court/court_notice/
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "袁园",
+            "type": "phrase",
+            "fields": [
+              "party"
+            ]
+          }
+        },
+        {
+          "term": {
+            "court_notice.body.notice_user_name": "重庆"
+          }
+        },
+        {
+          "term": {
+            "court_notice.body.party": "公司"
+          }
+        }
+      ],
+      "must_not": [],
+      "should": []
+    }
+  },
+  "from": 0,
+  "size": 10,
+  "sort": [],
+  "facets": {}
+}
+
+http://10.1.80.181:9200/law_judgement/judgement/
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "广发银行股份有限公司",
+            "type": "phrase",
+            "fields": [
+              "beigao"
+            ]
+          }
+        },
+        {
+          "term": {
+            "court": "山东"
+          }
+        }
+      ],
+      "must_not": [],
+      "should": []
+    }
+  },
+  "from": 0,
+  "size": 10,
+  "sort": [],
+  "facets": {}
+}

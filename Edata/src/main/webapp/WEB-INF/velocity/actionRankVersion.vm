@@ -1,0 +1,88 @@
+<html>
+<head>
+	<meta http-equiv='Content-Type' content='text/html' charset='UTF-8' />
+	<link type="text/css" rel="stylesheet" href="/resources/css/style.css"></link>
+	
+  <title>用户命令使用排行</title>
+  <script type="text/javascript" src="/resources/js/My97DatePicker/WdatePicker.js"></script>
+  <script type="text/javascript" src="/resources/js/jquery-1.4.2.js"></script>
+  <script type="text/javascript">
+		$(document).ready(function() { 
+		$('#changecolor tr').addClass('odd'); 
+		$('#changecolor tr:even').addClass('even'); //奇偶变色，添加样式 
+		}); 		
+  </script>
+  
+  <style> 
+	#changecolor tr:hover{ 
+	background-color:#dff4fc; 
+	} 
+	
+	.odd { 
+	background-color: #ffffff; /* pale yellow for odd rows */ 
+	} 
+	.even { 
+	background-color: #fcf1fe; /* pale blue for even rows */ 
+	} 
+  </style> 
+
+</head>
+
+<body onload="senfe("changecolor","#f8fbfc","#e5f1f4","#ecfbd4","#bce774");">
+<div style="height:500px; width:600px; margin:0 auto;padding:45px 35px 0 25px">
+	<fieldset style="width:600px">
+		<legend>分版本用户命令使用排行 查询条件:</legend>
+		<form action="/versionActionRankList.do" method="post">
+		<table width="90%" cellpadding="1" cellspacing="1" border="0" align="center">
+			<tr>
+				<td class="STYLE6">
+					<input id="d421" name="datestr" class="Wdate" type="text" 
+				    	onfocus="WdatePicker({minDate:'2012-03-31',maxDate:'%y-%M-#{%d-1}',readOnly:true})"/>
+			    </td>
+			    
+			    <td class="STYLE6">
+			    版本
+				<select id="fullVersion"  name="fullVersion" >
+				 #foreach($mnl in $versionList)
+					#if($mnl == $fullVersion)
+				  	  <option value="${mnl}"  selected="selected">${mnl}</option>
+				        #else
+					    <option value="${mnl}" >${mnl}</option>
+				        #end
+			        #end
+				</select>			    	
+			    	&nbsp;&nbsp;
+			    </td>
+			    <td class="STYLE6">
+			    	<input type="radio" name="type" value="0" checked="true">日&nbsp;&nbsp;
+			    	<input type="radio" name="type" value="1">周&nbsp;&nbsp;
+			    </td>
+			    <td class="STYLE6">
+			    	<input type="submit" name="submit" value="查询">			 
+			    </td>
+			</tr>
+		</table>
+		</form>
+	</fieldset>    		
+</br>		
+	<table width="610px" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" id="changecolor">
+        <tr style="font-weight: bold;background: #d3eaef;">    
+          <td bgcolor="d3eaef" class="STYLE6">排名</td>
+	      <td bgcolor="d3eaef" class="STYLE6">语音控命令ID</td>
+	      <td bgcolor="d3eaef" class="STYLE6">语音控命令名称</td>
+	      <td bgcolor="d3eaef" class="STYLE6">使用该命令所有终端数</td>
+	      <td bgcolor="d3eaef" class="STYLE6">命令次数</td>
+        </tr>
+	#foreach($ls in $actionIdRankList)       
+          <tr>
+	          <td class="STYLE19">${ls.rank}</td>
+	          <td class="STYLE19">${ls.actionId}</td>
+		  <td style="text-align: left;" class="STYLE19" >${ls.actionName}</td>
+	          <td class="STYLE19">${ls.imeiCount}</td>
+	          <td class="STYLE19">${ls.actionIdCount}</td>
+          </tr>
+        #end
+	</table>
+</div>
+</body>
+</html>

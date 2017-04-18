@@ -1,0 +1,26 @@
+<html >
+<head>
+	<meta http-equiv='Content-Type' content='text/html' charset='UTF-8' />
+	<link type="text/css" rel="stylesheet" href="/resources/css/style.css"></link>
+	
+  <title>乐语音后台统计</title>
+
+</head>
+
+<body>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce">
+        <tr style="font-weight: bold;background: #d3eaef;">    
+          <td bgcolor="d3eaef" class="STYLE6">日期</td>
+	      <td bgcolor="d3eaef" class="STYLE6">打开乐语音应用终端总累计数</td>
+	      
+        </tr>
+		#foreach($ls in $listTest)       
+          <tr>
+	          <td>$ls.get("aaa") </td>
+	          <td>$ls.get("bbb")</td>
+	          
+          </tr>
+        #end
+	</table>
+</body>
+</html>

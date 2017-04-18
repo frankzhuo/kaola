@@ -1,0 +1,258 @@
+//新建个人失信人
+curl -XPUT 'http://localhost:9200/law_shixin/'
+curl -XDELETE 'http://localhost:9200/law_shixin/c_personmore_new'
+curl -XPOST http://localhost:9200/law_shixin/c_personmore_new/_mapping -d'
+{
+"c_personmore_new": {
+"properties": {
+"partytypename": {
+"type": "string"
+},
+"sex": {
+"type": "string"
+},
+"gistid": {
+"type": "string"
+},
+"areaname": {
+"type": "string"
+},
+"cardnum": {
+"index":"not_analyzed",
+"type": "string"
+},
+"courtname": {
+"type": "string"
+},
+"cid": {
+"type": "string"
+},
+"id": {
+"type": "string"
+},
+"pulishdate": {
+"index":"not_analyzed",
+"type": "string"
+},
+"duty": {
+"type": "string"
+},
+"gistunit": {
+"type": "string"
+},
+"performance": {
+"type": "string"
+},
+"regdate": {
+"index":"not_analyzed",
+"type": "string"
+},
+"age": {
+"type": "string"
+},
+"name": {
+"index":"not_analyzed",
+"type": "string"
+},
+"casecode": {
+"type": "string"
+},
+"disrupttypename": {
+"type": "string"
+}
+},
+"_all": {
+ "analyzer": "ik"
+}
+}
+}'
+
+//新建企业失信人
+curl -XDELETE 'http://localhost:9200/law_shixin/c_unitmore_new'
+curl -XPOST http://localhost:9200/law_shixin/c_unitmore_new/_mapping -d'
+{
+"c_unitmore_new": {
+"properties": {
+"businessentity": {
+"index":"not_analyzed",
+"type": "string"
+},
+"gistid": {
+"type": "string"
+},
+"areaname": {
+"type": "string"
+},
+"cardnum": {
+"index":"not_analyzed",
+"type": "string"
+},
+"courtname": {
+"type": "string"
+},
+"cid": {
+"type": "string"
+},
+"id": {
+"type": "string"
+},
+"pulishdate": {
+"index":"not_analyzed",
+"type": "string"
+},
+"duty": {
+"type": "string"
+},
+"gistunit": {
+"type": "string"
+},
+"performance": {
+"type": "string"
+},
+"regdate": {
+"index":"not_analyzed",
+"type": "string"
+},
+"name": {
+"index":"not_analyzed",
+"type": "string"
+},
+"casecode": {
+"type": "string"
+},
+"disrupttypename": {
+"type": "string"
+}
+},
+"_all": {
+ "analyzer": "ik"
+}
+}
+}'
+
+
+//新建判决文书(涉案信息)
+curl -XDELETE 'http://localhost:9200/law_shixin/judgement_new'
+curl -XPOST http://localhost:9200/law_shixin/judgement_new/_mapping -d'
+{"judgement_new": {
+"properties": {
+"result": {
+"type": "string"
+},
+"yuangao": {
+"type": "string"
+},
+"weitobianhuren": {
+"type": "string"
+},
+"identity_card": {
+"index": "not_analyzed",
+"type": "string"
+},
+"judge_date": {
+"index": "not_analyzed",
+"type": "string"
+},
+"court": {
+"type": "string"
+},
+"jprocees": {
+"type": "string"
+},
+"jnum": {
+"type": "string"
+},
+"url": {
+"index": "not_analyzed",
+"type": "string"
+},
+"dangshiren_all": {
+"index": "not_analyzed",
+"type": "string"
+},
+"content": {
+"type": "string"
+},
+"title": {
+"type": "string"
+},
+"court_type": {
+"type": "string"
+},
+"jtype": {
+"type": "string"
+},
+"dangshiren": {
+"type": "string"
+},
+"jdate": {
+"format": "dateOptionalTime",
+"type": "date"
+},
+"shangshuren": {
+"type": "string"
+},
+"jsummary": {
+"type": "string"
+},
+"beigao": {
+"type": "string"
+},
+"result_str": {
+"type": "string"
+},
+"beishangshuren": {
+"type": "string"
+},
+"jcase": {
+"type": "string"
+}
+},
+"_all": {
+"analyzer": "ik"
+}
+}
+}'
+
+
+//查询方式
+http://10.5.28.13:9200/law_shixin/_search
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "bool": {
+            "must": [
+              {
+                "term": {
+                  "name": "王宝兴"
+                }
+              },
+              {
+                "term": {
+                  "cardnum": "3307221969****2110"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "term": {
+            "businessentity": "王"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "_type": "asc",
+    "regdate": "desc"
+  },
+  "size":20,
+  "_source": [
+    "name",
+    "cardnum",
+    "businessentity"
+  ]
+}

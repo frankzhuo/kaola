@@ -1,0 +1,11 @@
+1>  wget http://xbib.org/repository/org/xbib/elasticsearch/importer/elasticsearch-jdbc/1.7.2.1/elasticsearch-jdbc-1.7.2.1-dist.zip
+2>  unzip elasticsearch-jdbc-1.7.2.1-dist.zip 
+3>  拷相关驱动的JAR包到LIB
+4>  cd bin
+    修改相关数据库脚本的IP 用户名密码
+    运行脚本
+
+
+
+参考
+https://github.com/jprante/elasticsearch-jdbc

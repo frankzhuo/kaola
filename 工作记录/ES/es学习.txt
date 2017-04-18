@@ -1,0 +1,248 @@
+--判断id是否存在
+curl -i XHEAD http://trs-13:9200/security/public_company/AVgEtjInyvHLnJKCWQ5C
+
+-- PUT
+更新或 创建
+
+--POST 更新
+POST /index/type/id/_update 
+
+分页
+_search?size=5&from=5
+
+--
+http://trs-13:9200/security/public_company
+_search      POST
+{
+  "query": {
+    "bool": {
+      "must": {
+        "term": {
+          "securityShort": "乾照光电"
+        }
+      }
+    }
+  }
+}
+
+--包含而不相等
+term terms
+
+-----过滤
+--复杂查询 短语匹配
+http://trs-13:9200/software/copyright/ 
+_search   POST
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "用友优普信息技术有限公司",
+            "type": "phrase",
+            "fields": [
+              "name"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "2016",
+            "type": "phrase",
+            "fields": [
+              "reg_time"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "size": 1000,
+  "from": 0
+}
+
+--term精确查询 数字 日期 布尔not_analyzed
+http://trs-13:9200/software/copyright/ 
+_search   POST
+{
+  "query": {
+    "term": {
+      "sys_time": "2016-10-19"
+    }
+  },
+  "size": 1000,
+  "from": 0
+}
+
+
+--range过滤  作用域 数字 日期
+{
+  "query": {
+    "range": {
+      "sys_time": {
+        "gt": "2016-10-19"
+      }
+    }
+  },
+  "size": 1000,
+  "from": 0
+}
+
+-----查询
+--查询所有
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ]
+    }
+  },
+  "size": 1000,
+  "from": 0
+}
+
+---以什么字符开头的
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "prefix": {
+            "reg_time": "2015"
+          }
+        }
+      ]
+    }
+  },
+  "size": 1000,
+  "from": 0
+}
+
+--短语匹配
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_phrase": {
+            "reg_time": "2015"
+          }
+        },
+        {
+          "match_phrase": {
+            "name": "北京天锋网络科技有限公司"
+          }
+        }
+      ]
+    }
+  },
+  "size": 1000,
+  "from": 0
+}
+
+
+--查看健康状态
+curl 'localhost:9200/_cat/nodes?v'
+--查看索引目录
+curl 'localhost:9200/_cat/indices?v'
+--查看分片
+curl 'localhost:9200/_cat/shards?v'
+
+--XPOST不指定id；--XGET 指定ip
+--需制定id
+curl  -XPUT 'localhost:9200/customer/external/1?prety' -d '
+{
+"name":"jian"
+}
+'
+--无需制定id
+curl  -XPOST 'localhost:9200/customer/external?prety' -d '
+{
+"name":"jian"
+}
+'
+--更新
+curl -XPOST 'localhost:9200/customer/external/1/_update?prety' -d '
+{
+"doc":{"name":"jianyikai","age":"11"}
+}
+'
+--删除(根据id删除)
+curl -XDELETE 'localhost:9200/customer/external/2?prety'
+--根据查询结果删除
+curl -XDELETE 'localhost:9200/customer/external/_query?prety' -d '
+{
+"query":{"match":{"name":"jian"}}
+}
+'
+--批量处理
+curl -XPOST 'localhost:9200/customer/external/_bulk?prety' -d '
+{"update" :{"_id":"1"}}
+{"doc":{"name":"jian","age":"11"}}
+{"delete":{"_id":"2"}}
+'
+
+
+--------
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_phrase_prefix": {
+            "compName": {
+               "query":"北京东方",
+                "type":"phrase_prefix"
+             }
+          }
+        }
+      ]
+    }
+  },
+  "size": 1000,
+  "from": 0
+}
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "regexp": {
+            "compName":".*网力.*"
+           }
+        }
+      ]
+    }
+  },
+  "size": 1000,
+  "from": 0
+}
+
+----------------2017.02.23----------------------
+检查集群的健康状态：
+http://10.1.80.181:9200/_cat/health?v
+获取集群中的节点列表
+http://10.1.80.181:9200/_cat/nodes?v
+列出所有索引
+http://10.1.80.181:9200/_cat/indices?v
+
+根据sys_time区间删除
+curl -XDELETE 'http://localhost:9200/law_unitmore/c_unitmore/_query?party' -d'{
+"query": {
+  "bool": {
+   "must": [
+     {
+      "range": {
+             "c_unitmore.body.sys_time": {
+                "from": "2016-02-27"
+            }
+         }
+    }
+   ]
+  }
+ }
+}'

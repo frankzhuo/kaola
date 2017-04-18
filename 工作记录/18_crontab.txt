@@ -1,0 +1,72 @@
+###### 小贷新模型 1 期 已停止
+##### 30 19 * * * sh /home/hdfs/xiaodai/loan_model.sh > /home/hdfs/xiaodai/logs/`date +\%Y-\%m-\%d`.log 2>&1
+
+###小贷新模型 2 期
+1 0 * * * sh /home/hdfs/xiaodai/xiaodai.sql > /home/hdfs/xiaodai/logs/v2_`date +\%Y-\%m-\%d`.log 2>&1
+
+###银联综合分开发相关变量的需求
+0 23 1 * * sh /home/hdfs/unionpay/unionpay-1.sql > /home/hdfs/unionpay/logs/`date +\%Y-\%m-\%d`.log 2>&1
+0 1 4 * * sh /home/hdfs/unionpay/unionpay-2.sql > /home/hdfs/unionpay/logs/`date +\%Y-\%m-\%d`.log 2>&1
+
+###商户评分二期
+1 0 5 * * sh /home/hdfs/merzx/merzx.sh > /home/hdfs/merzx/logs/`date +\%Y-\%m-\%d`.log 2>&1
+#25 18 10 * * sh /home/hdfs/merzx/merzx.sh > /home/hdfs/merzx/logs/`date +\%Y-\%m-\%d`.log 2>&1
+
+1 4 5 * * sh /home/hdfs/merzx/mer_expmpos_area.sh > /home/hdfs/merzx/logs/expmpos`date +\%Y-\%m-\%d`.log 2>&1
+
+#15 17 30 * * sh /home/hdfs/merzx/merzx_back.sh > /home/hdfs/merzx/logs/`date +\%Y-\%m-\%d`.log 2>&1
+
+1 0 7 * * sh /home/hdfs/merzx/merzx_export_shangxian.sh > /home/hdfs/merzx/logs/`date +\%Y-\%m-\%d`.log 2>&1
+1 0 12 * * sh /home/hdfs/merzx/merzx_export_shangxian.sh > /home/hdfs/merzx/logs/`date +\%Y-\%m-\%d`.log 2>&1
+
+1 1 6 * * sh /home/hdfs/merzx/mer_expmpos_area_export.sh > /home/hdfs/merzx/logs/expmpos_exp`date +\%Y-\%m-\%d`.log 2>&1
+
+#1 1 3 * * sh /home/hdfs/merzx/merzx_export_shangxian.sh > /home/hdfs/merzx/logs/`date +\%Y-\%m-\%d`.log 2>&1
+
+1 1 5 * * sh /home/hdfs/merzx/mer_limit_result_export.sql  > /home/hdfs/merzx/logs/mer_limit`date +\%Y-\%m-\%d`.log 2>&1
+
+////////////
+%s/sudo\ -u\ hdfs\ //g
+%s/\/home\/hdfs/\/home\/zx_t/g
+
+sed -i "s/sudo -u hdfs //g" hdw_nwpos_atmtxnjnl.sql;
+sed -i "s/sudo -u hdfs //g" hdw_nwpos_t01_branch_info_all.sql;
+sed -i "s/sudo -u hdfs //g" hdw_nwpos_t01_terminal_info.sql;
+sed -i "s/sudo -u hdfs //g" hdw_nwpos_t01_merchant_info.sql;
+sed -i "s/sudo -u hdfs //g" merzx_var_mid.sql;
+sed -i "s/sudo -u hdfs //g" merzx_var_basic_info.sql;
+sed -i "s/sudo -u hdfs //g" merzx_var_trans.sql;
+sed -i "s/sudo -u hdfs //g" merzx_source_collect_all.sql;
+sed -i "s/sudo -u hdfs //g" merzx_source_collect_lvscore.sql;
+sed -i "s/sudo -u hdfs //g" merzx_source_collect_wtscore.sql;
+sed -i "s/sudo -u hdfs //g" merzx_source_collect_wtscore_sum.sql;
+sed -i "s/sudo -u hdfs //g" merzx_source_collect_wtscore_sum_tz.sql;
+sed -i "s/sudo -u hdfs //g" merzx_source_result_score_grade.sql;
+sed -i "s/sudo -u hdfs //g" merzx_export_result.sql;
+sed -i "s/sudo -u hdfs //g" 6_yue_jun_jiao_yi_bi_shu.sql;
+sed -i "s/sudo -u hdfs //g" merzx_check.sh;
+
+
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" hdw_nwpos_atmtxnjnl.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" hdw_nwpos_t01_branch_info_all.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" hdw_nwpos_t01_terminal_info.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" hdw_nwpos_t01_merchant_info.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_var_mid.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_var_basic_info.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_var_trans.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_source_collect_all.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_source_collect_lvscore.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_source_collect_wtscore.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_source_collect_wtscore_sum.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_source_collect_wtscore_sum_tz.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_source_result_score_grade.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_export_result.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" 6_yue_jun_jiao_yi_bi_shu.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" merzx_check.sh;
+
+grep "zx_t" hdw_nwpos_atmtxnjnl.sql hdw_nwpos_t01_branch_info_all.sql hdw_nwpos_t01_terminal_info.sql hdw_nwpos_t01_merchant_info.sql merzx_var_mid.sql merzx_var_basic_info.sql merzx_var_trans.sql merzx_source_collect_all.sql merzx_source_collect_lvscore.sql merzx_source_collect_wtscore.sql merzx_source_collect_wtscore_sum.sql merzx_source_collect_wtscore_sum_tz.sql merzx_source_result_score_grade.sql merzx_export_result.sql 6_yue_jun_jiao_yi_bi_shu.sql merzx_check.sh;
+
+sed -i "s/sudo -u hdfs //g" unionpay-1.sql unionpay-2.sql;
+
+sed -i "s/sudo -u hdfs //g" mer_expmpos_area.sh merzx_export_shangxian.sh mer_expmpos_area_export.sh mer_limit_result_export.sql;
+sed -i "s/\/home\/hdfs/\/home\/zx_t/g" mer_expmpos_area.sh merzx_export_shangxian.sh mer_expmpos_area_export.sh mer_limit_result_export.sql;

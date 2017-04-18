@@ -1,0 +1,187 @@
+A:visited {
+	COLOR: #7b7b7b; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #C75F3E; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #003399; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #003399; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A.A1:visited {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #333399; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A.A1:link {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #333399; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A.A1:hover {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #333399; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+A.A1:active {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #333399; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A.A2:visited {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #333399; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A.A2:link {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #333399; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A.A2:hover {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #cc6600; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+A.A2:active {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #cc6600; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A.A3:visited {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #ff6600; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.A3:link {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #ff6600; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.A3:hover {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #333399; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A.A3:active {
+	FONT-FAMILY: "宋体", "仿宋_GB2312", "黑体"; COLOR: #333399; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+TD {
+	COLOR: #3a3a3a; FONT-SIZE: 9pt; TEXT-DECORATION: none;border-color:#ccc;word-wrap:break-word;
+}
+.inputrequest {
+	BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BACKGROUND-COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; VERTICAL-ALIGN: middle; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid
+}
+.inputnotrequest {
+	BORDER-BOTTOM: #13215e 1px solid; BORDER-LEFT: #13215e 1px solid; BACKGROUND-COLOR: #feeade; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; VERTICAL-ALIGN: middle; BORDER-TOP: #13215e 1px solid; BORDER-RIGHT: #13215e 1px solid
+}
+.input {
+	BORDER-BOTTOM: #cccccc 1px groove; BORDER-LEFT: #cccccc 1px groove; BACKGROUND-COLOR: #f5f5f5; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 9pt; BORDER-TOP: #cccccc 1px groove; BORDER-RIGHT: #cccccc 1px groove
+}
+.inputdown {
+	BORDER-BOTTOM: #000000 1px groove; BORDER-LEFT: #ffffff 0px groove; BACKGROUND-COLOR: #e8e8e8; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 9pt; VERTICAL-ALIGN: middle; BORDER-TOP: #ffffff 0px groove; BORDER-RIGHT: #ffffff 0px groove; FONT-COLOR: "#000000"
+}
+.inputno {
+	BORDER-BOTTOM: #000000 0px groove; BORDER-LEFT: #ffffff 0px groove; BACKGROUND-COLOR: #e8e8e8; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 9pt; BORDER-TOP: #ffffff 0px groove; BORDER-RIGHT: #ffffff 0px groove
+}
+.input1 {
+	BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 0px solid; BACKGROUND-COLOR: #ddeeff; FONT-FAMILY: "宋体"; COLOR: black; FONT-SIZE: 9pt; BORDER-TOP: black 0px solid; BORDER-RIGHT: black 0px solid
+}
+.button {
+	BORDER-BOTTOM: #333333 1px solid; BORDER-LEFT: #ffffff 1px solid; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND: #e3e3e3; HEIGHT: 20px; COLOR: #404040; FONT-SIZE: 9pt; BORDER-TOP: #ffffff 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: #333333 1px solid
+}
+.tablehead {
+	TEXT-ALIGN: center; BACKGROUND-COLOR: #dddddd; FONT-FAMILY: Arial,宋体，Times New Roman; COLOR: #003333; FONT-SIZE: 10.5pt
+}
+.navbar {
+	TEXT-ALIGN: center; BACKGROUND-COLOR: #d4d0c8; FONT-FAMILY: Arial,宋体，Times New Roman; COLOR: #ffffff; FONT-SIZE: 12pt
+}
+BODY {
+	SCROLLBAR-ARROW-COLOR: #ffffff; 
+	SCROLLBAR-FACE-COLOR: #dddddd; 
+	LINE-HEIGHT: 14px; 
+	SCROLLBAR-DARKSHADOW-COLOR: #848484; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; 
+	COLOR: #000000; 
+	SCROLLBAR-SHADOW-COLOR: #cccccc; 
+	FONT-SIZE: 9pt; 
+	BORDER-RIGHT: #000000 0px outset; 
+	TEXT-DECORATION: none; 
+	SCROLLBAR-3DLIGHT-COLOR: #848484;
+	PADDING:0;
+	MARGIN:0;
+}
+
+.pageNav label{
+	padding:0 5px;
+}
+.pageNav a{
+	text-decoration: underline;
+	color: #0883C6;
+}
+
+.memusty2 {
+	BORDER-BOTTOM: #99ccff 1px inset; BORDER-LEFT: #99ccff 1px inset; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; COLOR: #ffffff; BORDER-TOP: #99ccff 1px inset; CURSOR: hand; BORDER-RIGHT: #99ccff 1px inset; PADDING-TOP: 3px
+}
+.tab {
+	TEXT-ALIGN: center; BORDER-LEFT: #ffffff 1px solid; FONT-FAMILY: Verdana; FONT-SIZE: 9pt; BORDER-TOP: #ffffff 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: gray 1px solid
+}
+.selTab {
+	TEXT-ALIGN: center; BORDER-LEFT: white 1px solid; BACKGROUND-COLOR: #eaeaea; COLOR: #000000; FONT-SIZE: 9pt; BORDER-TOP: #6699cc 2px solid; FONT-WEIGHT: normal; BORDER-RIGHT: black 1px solid
+}
+.contentText {
+	LINE-HEIGHT: 20px; FONT-SIZE: 12px; WORD-SPACING: normal; TEXT-DECORATION: none
+}
+.inputbg {
+	BACKGROUND-IMAGE: url(images/c3.gif); BORDER-BOTTOM: #cccccc 1px groove; BORDER-LEFT: #cccccc 1px groove; BACKGROUND-COLOR: #ff9900; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 9pt; BORDER-TOP: #cccccc 1px groove; BORDER-RIGHT: #cccccc 1px groove
+}
+
+.test1
+		{
+		 padding-right: 3px;  
+		  padding-left: 3px;  
+		  padding-bottom: 0px;  
+		  color:#0000;
+		  margin-right: 3px;  
+		  padding-top: 0px;  
+		  font-family:"黑体","微软雅黑";
+		  font-size:14px;   
+		  text-align: center;
+		  border:1px solid #ccc;
+		  margin:0 auto;
+		  width:100%;
+		  border-collapse: collapse;
+		}
+		
+		
+		label{
+			cursor: pointer;
+		}
+	   .func{
+			list-style:none;
+			margin:0px;
+			padding:0px;
+			clear:both;
+		}
+		.func li{
+			float:left;
+		}
+		.input{
+			width:450px;
+		}
+		
+		.td1{
+			text-align: right;
+			width:150px;
+		}
+		.td2{
+			text-align: left;	
+		}
+	input{
+		border: 1px solid #D4D0C8;
+		margin:1px;
+		padding:2px;
+	}
+	input[type=button] ,input[type=reset] ,input[type=submit]
+	{
+		width:60px;
+		background-color: #FFCC33;
+	}
+	input[type=text] 
+	{
+		/*background-color: #FFCC33;*/
+	}
+	textarea
+	{
+		border:1px solid #ccc;
+		/*background-color: #FFCC33;*/
+	}
+	input[type=checkbox],input[type=radio] 
+	{
+		width: 20px;border: 0px;
+	}
+
+.consolePage {width:100%;margin:0 auto;height:10px;text-align: center;}
+.consolePage .pageNav {text-align: center;width: 100%;}
+.consolePage .previousPage {float:left;}
+.consolePage .nextPage {float:right;}

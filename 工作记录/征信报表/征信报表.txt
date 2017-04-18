@@ -1,0 +1,52 @@
+create table zhengxin.euser(
+userid string,
+customerid string,
+mobilephone string,
+opentime string,
+coreuerid string,
+userflag string
+)
+partitioned by(
+ymd string
+)
+row format delimited fields terminated by '\001';
+
+
+create table zhengxin.accesslog(
+id String,
+channelid String,
+state String,
+requestid string,
+time string,
+userid string, -- customerid string
+marketchannel string
+)
+partitioned by(
+ymd string
+)
+row format delimited fields terminated by '\001';
+
+
+create table zhengxin.procdt_scorelog(
+mobile String,
+customerid String,
+customer_id String,
+source string,
+date_time string
+)
+partitioned by(
+ymd string
+)
+row format delimited fields terminated by '\001';
+
+
+
+alter table euser rename to euser2;
+alter table accesslog rename to accesslog2;
+alter table procdt_scorelog rename to procdt_scorelog2;
+
+set hive.exec.max.dynamic.partitions.pernode.Maximum=10000;
+
+insert overwrite table euser partition(ymd) select a.userid,a.customerid,a.mobilephone,a.opentime,a.coreuerid,a.userflag,regexp_replace(a.opentime,'-','') ymd from euser2 a where a.opentime > '2017-01-01' ;
+insert overwrite table accesslog partition(ymd) select a.id,a.channelid,a.state,a.requestid,a.time,a.userid,a.marketchannel,regexp_replace(a.time,'-','') ymd from accesslog2 a where a.time > '2017-01-01';
+insert overwrite table procdt_scorelog partition(ymd) select a.mobile,a.customerid,a.customer_id,source,a.date_time,regexp_replace(a.date_time,'-','') ymd from procdt_scorelog2 a where a.date_time > '2017-01-01';

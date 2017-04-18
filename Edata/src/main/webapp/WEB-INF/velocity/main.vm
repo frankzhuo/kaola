@@ -1,0 +1,87 @@
+<html >
+<head>
+	<meta http-equiv='Content-Type' content='text/html' charset='UTF-8' />
+	<link type="text/css" rel="stylesheet" href="/resources/css/style.css"></link>
+	
+  <title>乐语音后台统计</title>
+
+</head>
+
+<body>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce">
+        <tr style="font-weight: bold;background: #d3eaef;">    
+          <td bgcolor="d3eaef" class="STYLE6">日期</td>
+	      <td bgcolor="d3eaef" class="STYLE6">打开乐语音应用终端总累计数</td>
+	      <td bgcolor="d3eaef" class="STYLE6">新增量</td>
+	      <td bgcolor="d3eaef" class="STYLE6">使用语音控终端累计数</td>
+	      <td bgcolor="d3eaef" class="STYLE6">新增量</td>
+	      <td bgcolor="d3eaef" class="STYLE6">使用语音控终端数</td>
+	      <td bgcolor="d3eaef" class="STYLE6">语音控命令使用次数</td>
+	      <td bgcolor="d3eaef" class="STYLE6">新增量</td>
+	      <td bgcolor="d3eaef" class="STYLE6" colspan="2">活跃用户量</td>
+	      <td bgcolor="d3eaef" class="STYLE6">重度用户量</td>
+	      <td bgcolor="d3eaef" class="STYLE6">用户留存率</td>
+	      <td bgcolor="d3eaef" class="STYLE6">随身记用户累计数</td>
+	      <td bgcolor="d3eaef" class="STYLE6">新增量</td>
+	      <td bgcolor="d3eaef" class="STYLE6">使用随身记用户数</td>
+	      <td bgcolor="d3eaef" class="STYLE6">随身记记录累计数</td>
+	      <td bgcolor="d3eaef" class="STYLE6">新增量</td>
+        </tr>
+		#foreach($ls in $listMain)       
+		  #if (${ls.opeType} == 1)
+          	<tr bgcolor="#dff4fc">
+          #elseif (${ls.opeType} == 2)
+          	<tr bgcolor="#fcf1fe">
+          #else
+          	<tr bgcolor="#ffffff">
+          #end
+	          <td class="STYLE19">${ls.opeDate}</td>
+	          <td class="STYLE19">${ls.leyuyinUserCount}</td>
+	          <td class="STYLE19">${ls.leyuyinUserAdd}</td>
+	          <td class="STYLE19">${ls.yuyinkongUserCount}</td>
+	          <td class="STYLE19">${ls.yuyinkongUserAdd}</td>
+	          <td class="STYLE19">${ls.yuyinkongUserDay}</td>
+	          <td class="STYLE19">${ls.yuyinkongCount}</td>
+	          <td class="STYLE19">${ls.yuyinkongAdd}</td>
+	          #if (${ls.opeType} == 2)
+	          	<td class="STYLE19">5天量:${ls.activeUserCount}</td>
+	          	<td class="STYLE19">1天量:${ls.activeUserCount2}</td>
+	          #else
+          		<td class="STYLE19" colspan="2">${ls.activeUserCount}</td>
+          	  #end
+	          <td class="STYLE19">${ls.heavyUserCount}</td>
+	          <td class="STYLE19">${ls.keepUserRate}%</td>
+	          <td class="STYLE19">${ls.noteUserCount}</td>
+	          <td class="STYLE19">${ls.noteUserAdd}</td>
+			  <td class="STYLE19">${ls.noteUserDay}</td>
+			  <td class="STYLE19">${ls.noteCount}</td>
+	          <td class="STYLE19">${ls.noteAdd}</td>
+          </tr>
+        #end
+	</table>
+	</br>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce">
+		<tr style="font-weight: bold;background: #d3eaef;"><td colspan=7>&nbsp;&nbsp;Summary</td></tr>
+        <tr style="font-weight: bold;background: #d3eaef;">  
+        	<td bgcolor="d3eaef" class="STYLE6">使用语音控终端累计数</td>
+        	<td bgcolor="d3eaef" class="STYLE6">语音控终端新增量</td> 
+        	<td bgcolor="d3eaef" class="STYLE6">语音控终端当天使用数</td>
+        	<td bgcolor="d3eaef" class="STYLE6">语音控命令使用累计数</td>
+        	<td bgcolor="d3eaef" class="STYLE6">语音控命令当天使用数</td>
+        	<td bgcolor="d3eaef" class="STYLE6">随身记当天用户</td>
+        	<td bgcolor="d3eaef" class="STYLE6">随身记当天记录累计数</td>
+        </tr>
+        #foreach($lsSummary in $listSummary) 
+        <tr bgcolor="#ffffff">
+        	<td class="STYLE19">${lsSummary.yuyinkongUserCount}</td>
+        	<td class="STYLE19">${lsSummary.yuyinkongUserAdd}</td>
+        	<td class="STYLE19">${lsSummary.yuyinkongUserDay}</td>
+        	<td class="STYLE19">${lsSummary.yuyinkongCount}</td>
+        	<td class="STYLE19">${lsSummary.yuyinkongAdd}</td>
+        	<td class="STYLE19">${lsSummary.noteUserDay}</td>
+        	<td class="STYLE19">${lsSummary.noteCount}</td>
+        </tr>
+        #end
+    </table>
+</body>
+</html>

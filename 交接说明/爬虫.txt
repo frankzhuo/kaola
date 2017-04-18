@@ -1,0 +1,165 @@
+爬虫相关工程：
+crawler\crawler 爬虫实现工程
+crawler\project 爬虫底层框架（seimi）
+crawler\selenium-master 没使用框架的爬虫
+
+
+数据清洗工程
+Java:  crawler\Edata
+spark:  crawler\spark\ETL
+
+
+
+
+主要爬虫数据项目
+
+专利数据
+
+爬虫代码：crawler工程
+com.kaola.crawlers.Patent类
+部署
+10.2.60.1
+/data/KaolaCrawler-7
+
+上传如ES库
+10.1.80.181
+10 17 * *  *   /data/patent.sh 
+
+
+
+
+百度老赖数据（个人和企业失信人）
+
+爬虫代码：crawler工程
+com.kaola.crawlers.ShixinBaidu类
+
+部署
+10.5.28.14 
+/data/KaolaCrawler-7
+
+上传如ES库
+10.1.80.181
+25 23 * *  *   /data/shixin.sh 
+
+
+
+判决文书数据
+
+爬虫代码：crawler\selenium-master
+Panjuewenshu类
+
+清洗工程：crawler\Edata
+//10.1.80.181 /data
+trs-11:cd /es/
+com.kaola.edata.JudgeFileNew类
+
+部署
+10.2.60.1
+38 1 * * * /data/run.sh
+
+上传如ES库
+10.1.80.181
+27 13 * *  *   /data/judgement.sh
+
+
+51job数据
+爬虫代码：crawler工程
+com.kaola.crawlers.Job51类                爬新增的企业
+                   Job51detail            爬原来企业的职位信息
+
+清洗工程：spark:  crawler\spark\ETL
+Job51        清洗企业信息
+Job51Info   职位信息
+
+部署：  手工
+上传：  手工
+
+
+保监会行政处罚
+爬虫代码：crawler工程
+com.kaola.crawlers.Baojianhui类                
+
+清洗工程：crawler\Edata
+com.kaola.edata.etl.Baojiahui类
+部署：  手工
+上传：  手工
+
+
+
+招投标信息
+爬虫代码：
+url地址爬取代码
+crawler\selenium-master
+PurchaseUrl类
+
+详细信息爬取代码
+crawler工程
+com.kaola.crawlers.PurchaseDetail类          
+
+清洗工程：crawler\Edata
+com.kaola.edata.etl.ZhidianExtract类  （没提交,暂不用）
+
+
+代理IP数据
+
+爬虫代码：crawler工程
+com.kaola.crawlers.Xici类
+部署
+10.2.60.1
+/data/KaolaCrawler-7
+
+获取可用IP
+crawler\selenium-master
+GetIp3类
+java -cp /data/selenium_habr-1.0-jar-with-dependencies.jar GetIp3
+
+手机和pad信息
+爬虫代码：
+手机爬取代码
+crawler工程
+com.kaola.crawlers.zol类   
+
+pad爬取代码
+crawler工程
+com.kaola.crawlers.zolpad类          
+
+
+清洗入库：
+hadoop19 
+su zx_t
+1 12 11  * *  sh /home/zx_t/mobile/cpmobile.sh  > /home/zx_t/mobile/log`date +\%Y-\%m-\%d`.log 2>&1
+
+
+
+软件著作权
+爬虫代码：crawler工程
+com.kaola.crawlers.SofewareCopyRight
+根据企业名称查询
+
+
+
+
+
+
+
+
+
+
+by jyk 附加
+10.2.60.1
+需要启动的程序
+/data/KaolaCrawler-7/bin  nohup sh run.sh &
+java -jar /data/selenium_habr-1.0-jar-with-dependencies.jar(crontab -l)
+
+
+套现（hadoop 18）
+/home/hdfs/merzx/mer_shouxin_limit.sh
+/home/hdfs/merdm/merzx_tiaoxian.sh
+
+
+
+
+
+
+
+

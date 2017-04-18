@@ -1,0 +1,15 @@
+1>¥”https://www.elastic.co/downloads/kibanaœ¬‘ÿ
+
+2>tar  -xvf kibana-4.1.2-linux-x64.tar.gz
+3>
+kibana-4.1.2-linux-x64/config
+
+vi kibana.yml
+elasticsearch_url: "http://localhost:9200"
+
+4>
+cd bin
+sh kibana
+
+5>
+∑√Œ http://10.5.28.11:5601/

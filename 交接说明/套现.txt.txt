@@ -1,0 +1,10 @@
+部署
+hadoop18
+/home/hdfs/merdm
+入口程序/home/hdfs/merzx/mer_shouxin_limit.sh
+调用merzx_tiaoxian.sh
+
+
+spark逻辑 etl.jar 
+spark工程ETL
+MerzxTaoxian类

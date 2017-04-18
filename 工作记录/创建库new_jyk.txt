@@ -1,0 +1,396 @@
+curl -XDELETE 'http://localhost:9200/law_judgement/'
+curl -XPUT 'http://localhost:9200/law_judgement/'
+
+curl -XDELETE 'http://localhost:9200/law_judgement/judgement'
+curl -XPOST http://localhost:9200/law_judgement/judgement/_mapping -d'
+{
+    "judgement": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        },
+        "properties": {
+         "body":{
+
+           "properties": {
+            "url":{
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "court":{
+                "type": "string",
+                "indexAnalyzer": "ik",
+                "searchAnalyzer": "ik"
+            },
+            "jtype": {
+                "type": "string",
+                "indexAnalyzer": "ik",
+                "searchAnalyzer": "ik"
+            },
+            "title": {
+                "type": "string",
+                "indexAnalyzer": "ik",
+                "searchAnalyzer": "ik"
+            },
+            "jnum": {
+                "type": "string",
+                "indexAnalyzer": "ik",
+                "searchAnalyzer": "ik"
+            },
+            "content":{
+                "type": "string",    
+                "indexAnalyzer": "ik",
+                "searchAnalyzer": "ik"
+                
+            },
+            "jdate":{
+                "type":"date",
+                 "format":"dateOptionalTime"
+            }
+          }
+        }
+      }
+    }
+}'
+
+curl -XGET 'http://localhost:9200/law_judgement/_mapping'
+
+
+
+
+
+
+curl -XDELETE 'http://localhost:9200/law_personmore/'
+curl -XPUT 'http://localhost:9200/law_personmore/'
+curl -XDELETE 'http://localhost:9200/law_personmore//c_personmore'
+curl -XPOST http://localhost:9200/law_personmore/c_personmore/_mapping -d'
+{
+    "c_personmore": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+
+
+
+curl -XDELETE 'http://localhost:9200/law_unitmore/'
+curl -XPUT 'http://localhost:9200/law_unitmore/'
+
+curl -XDELETE 'http://localhost:9200/law_unitmore/c_unitmore'
+curl -XPOST http://localhost:9200/law_unitmore/c_unitmore/_mapping -d'
+{
+    "c_unitmore": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+curl -XDELETE 'http://localhost:9200/law_ppai_blacklist/'
+curl -XPUT 'http://localhost:9200/law_ppai_blacklist/'
+curl -XDELETE 'http://localhost:9200/law_ppai_blacklist/c_ppai_blacklist'
+curl -XPOST http://localhost:9200/law/c_ppai_blacklist/_mapping -d'
+{
+    "c_ppai_blacklist": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+
+curl -XDELETE 'http://localhost:9200/law_open_court/'
+curl -XPUT 'http://localhost:9200/law_open_court/'
+curl -XDELETE 'http://localhost:9200/law_open_court/open_court_notice'
+curl -XPOST http://localhost:9200/law_open_court/open_court_notice/_mapping -d'
+{
+    "open_court_notice": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+
+curl -XDELETE 'http://localhost:9200/law_court/'
+curl -XPUT 'http://localhost:9200/law_court/'
+curl -XDELETE 'http://localhost:9200/law_court/court_notice'
+curl -XPOST http://localhost:9200/law_court/court_notice/_mapping -d'
+{
+    "court_notice": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+      ,
+        "properties": {
+         "body":{
+           "properties": {
+            "url":{
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "notice_type":{
+                "type": "string",
+                "indexAnalyzer": "ik",
+                "searchAnalyzer": "ik"
+            },
+            "notice_user_name": {
+                "type": "string",
+                "indexAnalyzer": "ik",
+                "searchAnalyzer": "ik"
+            },
+            "party": {
+                "type": "string",
+                "indexAnalyzer": "ik",
+                "searchAnalyzer": "ik"
+            },
+            "publish_time": {
+                "type": "string",
+                "indexAnalyzer": "not_analyzed",
+                "searchAnalyzer": "not_analyzed"
+            },
+            "content":{
+                "type": "string",    
+                "indexAnalyzer": "ik",
+                "searchAnalyzer": "ik"  
+            },
+            "publish_time": {
+                "type": "string",
+                "index": "not_analyzed"
+            }	  	
+          
+          }
+        }
+      }
+    }
+  }'
+
+
+
+curl -XDELETE 'http://localhost:9200/law_execution/'
+curl -XPUT 'http://localhost:9200/law_execution/'
+curl -XDELETE 'http://localhost:9200/law_execution/execution'
+curl -XPOST http://localhost:9200/law_execution/execution/_mapping -d'
+{
+    "execution": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+curl -XDELETE 'http://localhost:9200/law_caseflow/'
+curl -XDELETE 'http://localhost:9200/law_caseflow/caseflow'
+
+curl -XPUT 'http://localhost:9200/law_caseflow/'
+
+curl -XPOST http://localhost:9200/law_caseflow/caseflow/_mapping -d'
+{
+    "caseflow": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+
+
+curl -XDELETE 'http://localhost:9200/job_51/'
+curl -XDELETE 'http://localhost:9200/job_51/51job'
+
+curl -XPUT 'http://localhost:9200/job_51/'
+
+curl -XPOST http://localhost:9200/job_51/51job/_mapping -d'
+{
+    "51job": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+
+curl -XDELETE 'http://localhost:9200/job_51_info/'
+curl -XDELETE 'http://localhost:9200/job_51_info/51jobinfo'
+
+curl -XPUT 'http://localhost:9200/job_51_info/'
+
+curl -XPOST http://localhost:9200/job_51_info/51jobinfo/_mapping -d'
+{
+    "51jobinfo": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+
+curl -XDELETE 'http://localhost:9200/job_zhaopin/'
+curl -XDELETE 'http://localhost:9200/job_zhaopin/zhaopinjob'
+
+curl -XPUT 'http://localhost:9200/job_zhaopin/'
+
+curl -XPOST http://localhost:9200/job_zhaopin/zhaopinjob/_mapping -d'
+{
+    "zhaopinjob": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+
+curl -XDELETE 'http://localhost:9200/job_zhaopin_info/'
+curl -XDELETE 'http://localhost:9200/job_zhaopin_info/zhaopinjobinfo'
+
+curl -XPUT 'http://localhost:9200/job_zhaopin_info/'
+
+curl -XPOST http://localhost:9200/job_zhaopin_info/zhaopinjobinfo/_mapping -d'
+{
+    "zhaopinjobinfo": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+
+
+curl -XGET 'http://localhost:9200/law_court/court_notice/_mapping'
+
+curl -XDELETE 'http://localhost:9200/law/judgementfull'
+
+curl -XGET 'http://localhost:9200/law/judgementfull/_mapping'
+curl -XDELETE 'http://localhost:9200/lawtest'
+
+
+curl -XDELETE 'http://localhost:9200/law/c_wd_blacklist'
+curl -XPOST http://localhost:9200/law/c_wd_blacklist/_mapping -d'
+{
+    "c_wd_blacklist": {
+             "_all": {
+            "indexAnalyzer": "ik",
+            "searchAnalyzer": "ik"
+        }
+       }
+    }'
+
+/**
+* 简义凯 管理
+*/	
+
+#行业信用评价 10.5.28.13
+curl -XDELETE 'http://localhost:9200/industry_credit/credit'
+curl -XDELETE 'http://localhost:9200/industry_credit/'
+curl -XPUT 'http://localhost:9200/industry_credit/'
+curl -XPOST http://localhost:9200/industry_credit/credit/_mapping -d'
+{
+"credit": { "properties": { "body": { "properties": { "compName": { "type": "string"},"sector": { "type": "string"},"legalRepZh": { "type": "string"},"postcodeZh": { "type": "string"},"region": { "type": "string"},"sys_time": { "type": "string"},"issueUnit": { "type": "string"},"validPeriodZh": {"type": "string"},"validPeriod": {"type": "string"},"businessAddrZh": { "type": "string"},"issueDateZh": {"type": "string"},"evalUnitZh": { "type": "string"},"regCapitalZh": { "type": "string"},"orgNum": { "type": "string"},"mainBusiness": { "type": "string"},"mainBusinessZh": { "type": "string"},"websiteZh": { "type": "string"},"regNum": { "type": "string"},"regCapital": { "type": "string"},"certificateNumZh": { "type": "string"},"regionZh": { "type": "string"},"website": { "type": "string"},"orgNumZh": { "type": "string"},"issueDate": {"type": "string"},"postcode": { "type": "string"},"regNumZh": { "type": "string"},"legalRep": { "type": "string"},"sectorZh": { "type": "string"},"issueUnitZh": { "type": "string"},"evalUnit": { "type": "string"},"certificateNum": { "type": "string"},"businessAddr": { "type": "string"}}}}
+        ,
+        "_all": {"analyzer":"ik"}
+        }
+}'
+
+//重新创建开庭公告，
+curl -XDELETE 'http://localhost:9200/law_open_court/open_court_notice'
+curl -XDELETE 'http://localhost:9200/law_open_court/'
+curl -XPUT 'http://localhost:9200/law_open_court/'
+curl -XPOST http://localhost:9200/law_open_court/open_court_notice/_mapping -d'{
+"open_court_notice": {"properties": {"body": {"properties":{"yuangao": { "type": "string"},"court": { "type": "string"},"jnum": { "type": "string"},"url": { "type": "string"},"content": { "type": "string"},"open_time": { "type": "string"},"fating": { "type": "string"},"publish_time": {"type": "string"},"dangshiren": { "type": "string"},"judge": { "type": "string"},"name": { "type": "string"},"beigao": { "type": "string"},"jcase": { "type": "string"}}}},"_all": { "analyzer": "ik"}}
+}'
+
+//作品著作权登记公告，
+curl -XDELETE 'http://localhost:9200/workscopyright/works'
+curl -XDELETE 'http://localhost:9200/workscopyright/'
+curl -XPUT 'http://localhost:9200/workscopyright/'
+curl -XPOST http://localhost:9200/workscopyright/works/_mapping -d'{
+"works":{"properties":{"body":{"properties":{"regNum":{"type":"string"},"regDate":{"type":"string"},"worksName":{"type":"string"},"worksType":{"type":"string"},"worksPerson":{"type":"string"},"finishedDate":{"type":"string"},"firstPublishDate":{"type":"string"}}}},"_all":{"analyzer":"ik"}}
+}'
+
+//删除数据
+curl -XDELETE 'http://localhost:9200/law_court/court_notice/_query?party' -d'{
+"query":{
+"match":{
+"sys_time":"2016-07-25"
+}
+}
+}'
+
+//根据id删除数据
+curl -XDELETE 'http://localhost:9200/law_court/court_notice/AVYgjBpIxjYBCxwVwoZ5'
+
+//创建政府采购代理单位详细表
+curl -XDELETE 'http://localhost:9200/procure/procure_proxy_org'
+curl -XDELETE 'http://localhost:9200/procure'
+curl -XPUT 'http://localhost:9200/procure'
+curl -XPOST http://localhost:9200/procure/procure_proxy_org/_mapping -d'{
+"procure_proxy_org":{"properties":{"body":{"properties":{
+"uuid":{"type":"string"},
+"orgId":{"type":"string"},
+"agentNm":{"index":"not_analyzed","type":"string"},
+"corpTel":{"type":"string"},
+"contactNm":{"type":"string"},
+"legalNm":{"type":"string"},
+"regAddr":{"type":"string"},
+"auditPlaceAddr":{"type":"string"},
+"auditPlaceArea":{"type":"string"},
+"regValidDataStr":{"type":"string"},
+"auditPlace":{"type":"string"},
+"year3Outlaw":{"type":"string"},
+"publicRemark":{"type":"string"},
+"corpDesc":{"type":"string"},
+"soledutyStaffSum":{"type":"string"},
+"middleJobtitleSum":{"type":"string"},
+"advJobtitleSum":{"type":"string"},
+"middleJobitlePer":{"type":"string"},
+"advJobtilePer":{"type":"string"}
+}}},"_all":{"analyzer":"ik"}}
+}'
+
+//采购代理单位业绩表
+curl -XPOST http://localhost:9200/procure/procure_proxy_org_score/_mapping -d'{
+"procure_proxy_org_score":{"properties":{"body":{"properties":{
+"uuid":{"type":"string"},
+"orgId":{"type":"string"},
+"projNm":{"index":"not_analyzed","type":"string"},
+"entrustUnitNm":{"type":"string"},
+"bidcallNo":{"type":"string"},
+"bidconfirmUnitNm":{"type":"string"},
+"noticedatestr":{"type":"string"},
+"bidconfirmAmount":{"type":"string"}
+}}},"_all":{"analyzer":"ik"}}
+}'
+
+//采购费标流标公告
+curl -XPOST http://localhost:9200/procure/procure_fblb_bulletin/_mapping -d'{
+"procure_fblb_bulletin":{"properties":{"body":{"properties":{
+"projectNum":{"type":"string"},
+"projectName":{"type":"string"},
+"projectContact":{"type":"string"},
+"contact":{"type":"string"},
+"purchaseName":{"type":"string"},
+"purchaseAddr":{"type":"string"},
+"purchaseContact":{"type":"string"},
+"purchaseAgentName":{"index":"not_analyzed","type":"string"},
+"purchaseAgentAddr":{"type":"string"},
+"purchaseAgentContact":{"type":"string"},
+"fblbDate":{"type":"string"},
+"fblbSeason":{"type":"string"},
+"type":{"type":"string"},
+"url":{"type":"string"}
+}}},"_all":{"analyzer":"ik"}}
+}'

@@ -1,0 +1,357 @@
+# /root/apache-flume-1.6.0-bin/conf/crawler_new.conf
+
+
+#zhengxin hangye pingjia
+es.channels.channel-14.checkpointDir=/es/flume/data/checkpointDir14
+es.channels.channel-14.dataDirs=/es/flume/data/dataDirs14
+es.channels.channel-14.type=file
+es.channels.channel-14.capacity = 2000000
+es.channels.channel-14.transactionCapacity = 13000
+
+es.sources.src-14.type=spooldir
+es.sources.src-14.ignorePattern=^$
+es.sources.src-14.spoolDir=/data/edata/credit
+es.sources.src-14.deletePolicy=NEVER
+es.sources.src-14.channels=channel-14
+es.sources.src-14.inputCharset=UTF-8
+es.sources.src-14.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k14.type = elasticsearch
+es.sinks.k14.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+
+es.sinks.k14.indexName = industry_credit
+es.sinks.k14.jsonSplitFlag = \\001
+es.sinks.k14.jsonField = compName,evalUnitZh,evalUnit,certificateNumZh,certificateNum,issueDateZh,issueDate,validPeriodZh,validPeriod,issueUnitZh,issueUnit,evalUnitZh,evalUnit,regNumZh,regNum,orgNumZh,orgNum,legalRepZh,legalRep,regCapitalZh,regCapital,sectorZh,sector,websiteZh,website,regionZh,region,postcodeZh,postcode,businessAddrZh,businessAddr,mainBusinessZh,mainBusiness
+
+es.sinks.k14.indexType = credit
+es.sinks.k14.clusterName =  lakala
+es.sinks.k14.batchSize = 50
+#es.sinks.k14.ttl = 1s
+es.sinks.k14.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+#es.sinks.k14.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchLogStashEventSerializer
+es.sinks.k14.channel = channel-14
+
+
+#作品著作权登记公告
+es.channels.channel-15.checkpointDir=/es/flume/data/checkpointDir15
+es.channels.channel-15.dataDirs=/es/flume/data/dataDirs15
+es.channels.channel-15.type=file
+es.channels.channel-15.capacity = 2000000
+es.channels.channel-15.transactionCapacity = 13000
+
+es.sources.src-15.type=spooldir
+es.sources.src-15.ignorePattern=^$
+es.sources.src-15.spoolDir=/data/edata/worksCopyright
+es.sources.src-15.deletePolicy=NEVER
+es.sources.src-15.channels=channel-15
+es.sources.src-15.inputCharset=UTF-8
+es.sources.src-15.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+#es.sinks.k15.type = elasticsearch
+es.sinks.k15.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k15.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+#es.sinks.k15.hostNames = 10.5.28.14:9300
+es.sinks.k15.indexName = workscopyright
+es.sinks.k15.jsonSplitFlag = \\001
+es.sinks.k15.jsonField =regNum,regDate,worksName,worksType,worksPerson,finishedDate,firstPublishDate
+
+es.sinks.k15.indexType = works
+es.sinks.k15.clusterName =  lakala
+es.sinks.k15.batchSize = 50
+#es.sinks.k15.ttl = 1s
+es.sinks.k15.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k15.channel = channel-15
+
+
+
+#创建政府采购代理单位详细表
+es.channels.channel-16.checkpointDir=/es/flume/data/checkpointDir16
+es.channels.channel-16.dataDirs=/es/flume/data/dataDirs16
+es.channels.channel-16.type=file
+es.channels.channel-16.capacity = 2000000
+es.channels.channel-16.transactionCapacity = 13000
+
+es.sources.src-16.type=spooldir
+es.sources.src-16.ignorePattern=^$
+es.sources.src-16.spoolDir=/data/edata/procure/procure_proxy_org
+es.sources.src-16.deletePolicy=NEVER
+es.sources.src-16.channels=channel-16
+es.sources.src-16.inputCharset=UTF-8
+es.sources.src-16.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k16.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k16.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+es.sinks.k16.indexName = procure
+es.sinks.k16.jsonSplitFlag = \\001
+es.sinks.k16.jsonField =uuid,orgId,agentNm,corpTel,contactNm,legalNm,regAddr,auditPlaceAddr,auditPlaceArea,regValidDataStr,auditPlace,year3Outlaw,publicRemark,corpDesc,soledutyStaffSum,middleJobtitleSum,advJobtitleSum,middleJobitlePer,advJobtilePer
+
+es.sinks.k16.indexType = procure_proxy_org
+es.sinks.k16.clusterName =  lakala
+es.sinks.k16.batchSize = 50
+es.sinks.k16.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k16.channel = channel-16
+
+#采购代理单位业绩表
+es.channels.channel-17.checkpointDir=/es/flume/data/checkpointDir17
+es.channels.channel-17.dataDirs=/es/flume/data/dataDirs17
+es.channels.channel-17.type=file
+es.channels.channel-17.capacity = 2000000
+es.channels.channel-17.transactionCapacity = 13000
+
+es.sources.src-17.type=spooldir
+es.sources.src-17.ignorePattern=^$
+es.sources.src-17.spoolDir=/data/edata/procure/procure_proxy_org_score
+es.sources.src-17.deletePolicy=NEVER
+es.sources.src-17.channels=channel-17
+es.sources.src-17.inputCharset=UTF-8
+es.sources.src-17.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k17.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k17.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+es.sinks.k17.indexName = procure
+es.sinks.k17.jsonSplitFlag = \\001
+es.sinks.k17.jsonField =uuid,orgId,projNm,entrustUnitNm,bidcallNo,bidconfirmUnitNm,noticedatestr,bidconfirmAmount
+
+es.sinks.k17.indexType = procure_proxy_org_score
+es.sinks.k17.clusterName =  lakala
+es.sinks.k17.batchSize = 50
+es.sinks.k17.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k17.channel = channel-17
+
+
+#采购费标流标公告
+es.channels.channel-18.checkpointDir=/es/flume/data/checkpointDir18
+es.channels.channel-18.dataDirs=/es/flume/data/dataDirs18
+es.channels.channel-18.type=file
+es.channels.channel-18.capacity = 2000000
+es.channels.channel-18.transactionCapacity = 13000
+
+es.sources.src-18.type=spooldir
+es.sources.src-18.ignorePattern=^$
+es.sources.src-18.spoolDir=/data/edata/procure/procure_fblb_bulletin
+es.sources.src-18.deletePolicy=NEVER
+es.sources.src-18.channels=channel-18
+es.sources.src-18.inputCharset=UTF-8
+es.sources.src-18.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k18.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k18.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+es.sinks.k18.indexName = procure
+es.sinks.k18.jsonSplitFlag = \\001
+es.sinks.k18.jsonField =projectNum,projectName,projectContact,contact,purchaseName,purchaseAddr,purchaseContact,purchaseAgentName,purchaseAgentAddr,purchaseAgentContact,fblbDate,fblbSeason,type,url
+
+es.sinks.k18.indexType = procure_fblb_bulletin
+es.sinks.k18.clusterName =  lakala
+es.sinks.k18.batchSize = 50
+es.sinks.k18.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k18.channel = channel-18
+
+
+#保监会和证监会处罚决定 
+es.channels.channel-19.checkpointDir=/es/flume/data/checkpointDir19
+es.channels.channel-19.dataDirs=/es/flume/data/dataDirs19
+es.channels.channel-19.type=file
+es.channels.channel-19.capacity = 2000000
+es.channels.channel-19.transactionCapacity = 13000
+
+es.sources.src-19.type=spooldir
+es.sources.src-19.ignorePattern=^$
+es.sources.src-19.spoolDir=/data/edata/penalty/penalty_decision
+es.sources.src-19.deletePolicy=NEVER
+es.sources.src-19.channels=channel-19
+es.sources.src-19.inputCharset=UTF-8
+es.sources.src-19.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k19.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k19.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+es.sinks.k19.indexName = penalty
+es.sinks.k19.jsonSplitFlag = \\001
+es.sinks.k19.jsonField =title,publishDate,content,party
+
+es.sinks.k19.indexType = penalty_decision
+es.sinks.k19.clusterName =  lakala
+es.sinks.k19.batchSize = 50
+es.sinks.k19.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k19.channel = channel-19
+
+
+#银监会处罚决定 
+es.channels.channel-20.checkpointDir=/es/flume/data/checkpointDir20
+es.channels.channel-20.dataDirs=/es/flume/data/dataDirs20
+es.channels.channel-20.type=file
+es.channels.channel-20.capacity = 2000000
+es.channels.channel-20.transactionCapacity = 13000
+
+es.sources.src-20.type=spooldir
+es.sources.src-20.ignorePattern=^$
+es.sources.src-20.spoolDir=/data/edata/penalty/yjh_penalty_decision
+es.sources.src-20.deletePolicy=NEVER
+es.sources.src-20.channels=channel-20
+es.sources.src-20.inputCharset=UTF-8
+es.sources.src-20.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k20.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k20.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+es.sinks.k20.indexName = penalty
+es.sinks.k20.jsonSplitFlag = \\001
+es.sinks.k20.jsonField =title,decisionNum,personalName,unitName,legalPerson,illegalFact,penaltyInfo,penaltyDecision,penaltyOrg,penaltyDate
+
+es.sinks.k20.indexType = yjh_penalty_decision
+es.sinks.k20.clusterName =  lakala
+es.sinks.k20.batchSize = 50
+es.sinks.k20.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k20.channel = channel-20
+
+
+#采购违法失信行为信息
+es.channels.channel-22.checkpointDir=/es/flume/data/checkpointDir22
+es.channels.channel-22.dataDirs=/es/flume/data/dataDirs22
+es.channels.channel-22.type=file
+es.channels.channel-22.capacity = 2000000
+es.channels.channel-22.transactionCapacity = 13000
+
+es.sources.src-22.type=spooldir
+es.sources.src-22.ignorePattern=^$
+es.sources.src-22.spoolDir=/data/edata/procure/procure_illegal_act
+es.sources.src-22.deletePolicy=NEVER
+es.sources.src-22.channels=channel-22
+es.sources.src-22.inputCharset=UTF-8
+es.sources.src-22.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k22.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k22.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+es.sinks.k22.indexName = procure
+es.sinks.k22.jsonSplitFlag = \\001
+es.sinks.k22.jsonField =compNum,compName,compAddress,content,punishResult,punishReason,punishDate,punishEndDate,executeOrg
+
+es.sinks.k22.indexType = procure_illegal_act
+es.sinks.k22.clusterName = lakala
+es.sinks.k22.batchSize = 50
+es.sinks.k22.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k22.channel = channel-22
+
+
+#信用中国受惩罚企业黑名单
+es.channels.channel-23.checkpointDir=/es/flume/data/checkpointDir23
+es.channels.channel-23.dataDirs=/es/flume/data/dataDirs23
+es.channels.channel-23.type=file
+es.channels.channel-23.capacity = 2000000
+es.channels.channel-23.transactionCapacity = 13000
+
+es.sources.src-23.type=spooldir
+es.sources.src-23.ignorePattern=^$
+es.sources.src-23.spoolDir=/data/edata/creditchina/
+es.sources.src-23.deletePolicy=NEVER
+es.sources.src-23.channels=channel-23
+es.sources.src-23.inputCharset=UTF-8
+es.sources.src-23.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k23.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k23.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+es.sinks.k23.indexName = creditchina
+es.sinks.k23.jsonSplitFlag = \\001
+es.sinks.k23.jsonField =compName,orgNum,belongArea
+
+es.sinks.k23.indexType = punish_blacklist
+es.sinks.k23.clusterName = lakala
+es.sinks.k23.batchSize = 50
+es.sinks.k23.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k23.channel = channel-23
+
+
+
+#税务数据　纳税人欠税
+es.channels.channel-24.checkpointDir=/es/flume/data/checkpointDir24
+es.channels.channel-24.dataDirs=/es/flume/data/dataDirs24
+es.channels.channel-24.type=file
+es.channels.channel-24.capacity = 2000000
+es.channels.channel-24.transactionCapacity = 13000
+
+es.sources.src-24.type=spooldir
+es.sources.src-24.ignorePattern=^$
+es.sources.src-24.spoolDir=/data/edata/tax/taxplayerowe/
+es.sources.src-24.deletePolicy=NEVER
+es.sources.src-24.channels=channel-24
+es.sources.src-24.inputCharset=UTF-8
+es.sources.src-24.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k24.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k24.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+es.sinks.k24.indexName = tax
+es.sinks.k24.jsonSplitFlag = \\001
+es.sinks.k24.jsonField =compName,taxNum,legalRep,idType,idNum,adress,taxType,ownSum,taxUnit
+
+es.sinks.k24.indexType = taxplayerowe
+es.sinks.k24.clusterName = lakala
+es.sinks.k24.batchSize = 50
+es.sinks.k24.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k24.channel = channel-24
+
+
+
+#税务数据　纳税人违法
+es.channels.channel-25.checkpointDir=/es/flume/data/checkpointDir25
+es.channels.channel-25.dataDirs=/es/flume/data/dataDirs25
+es.channels.channel-25.type=file
+es.channels.channel-25.capacity = 2000000
+es.channels.channel-25.transactionCapacity = 13000
+
+es.sources.src-25.type=spooldir
+es.sources.src-25.ignorePattern=^$
+es.sources.src-25.spoolDir=/data/edata/tax/taxplayerillegal/
+es.sources.src-25.deletePolicy=NEVER
+es.sources.src-25.channels=channel-25
+es.sources.src-25.inputCharset=UTF-8
+es.sources.src-25.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k25.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k25.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+es.sinks.k25.indexName = tax
+es.sinks.k25.jsonSplitFlag = \\001
+es.sinks.k25.jsonField =taxplayerName,taxNum,orgNum,regAdress,legalRepDesc,directPersonDesc,directPersonInfo,caseProperty,caseFactAndPunish
+
+es.sinks.k25.indexType = taxplayerillegal
+es.sinks.k25.clusterName = lakala
+es.sinks.k25.batchSize = 50
+es.sinks.k25.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k25.channel = channel-25
+
+
+#基金从业人员资格信息
+es.channels.channel-26.checkpointDir=/es/flume/data/checkpointDir26
+es.channels.channel-26.dataDirs=/es/flume/data/dataDirs26
+es.channels.channel-26.type=file
+es.channels.channel-26.capacity = 2000000
+es.channels.channel-26.transactionCapacity = 13000
+
+es.sources.src-26.type=spooldir
+es.sources.src-26.ignorePattern=^$
+es.sources.src-26.spoolDir=/data/edata/fund/fund_practitioner/
+es.sources.src-26.deletePolicy=NEVER
+es.sources.src-26.channels=channel-26
+es.sources.src-26.inputCharset=UTF-8
+es.sources.src-26.deserializer.maxLineLength=2048000
+es.sources.deserializer=LINE
+
+es.sinks.k26.type = org.apache.flume.sink.elasticsearch.ElasticSearchSink
+es.sinks.k26.hostNames = 10.5.28.11:9300,10.5.28.13:9300
+es.sinks.k26.indexName = fund
+es.sinks.k26.jsonSplitFlag = \\001
+es.sinks.k26.jsonField =id,name,sex,edu,prac_org,prac_job,cerNum,ppp_get_date,ppp_end_date,counter,countCX
+
+es.sinks.k26.indexType = fund_practitioner
+es.sinks.k26.clusterName = lakala
+es.sinks.k26.batchSize = 50
+es.sinks.k26.serializer = org.apache.flume.sink.elasticsearch.ElasticSearchDynamicSerializer
+es.sinks.k26.channel = channel-26

@@ -1,0 +1,223 @@
+
+[杨晓婷]
+个人评分		hadoop08
+
+代码路径		/home/hdfs/creditck/
+主程序脚本		cdt_cronjob_process.sh
+导出程序		cdt_cronjob_export.sh
+评分结果表		hive中creditck.cdt_final_score_grade_limit_push
+导出oracle		10.1.2.187:1521/crdnewdb 	EM/em_1234	CDT_SCORE_FINAL
+crontab			
+			0 12 * * * sh /home/hdfs/creditck/cdt_cronjob_process.sh > /home/hdfs/creditck/logs/cdt_cronjob_process.log 2>&1
+			0 3 * * * sh /home/hdfs/creditck/cdt_cronjob_export.sh > /home/hdfs/creditck/logs/cdt_cronjob_export.log 2>&1
+
+
+
+
+
+
+[曹菲/旭东]
+内部商户评分		hadoop18
+
+代码路径		/home/hdfs/merzx
+主程序脚本		merzx.sh
+导出程序		merzx_export_shangxian.sh
+                                                                                   
+评分&报告表		hive中 merzx.v2_nb_merzx_result_score_push/评分表    merzx.v2_nb_merzx_result_report_push/报告表
+			推送完成 merzx.v2_nb_merzx_result_score_push　 会重命名为 merzx.v2_merzx_result_score_push_yyyy_MM   备份
+				 merzx.v2_nb_merzx_result_report_push 会重命名为 merzx.v2_merzx_result_report_push_yyyy_MM  备份
+
+导出oracle		10.1.2.187:1521/crdnewdb 	EM/em_1234	CDT_MERSCORE/CDT_MERREPORT
+crontab			
+每月5号算出结果		0 1 5 * * sh /home/hdfs/merzx/merzx.sh > /home/hdfs/merzx/logs/`date +\%Y-\%m-\%d`.log 2>&1
+每月7号凌晨推送		0 1 7 * * sh /home/hdfs/merzx/merzx_export_shangxian.sh > /home/hdfs/merzx/logs/`date +\%Y-\%m-\%d`.log 2>&1
+日志文件		logs
+
+清洗脚本
+			hdw_nwpos_atmtxnjnl.sql
+			hdw_nwpos_t01_branch_info_all.sql
+			hdw_nwpos_t01_terminal_info.sql
+			hdw_nwpos_t01_merchant_info.sql
+			merzx_var_mid.sql
+			merzx_var_basic_info.sql
+
+评分脚本
+			merzx_var_trans.sql					生成评分变量
+			merzx_source_collect_all.sql				原始变量整合
+			merzx_source_collect_lvscore.sql			标准分折算
+			merzx_source_collect_wtscore.sql			权重计算
+			merzx_source_collect_wtscore_sum.sql			评分及小分计算
+			merzx_source_collect_wtscore_sum_tz.sql			评分及小分计算
+			merzx_source_result_score_grade.sql			最终评分/评级计算
+
+初步生成推送		merzx_export_result.sql
+					merzx.v2_merzx_result_score_push/评分表    merzx.v2_merzx_result_report_push/报告表
+
+商户近６月月均交易笔数	6_yue_jun_jiao_yi_bi_shu.sql
+					merzx.v2_merzx_result_report_push_6m/报告表
+
+检查推送结果		merzx_check.sh
+
+
+
+推送程序		merzx_export_shangxian.sh
+					merzx.v2_nb_merzx_result_score_push/评分表	merzx.v2_nb_merzx_result_report_push/报告表
+
+模型变量说明		见	A_商户评分模型加工_V2.xlsx
+
+
+
+
+
+
+
+
+
+
+
+[曹菲/旭东/刘盛/毛吉吉]
+外部商户评分(刘盛/毛吉吉)			trs-13
+代码路径					/home/hdfs/shanghu
+主程序脚本					merzx.sh
+导入程序					merzx_import.sh
+导出程序					merzx_export.sh
+评分&报告表					hive中 merzx.v2_merzx_result_score_push/评分表    merzx.v2_merzx_result_report_push/报告表
+						       merzx.v2_merzx_result_score_push_blackno评分+黑名单表	merzx.v2_merzx_result_report_push_blackno/报告+黑名单表
+
+					
+导出oracle					10.5.19.28:1521/shdb		shdb/shdb		CDT_MERSCORE/CDT_MERREPORT
+
+
+
+
+导入数据脚本					merzx_import.sh
+							MSMERCHANT -> hds.imp_wbpos_msmerchant;
+							MSMERCHANTBRANCH -> hds.imp_wbpos_msmerchantbranch;
+							MSTERMINALINFO -> hds.imp_wbpos_msterminalinfo;
+							MSMERTRANSACTIONFLOW -> hds.imp_wbpos_msmertransactionflow;
+
+
+						根据业务 选取数据
+							hds.imp_wbpos_msmerchant　-> hds.wbpos_msmerchant
+							hds.imp_wbpos_msmerchantbranch -> hds.wbpos_msmerchantbranch
+							hds.imp_wbpos_msterminalinfo -> hds.wbpos_msterminalinfo
+							hds.imp_wbpos_msmertransactionflow -> hds.wbpos_msmertransactionflow
+
+
+
+清洗脚本
+						hdw_wbpos_clean.sql
+						merzx_var_mid.sql
+						merzx_var_basic_info.sql
+
+
+评分脚本
+						merzx_var_trans.sql
+						merzx_source_collect_all.sql
+						merzx_source_collect_lvscore.sql
+						merzx_source_collect_wtscore.sql
+						merzx_source_collect_wtscore_sum.sql
+						merzx_source_collect_wtscore_sum_tz.sql
+						merzx_source_result_score_grade.sql
+
+初步生成推送					merzx_export_result.sql
+							merzx.v2_merzx_result_score_push/评分表    merzx.v2_merzx_result_report_push/报告表
+
+
+
+导出数据脚本					merzx_export.sh
+							merzx.v2_merzx_result_score_push_blackno评分+黑名单表	merzx.v2_merzx_result_report_push_blackno/报告+黑名单表
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[程龙]
+银联综合分					hadoop18
+代码路径					/home/hdfs/unionpay
+
+脚本１						unionpay-1.sql			每月１号
+脚本２/导出数据脚本				unionpay-2.sql			每月４号　并推送结果
+
+日志						logs
+评分表						hive中 creditck.unionpay_score
+					
+导出oracle					10.1.2.187:1521/crdnewdb 	EM/em_1234	UNIONPAY_KOALA_SCORE
+crontab
+						0 23 1 * * sh /home/hdfs/unionpay/unionpay-1.sql > /home/hdfs/unionpay/logs/`date +\%Y-\%m-\%d`.log 2>&1
+						0 1 4 * * sh /home/hdfs/unionpay/unionpay-2.sql > /home/hdfs/unionpay/logs/`date +\%Y-\%m-\%d`.log 2>&1
+
+
+
+
+
+
+[赵刚]
+小贷评分					hadoop18
+代码路径					/home/hdfs/xiaodai
+
+小贷１期/导出					loan_model.sh
+小贷２期/导出					xiaodai.sql
+
+日志						logs
+１期变量表					creditck.zx_loan_model_dataset
+１期评分表					creditck.zx_loan_model_scoreset / 导出表creditck.zx_loan_model_scoreset_export
+２期变量表					creditck.v2_xd_apply_var / 导出表creditck.v2_xd_apply_var_export   	２期只有变量表，然后推送
+					
+１期导出oracle					10.1.2.187:1521/crdnewdb 	EM/em_1234	CDT_NEW_SCORE_FINAL
+２期导出oracle					10.1.2.187:1521/crdnewdb 	EM/em_1234	CDT_LOAN_SCORE_FINAL
+crontab
+						###小贷新模型 1 期
+							30 18 * * * sh /home/hdfs/xiaodai/loan_model.sh > /home/hdfs/xiaodai/logs/`date +\%Y-\%m-\%d`.log 2>&1
+
+						###小贷新模型 2 期
+							0  1 * * * sh /home/hdfs/xiaodai/xiaodai.sql > /home/hdfs/xiaodai/logs/v2_`date +\%Y-\%m-\%d`.log 2>&1
+
+
+
+
+
+
+
+
+爬虫						hadoop002
+
+代码路径					/data04/qianlize/
+
+
+
+专利						/data04/qianlize/patent_yyyyMM
+						进入程序目录  scrapy crawl patent22
+
+						数据存储目录		data/
+
+						hadoop18:/home/hdfs/patent.sh		修改　mydate　变量, 然后运行程序, 专利数据推送值Hive中 spss.c_patent
+
+
+
+智联
+	企业信息				/data04/qianlize/zhilian-company
+						进入程序目录  scrapy crawl company
+						数据存储目录		data/company
+
+	职位信息				/data04/qianlize/zhilian-job
+						进入程序目录  scrapy crawl job
+						数据存储目录		data/job						
+
+
+
+
+
+
+
+
+

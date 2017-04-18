@@ -1,0 +1,20 @@
+from（测试网、外部商户库，预授信）:
+JDBC=jdbc:oracle:thin:@10.5.19.28:1521
+SID=shdb
+USERNAME=shdb
+PASSWORD=shdb
+
+to（正式网）:
+oracle_jdbc=jdbc:oracle:thin:@10.1.2.187:1521/CRDNEWDB
+oracle_username=EM
+oracle_password=em_1234
+
+
+echo `curl http://10.1.80.115:443/dv/updateLoanManageStatus.do?_t=json`
+
+
+#研发测试网
+JDBC=jdbc:oracle:thin:@10.5.19.26:1521
+SID=ZXDB
+USERNAME=merscore1015
+PASSWORD=merscore1015

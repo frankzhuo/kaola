@@ -1,0 +1,296 @@
+
+awk -F"\001" '{if(length($1)>0) {print $0}}'  shangbiao*.txt |sort|uniq  > shangbiao_uniq.txt
+
+#java -cp class 
+#!/bin/sh
+JAVA_CMD="java"
+SEIMI_HOME=".."
+SEIMI_CLASS_PATH=".:$SEIMI_HOME/seimi/classes:$SEIMI_HOME/seimi/lib/*"
+SEIMI_SYS_ARGS="-Dfile.encoding=UTF-8"
+$JAVA_CMD -cp $SEIMI_CLASS_PATH $SEIMI_SYS_ARGS com.kaola.crawlers.DianPingShangHuValidIdDetailHttpClient
+ 
+ #研发代理ｉｐ
+ client.getHostConfiguration().setProxy("123.56.139.108", 8123);
+
+#检查
+route print
+arp -a 
+tracert 10.5.28.13
+
+#输入变量
+TODAY_1D=`date -d "$1 -1 days" "+%Y%m%d"`
+TODAYF_1D=`date -d "$1 -1 days" "+%Y-%m-%d"`
+TODAY_0D=`date -d "$1 -0 days" "+%Y%m%d"`
+
+curl -H "Accept:application/json" http://10.1.80.172:20550/lklpos_atm_risk_control_new/a4bacf9add59c1f31c87a1b0eb3b229f_detail_*/cf:col/1449849600000,1481472000000
+
+#获取ｈｄｆｓ上的　变量
+sudo -u hdfs hdfs dfs -cat /user/hive/warehouse/hdw.db/lklpos_atmtxnjnl/ymd=20161123/* | wc -l
+row_cnt=$(sudo -u hdfs hdfs dfs -cat /user/hive/warehouse/hdw.db/lklpos_atmtxnjnl/ymd=${TODAY_1D}/* | wc -l)
+
+
+#导出到本地
+insert overwrite local directory "/tmp/psd_lb_baseinfo_md5_b_daochu" row format delimited fields terminated by '\001' select * from  wm.psd_lb_baseinfo_md5_b_daochu order by mobile86_md5;
+
+#trs13
+add jar /root/jyk/kaola_udf.jar;
+create temporary function md5 as 'com.kaola.hive.udf.MD5';
+
+#老辣没法更新（hive spss） ，判决文书不存在更新
+
+#top 用法
+top  use h（帮助）  O（排序） c（切换详细命令）  
+
+#CDH 二进制 文件
+/opt/cloudera/parcels/CDH/lib/spark/sbin
+
+#hadoop  example jar 文件
+cd /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce
+hadoop  jar  hadoop-mapreduce-examples.jar
+
+--------------
+select *,row_number() over(partition by orgid,merchantid order by id desc) as row_id
+from merdm.wbpos_msterminalinfo limit 100;
+
+sqoop eval --connect jdbc:oracle:thin:@10.5.19.26:1521/ZXDB --username merscore1015 --password merscore1015  --query "SELECT * FROM CDT_MERCLOUDBUSINESSTAG";
+sudo -u hdfs sqoop create-hive-table --connect jdbc:oracle:thin:@10.5.19.26:1521/ZXDB --username merscore1015 --password merscore1015 --table CDT_MERCLOUDBUSINESSTAG --hive-table zhengxin.test_cdt_mercloudbusinesstag
+sudo -u hdfs sqoop import --connect jdbc:oracle:thin:@10.5.19.26:1521/ZXDB --username merscore1015 --password merscore1015 --table CDT_MERCLOUDBUSINESSTAG --hive-table zhengxin.test_cdt_mercloudbusinesstag --hive-import --hive-drop-import-delims  --fields-terminated-by '\001'  --null-string '\\N' --null-non-string '\\N'  -m 1;
+
+
+JDBC=jdbc:oracle:thin:@10.5.19.28:1521
+SID=shdb
+USERNAME=shdb
+PASSWORD=shdb
+
+JDBCZSW=jdbc:oracle:thin:@10.1.2.187:1521
+SIDZSW=crdnewdb
+USERNAMEZSW=scoredb
+PASSWORDZSW=amberdb!#$1234
+
+sudo -u hdfs sqoop import --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username scoredb --password 'amberdb!#$1234' --table MSMERCHANT --hive-table hds.imp_wbpos_msmerchant_187 --hive-import --hive-drop-import-delims --hive-overwrite  --fields-terminated-by '\001'  --null-string '\\N' --null-non-string '\\N'  -m 1;
+sudo -u hdfs sqoop import --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username scoredb --password 'amberdb!#$1234' --table MSMERCHANTBRANCH --hive-table hds.imp_wbpos_msmerchantbranch_187 --hive-import --hive-drop-import-delims --hive-overwrite  --fields-terminated-by '\001'  --null-string '\\N' --null-non-string '\\N'  -m 1;
+sudo -u hdfs sqoop import --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username scoredb --password 'amberdb!#$1234' --table MSTERMINALINFO --hive-table hds.imp_wbpos_msterminalinfo_187 --hive-import --hive-drop-import-delims --hive-overwrite  --fields-terminated-by '\001'  --null-string '\\N' --null-non-string '\\N'  -m 1;
+sudo -u hdfs sqoop import --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username scoredb --password 'amberdb!#$1234' --table MSMERTRANSACTIONFLOW --hive-table hds.imp_wbpos_msmertransactionflow_187 --hive-import --hive-drop-import-delims --hive-overwrite  --fields-terminated-by '\001'  --null-string '\\N' --null-non-string '\\N'  -m 1;
+
+
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username scoredb --password 'amberdb!#$1234' --query "select count(1) from MSMERCHANT where createdate like '2016-10-14%' and rownum <10";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from MSMERCHANTBRANCH where rownum <11";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from MSTERMINALINFO where rownum <11";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from MSMERTRANSACTIONFLOW where rownum <11";
+
+sqoop export --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --table CDT_XD_IPCRS_REPORT --export-dir /user/hive/warehouse/creditck.db/xd_auth_history_all_info_all_xz --fields-terminated-by '\001' --input-null-string '\\N' --input-null-non-string '\\N' --update-key NAME,CERT_NO --update-mode allowinsert -m 10
+
+
+
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select count(1) from CDT_XD_IPCRS_REPORT ";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from CDT_LKL_XD_TRANS where rownum <11";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from CDT_XD_IPCRS_REPORT where rownum <11";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from CDT_LKL_IPCRS_REPORT where rownum <11";
+
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from CDT_KL_GD_TRANS where rownum <11";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from CDT_CREDITLOAN_REPORT where rownum <11";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from CDT_LKL_CARD where rownum <11";
+
+
+30 4 13 * * sh /home/hdfs/merzx/merzx_import_waibu_select.sh > /home/hdfs/merzx/logs/merzx_import_waibu_select`date +\%Y-\%m-\%d`.log 2>&1
+
+scoredb/amberdb!#$1234
+
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from CDT_MERKDWLTRIALSTATE where rownum <11";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from USER_INDEXES WHERE table_name ='CDT_MERKDWLTRIALSTATE'";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from user_constraints where table_name='CDT_MERCLOUDBUSINESSTAG'";
+sqoop eval --connect jdbc:oracle:thin:@10.1.2.187:1521/crdnewdb --username EM --password em_1234 --query "select * from user_constraints where table_name='CDT_LKL_XD_TRANS'";
+
+---------------
+insert overwrite table merzx.mer_cloud_flag_result_push 
+select * from merzx.mer_cloud_flag_result;
+
+sh /home/hdfs/merzx/mer_cloud_export.sh > /home/hdfs/merzx/logs/cloud_export`date +\%Y-\%m-\%d`.log  ---5770619
+
+
+-------------
+大众点评
+
+#列表信息
+http://www.dianping.com/search/category/2/0
+
+http://www.dianping.com/search/keyword/1/0_1
+
+北京
+
+#商户信息：
+http://www.dianping.com/shop/22574666 
+名称：
+地址：
+电话：
+营业时间：
+营业资质：
+停车信息：
+会员贡献：
+
+
+＃添加商户　和添加分店
+
+-------------
+import org.apache.spark.SparkContext;
+import org.apache.spark.SparkContext._;
+
+
+object SparkTest extends App{
+ println(111)
+}
+
+var t = sc.textFile("/user/hive/warehouse/hdw.db/wbpos_atmtxnjnl_success/000004_0"
+t.count()
+
+
+---------------
+
+if [ x$1 = x ]; then
+#YMDDAY=`date +\%Y-\%m-\%d`
+YMDDAY=`date --date='1 day ago' +\%Y-\%m-\%d`
+else  
+YMDDAY=$1
+fi
+
+echo $YMDDAY
+scp 10.2.60.1:/data/crawler/peoplecountbulletin_"$YMDDAY".txt /data/edata/peoplecountbulletin_init
+cd /data
+java -cp /data/edata-1.0.0-BUILD-SNAPSHOT-jar-with-dependencies.jar com.kaola.edata.UniqueData /root/peoplecountbulletin/peoplecountbulletin0719_0604.txt peoplecountbulletin 0#4#6
+cp /data/edata/peoplecountbulletin_init/peoplecountbulletin_"$YMDDAY".txtr /data/edata/announce
+
+
+
+java -cp /data/edata-1.0.0-BUILD-SNAPSHOT-jar-with-dependencies.jar com.kaola.edata.UniqueDataMD5 /root/peoplecountbulletin/peoplecountbulletin0719_0604.txt peoplecountbulletin 0#1#2#3#4#5#6
+java -cp /data/edata-1.0.0-BUILD-SNAPSHOT-jar-with-dependencies.jar com.kaola.edata.UniqueDataMD5 /root/peoplecountbulletin/peoplecountbulletin_2016-06-03.txt peoplecountbulletin 0#4#6
+cp /root/peoplecountbulletin/peoplecountbulletin_2016-06-03.txtr /data/edata/announce
+
+scp root@10.5.28.14:/root/jyk/edata-1.0.0-BUILD-SNAPSHOT-jar-with-dependencies.jar ./
+
+
+
+
+java -cp /data/edata-1.0.0-BUILD-SNAPSHOT-jar-with-dependencies.jar com.kaola.edata.UniqueDataMD5 /data/edata/peoplecountbulletin_init/peoplecountbulletin0101_0603.txt peoplecountbulletin 0#1#2#3#4#5#6
+/data/edata/peoplecountbulletin_init/peoplecountbulletin0101_0603.txtr /data/edata/announce
+
+191751
+307801
+
+30 3 * * * sh /data/peoplecountbulletin.sh  >>/data/logs/peoplecountbulletin`date +\%Y-\%m-\%d`.log 2>&1 &
+
+scp 10.5.28.14:/data/crawler/peoplecountbulletin/peoplecountbulletin_2016-07-22.txt /data/edata/peoplecountbulletin_init
+scp 10.5.28.14:/data/crawler/peoplecountbulletin/peoplecountbulletin_2016-07-23.txt /data/edata/peoplecountbulletin_init
+scp 10.5.28.14:/data/crawler/peoplecountbulletin/peoplecountbulletin_2016-07-24.txt /data/edata/peoplecountbulletin_init
+
+java -cp /data/edata-1.0.0-BUILD-SNAPSHOT-jar-with-dependencies.jar com.kaola.edata.UniqueDataMD5 /data/edata/peoplecountbulletin_init/peoplecountbulletin_2016-07-22.txt peoplecountbulletin 0#1#2#3#4#5#6;
+java -cp /data/edata-1.0.0-BUILD-SNAPSHOT-jar-with-dependencies.jar com.kaola.edata.UniqueDataMD5 /data/edata/peoplecountbulletin_init/peoplecountbulletin_2016-07-23.txt peoplecountbulletin 0#1#2#3#4#5#6;
+java -cp /data/edata-1.0.0-BUILD-SNAPSHOT-jar-with-dependencies.jar com.kaola.edata.UniqueDataMD5 /data/edata/peoplecountbulletin_init/peoplecountbulletin_2016-07-24.txt peoplecountbulletin 0#1#2#3#4#5#6;
+
+cp /data/edata/peoplecountbulletin_init/peoplecountbulletin_2016-07-22.txtr /data/edata/announce;
+cp /data/edata/peoplecountbulletin_init/peoplecountbulletin_2016-07-23.txtr /data/edata/announce;
+cp /data/edata/peoplecountbulletin_init/peoplecountbulletin_2016-07-24.txtr /data/edata/announce;
+
+各位好！
+  为了使数据部hadoop集群使用更加规范，确保数据安全。集团数据部将对集群的使用做些相关权限的控制，控制内容包括：
+（1）登录系统控制。各部集群使用人员只能在指定的服务器进行登录及后续操作。
+（2）系统登录帐号控制。各部集群使用人员只能用各自系统帐号登录进行数据操作。
+（3）数据资源查询控制。各部集群使用人员只能对自己有权查看的数据进行查询操作。
+（4）数据资源变更控制。各部集群使用人员只能对自己有权增改删的库（表）数据进行增改删操作。
+（5）sh脚本执行控制。各部集群使用人员只能在自己帐号下进行脚本编程、脚本运行及调度配置。
+（6）因HUE对集群资源的消耗现阶段无法有效控制，数据部将暂停提供HUE数据查询服务。
+
+    为尽快完成上述控制，需要各位配合完成相关工作，具体事宜如下：
+（1）请各位分别填写《数据库使用情况整理.xls》。描述清楚现在hive仓库中，哪些库是你所有或是你有写入操作。
+（2）请各位分别填写《申请权限清单.xls》。描述清楚你现在的日常操作中会用到哪些库的哪些表。
+（3）请各位整理好自己编写的脚本及配置的调度，控制方案实施后，需要你将脚本及调度迁至你自己的帐号下。
+   
+    请各位务必仔细填写，以免数据安全控制方案实施后对你的日常工作造成影响。
+    在控制方案实施稳定后，我们会补发集群资源使用相关的申请流程及相应表格。
+    
+    我们将在下周正式开始实施控制方案，请大家本周完成两个表格的提交，有疑问随时找数据部韩倩。
+	
+	
+	
+	
+	
+	
+	select * from mer.mer_expmpos_area where mer_business_name like '%喔噻复制%' limit 10;
+
+	#!/bin/bash
+
+MON_0M=$(date +%Y%m)
+MON_1M=$(date --date='1 month ago' +%Y%m)
+
+
+echo '---------------非MPOS商户匹配经营地址 -------------'
+
+sudo -u hdfs hive <<EOF
+
+set hive.auto.convert.join=false; 
+set mapreduce.reduce.shuffle.input.buffer.percent=0.1;
+set mapreduce.reduce.shuffle.parallelcopies=9;
+
+
+DROP TABLE mer.mer_expmpos_area ;
+
+CREATE TABLE  mer.mer_expmpos_area AS 
+ SELECT   '110001' AS  orgid, 
+                t1.mer_id, 
+                t1.mer_business_name,
+                t1.area_code,
+                t2.prov_code,
+                t2.prov_name,
+                t2.city_code,
+                t2.city_name,
+                t2.country_code,
+                t2.country_name,
+                '${MON_1M}'  as load_date
+ FROM 
+(
+SELECT a.shop_no AS mer_id, MAX(a.mer_business_name) mer_business_name,   MAX(b.shop_act_addr_dist) AS  area_code 
+ FROM 
+  (SELECT * FROM  hds.bmcp_t01_merchant_info  WHERE status = 'VALID' )  a 
+  JOIN 
+  (SELECT * FROM  hds.bmcp_t01_shop_info  WHERE status = 'VALID' ) b
+  ON  a.merchant_id = b.merchant_id
+GROUP BY  a.shop_no
+) t1
+JOIN 
+(     
+SELECT  country_code AS district_id ,  
+ CASE WHEN  prov_code = 1 THEN   city_code
+           WHEN  city_code =1  THEN   country_code   ELSE prov_code  END  AS    prov_code   , 
+ CASE WHEN  prov_code = 1 THEN   city_name
+           WHEN  city_code = 1 THEN  country_name  ELSE prov_name  END AS prov_name, 
+ CASE WHEN  prov_code = 1 THEN   country_code 
+            WHEN  city_code = 1 THEN   NULL  ELSE city_code END  AS city_code, 
+ CASE WHEN  prov_code = 1 THEN   country_name 
+             WHEN  city_code = 1 THEN   NULL  ELSE city_name END AS city_name,
+  CASE WHEN  prov_code = 1  THEN  NULL  
+             WHEN  city_code = 1 THEN   NULL ELSE  country_code  END AS country_code,
+ CASE WHEN  prov_code = 1  THEN  NULL  
+            WHEN  city_code = 1 THEN   NULL  ELSE  country_name  END AS  country_name 
+ FROM 
+ ( SELECT  district_id  AS  country_code,  district_name  AS country_name ,  district_parent    FROM  hds.BMCP_T99_CHN_DISTRICT_CDE WHERE status = 'VALID' ) a
+ LEFT  JOIN 
+ (SELECT  district_id  AS  city_code,  district_name  AS city_name ,  district_parent    FROM  hds.BMCP_T99_CHN_DISTRICT_CDE WHERE status = 'VALID' )  b
+ ON a.district_parent = city_code 
+ LEFT  JOIN 
+  (SELECT  district_id  AS  prov_code,  district_name  AS prov_name ,  district_parent    FROM  hds.BMCP_T99_CHN_DISTRICT_CDE WHERE status = 'VALID' )  c
+ ON b.district_parent = prov_code  
+ )   t2
+ ON t1.area_code   =  t2.district_id
+ LEFT  JOIN 
+ (SELECT shop_no FROM   hds.bmcp_t01_cardapp_info WHERE  cast(card_app_type as int) in (200127,200507)) t3
+ ON t1.mer_id  =  t3.shop_no 
+ WHERE  t3.shop_no IS   NULL   ;
+EOF
+
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME '--------------非MPOS商户区域匹配 mer_expmpos_area 创建成功--------'$tmp  
+break
+else
+echo $NOWTIME '--------------非MPOS商户区域匹配 mer_expmpos_area  创建失败--------'$tmp  
+fi 

@@ -1,0 +1,22 @@
+jena
+
+学习参考
+http://jena.apache.org/
+
+jena三元组生成程序
+crawler\Csemantic-master
+com.kaola.user.CardMobileOwl
+
+部署
+/jena/apache-jena-fuseki-2.3.1
+./fuseki start
+
+
+访问
+http://10.5.28.12:3030/
+
+
+工具：
+10.5.28.12 下有工具：
+protege  可视化schema
+/disk/a/freebase

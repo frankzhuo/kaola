@@ -1,0 +1,76 @@
+.pageNav {
+    clear: both;
+    width: 660px;
+    text-align: right;
+    margin-right:20px;
+    line-height: 25px;
+    font-size: 12px;
+    bottom:20px;
+}
+
+.pageNav label{
+   /* padding-left: 4px;
+    padding-right: 4px;*/
+    /*padding-bottom: 8px;*/
+	padding-left: 5px;
+	padding-right: 5px;
+	float: left;
+	/*padding-top: 2px;*/
+}
+
+.pageNav span{
+  	padding-left: 5px;
+	padding-right: 5px;
+	float: left;
+    color:red;
+}
+.pageNav label input{
+	font: normal normal normal 9px/9px tahoma;
+	height: 9px;
+	margin: 0px 2px;
+	overflow: hidden;
+	padding: 2px;
+	vertical-align: middle;
+	width: 18px;
+	margin-bottom:4px;
+}
+.goBt{
+	background: url(../images/b09.gif) no-repeat;
+	/*text-align: ceter;
+	margin: 0px 2px;*/
+	width:35px;
+	height:25px;
+	border-width:0px;
+	CURSOR: pointer;
+}
+
+
+
+.previousPage{
+	background: url("../images/fenyeBt.png") no-repeat;
+	float: left;
+    height: 30px;
+    text-align: center;
+    width: 55px;
+    line-height:21px;
+}
+
+
+.nextPage{
+	background: url("../images/fenyeBt.png") no-repeat ;
+	float: left;
+    height: 30px;
+    text-align: center;
+    width: 55px;
+    line-height:21px;
+}
+
+.innerClass{
+	float:right;
+}
+
+/*.pageNav label a:hover{
+	background: url("../images/fenyeBt_c.png") no-repeat ;
+	/*text-decoration: underline;*/
+}*/
+

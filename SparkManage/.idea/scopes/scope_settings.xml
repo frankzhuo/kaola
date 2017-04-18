@@ -1,0 +1,7 @@
+<component name="DependencyValidationManager">
+  <state>
+    <unnamed_scope value="lib:org.apache.spark.sql..*" />
+    <unnamed_scope value="src:com.kaola.readES" />
+    <deny_rule from_scope="src:com.kaola.readES" to_scope="lib:org.apache.spark.sql..*" is_deny="true" />
+  </state>
+</component>

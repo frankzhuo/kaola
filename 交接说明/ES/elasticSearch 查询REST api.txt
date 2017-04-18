@@ -1,0 +1,504 @@
+{"query":{"bool":{"must":[{"multi_match":{"query":"庞金玉","type":"phrase","fields":["yuangao","dangshiren_all"]}}]}}}
+
+{"query":{"bool":{"must":[{"multi_match":{"query":"程大超：1956年7月20日","type":"phrase","fields":["yuangao","dangshiren_all"]}}],"should":[{"multi_match":{"query":"劳动","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"工资","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"欠薪","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"社保","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"五险一金","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"住房公积金","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"辞退","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"解聘","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"工伤","type":"phrase","fields":["title","content"]}}],"minimum_should_match":1}}}
+{"query":{"bool":{"must":[{"multi_match":{"query":"刘辉","type":"phrase","fields":["yuangao","dangshiren_all"]}},{"multi_match":{"query":"劳动争议","type":"phrase","fields":["jcase"]}}]}}}
+{"query":{"bool":{"must":[{"multi_match":{"query":"6259654151813317","type":"phrase","fields":["incdno"]}},{"multi_match":{"query":"信用卡还款","type":"phrase","fields":["tv4name"]}}]}}}
+
+{"query":{"bool":{"must":[{"multi_match":{"query":"4047380012837152","type":"phrase","fields":["incdno"]}},{"multi_match":{"query":"信用卡还款","type":"phrase","fields":["tv4name"]}}]}}}
+{"query":{"bool":{"must":[{"multi_match":{"query":"刘辉","type":"phrase","fields":["yuangao","dangshiren_all"]}},{"multi_match":{"query":"上海","type":"phrase","fields":["yuangao","content"]}}],"should":[{"multi_match":{"query":"劳动","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"工资","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"欠薪","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"社保","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"五险一金","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"住房公积金","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"辞退","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"解聘","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"工伤","type":"phrase","fields":["title","content"]}}],"minimum_should_match":1}},"size":1000,"from":0}
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "刘辉",
+            "type": "phrase",
+            "fields": [
+              "yuangao",
+              "dangshiren_all"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "上海",
+            "type": "phrase",
+            "fields": [
+              "yuangao",
+              "content"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "劳动争议",
+            "type": "phrase",
+            "fields": [
+              "jcase"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
+单字段查询
+"type":"phrase"短语查询较精确匹配，所有关键词必须连在一起
+
+curl -XPOST 'localhost:9200/law/c_personmore/_search?pretty' -d '
+{"query":{"match":{"name":{"query":"朱文科","type":"phrase"}}}}
+'
+
+"operator":"and" 只要含所有关键词
+curl -XPOST 'localhost:9200/law/c_personmore/_search?pretty' -d '
+{"query":{"match":{"name":{"query":"朱文科","operator":"and"}}}}
+'
+{"query":{"match":{"content":{"query":"王耀平","operator":"and"}}},"size":10,"from":0}
+多字段查询
+curl -XPOST 'localhost:9200/law/judgement/_search?pretty' -d '
+{"query":{
+    "multi_match": {
+        "query":                "安徽省枞阳县",
+        "type":                 "best_fields", 
+        "fields":               [ "title", "content" ],
+        "tie_breaker":          0.3,
+        "minimum_should_match": "90%" 
+    }
+   }
+}'
+
+{"query":{"match":{"content":{"query":"张宏莹","type":"phrase"}}}}
+
+curl -XPOST 'localhost:9200/law/judgement/_search?pretty' -d '
+{
+    "query": {
+        "bool": {
+            "must": {
+                "match": {  
+                    "content": {
+                        "query":    "张宏莹",
+                        "type":"phrase"
+                    }
+                }
+            },
+           "must": {
+                "match": {  
+                    "content": {
+                        "query":    "劳动争议",
+                        "type":"phrase"
+                    }
+                }
+            }
+        }
+    }
+}'
+
+
+bool查询实现复杂的查询
+curl -XPOST 'localhost:9200/law/judgement/_search?pretty' -d '
+{
+    "query": {
+        "bool": {
+            "must": {
+                "match": {  
+                    "content": {
+                        "query":    "安徽省枞阳县",
+                        "type":"phrase"
+                    }
+                }
+            },
+            "should": [
+                { "match": {
+                    "title": {
+                        "query": "齐继武",
+                        "boost": 3 
+                    }
+                }},
+                { "match": {
+                    "court": {
+                        "query": "安徽省高级人民法院",
+                        "boost": 2 
+                    }
+                }}
+            ]
+        }
+    }
+}'
+
+
+聚合查询
+  curl -XPOST 'localhost:9200/bank/_search?pretty' -d '
+         {
+           "size": 0,
+           "aggs": {
+             "group_by_gender": { 
+               "terms": {
+	         "size": 9880,
+                 "field": "gender"
+               }
+             }
+           }
+         }'
+
+
+
+  curl -XPOST 'localhost:9200/bank/_search?pretty' -d '
+         {
+           "size": 0,
+           "aggs": {
+             "group_by_gender": { 
+               "terms": {
+                 "field": "url"
+               }
+             }
+           }
+         }'
+
+
+
+
+{
+  "query": {
+    "bool": {
+      "must": [
+         "match": {  
+                    "content": {
+                        "query":    "张宏莹",
+                        "type":"phrase"
+                    }
+                }
+	],
+       "must": [
+          "match": {  
+	    "content": {
+		"query":    "劳动争议",
+		"type":"phrase"
+	    }
+	}
+      ]
+    }
+  }
+}
+
+
+{
+  "query": {
+
+    "match": {
+        "content": {
+            "query":    "张宏莹",
+            "type":"phrase"
+        }
+    }
+
+  }
+}
+
+ 
+{
+  "query": {
+	  "bool": {
+	    "must": [
+	      { "term": { "content": "张宏莹" }},
+	      { "term": { "content": "劳动争议"   }}
+	    ]
+	  }
+   }
+}
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "张宏莹",
+            "type": "phrase",
+            "fields": [
+              "yuangao",
+              "shangshuren"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "劳动",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "陆盛龙",
+            "type": "phrase",
+            "fields": [
+              "yuangao",
+              "shangshuren"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "劳动",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "劳动争议",
+            "type": "phrase",
+            "fields": [
+              "jcase"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "董玉柱",
+            "type": "phrase",
+            "fields": [
+              "yuangao",
+              "shangshuren"
+            ]
+          }
+        },
+        {
+	"match": {
+                    "jcase": {
+                        "query": "劳动争议 人事争议",
+                         "minimum_should_match": "50%"
+                    }
+                }        
+        }
+      ]
+    }
+  }
+}
+
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "陆盛龙",
+            "type": "phrase",
+            "fields": [
+              "yuangao",
+              "title"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "劳动争议人事争议",
+            "type": "phrase",
+	    "minimum_should_match": "10%", 
+            "fields": [
+              "jcase"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "陆盛龙",
+            "type": "phrase",
+            "fields": [
+              "yuangao",
+              "title"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "劳动争议人事争议",
+            "type": "phrase",
+	    "minimum_should_match": "10%", 
+            "fields": [
+              "jcase"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+{"size":0,"aggs":{"group_by_gender":{"terms":{"field":"url"}}}}
+
+
+
+{"query":{"bool":{"must":[{"multi_match":{"query":"程大超：1956年7月20日","type":"phrase","fields":["yuangao","dangshiren_all"]}}],"should":[{"multi_match":{"query":"劳动","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"工资","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"欠薪","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"社保","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"五险一金","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"住房公积金","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"辞退","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"解聘","type":"phrase","fields":["title","content"]}},{"multi_match":{"query":"工伤","type":"phrase","fields":["title","content"]}}],"minimum_should_match":1}}}
+
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "程大超：1956年7月20日",
+            "type": "phrase",
+            "fields": [
+              "yuangao",
+              "dangshiren_all"
+            ]
+          }
+        }
+      ],
+      "should": [
+        {
+          "multi_match": {
+            "query": "劳动",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "工资",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "欠薪",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "社保",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "五险一金",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "住房公积金",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "辞退",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "解聘",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        },
+        {
+          "multi_match": {
+            "query": "工伤",
+            "type": "phrase",
+            "fields": [
+              "title",
+              "content"
+            ]
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+}

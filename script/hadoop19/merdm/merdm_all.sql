@@ -1,0 +1,2673 @@
+#!/bin/bash
+DATE_0m=$(date +%Y-%m-)01
+#DATE_0M=$(date +%Y%m)01
+DATE_0M=$(date --date='15 month ago' +%Y%m)01
+#DATE_2Y=$(date --date='3 month ago' +%Y%m)01
+DATE_1D=$(date --date='1 day ago'  +%Y%m%d)01
+DATE_3D=$(date --date='3 day ago'  +%Y%m%d)01
+DATE_7D=$(date --date='7 day ago'  +%Y%m%d)01
+DATE_15D=$(date --date='15 day ago'  +%Y%m%d)01
+DATE_1M_1D=$(date --date='1 month 9 day ago'  +%Y%m%d)01
+DATE_1M_3D=$(date --date='1 month 11 day ago'   +%Y%m%d)01
+DATE_1M_7D=$(date --date='1 month 15 day ago'   +%Y%m%d)01
+DATE_1M_15D=$(date --date='1 month 23 day ago'   +%Y%m%d)01
+DATE_2M_1D=$(date --date='2 month 4 day ago'  +%Y%m%d)01
+DATE_2M_3D=$(date --date='2 month 6 day ago'   +%Y%m%d)01
+DATE_2M_7D=$(date --date='2 month 10 day ago'   +%Y%m%d)01
+DATE_2M_15D=$(date --date='2 month 18 day ago'   +%Y%m%d)01
+DATE_3M_1D=$(date --date='3 month 7 day ago'  +%Y%m%d)01
+DATE_3M_3D=$(date --date='3 month 9 day ago'   +%Y%m%d)01
+DATE_3M_7D=$(date --date='3 month 13 day ago'   +%Y%m%d)01
+DATE_3M_15D=$(date --date='3 month 21 day ago'   +%Y%m%d)01
+DATE_4M_1D=$(date --date='4 month 3 day ago'  +%Y%m%d)01
+DATE_4M_3D=$(date --date='4 month 5 day ago'   +%Y%m%d)01
+DATE_4M_7D=$(date --date='4 month 9 day ago'   +%Y%m%d)01
+DATE_4M_15D=$(date --date='4 month 17 day ago'   +%Y%m%d)01
+DATE_5M_1D=$(date --date='5 month 5 day ago'  +%Y%m%d)01
+DATE_5M_3D=$(date --date='5 month 7 day ago'   +%Y%m%d)01
+DATE_5M_7D=$(date --date='5 month 11 day ago'   +%Y%m%d)01
+DATE_5M_15D=$(date --date='5 month 19 day ago'   +%Y%m%d)01
+MON_0M=$(date +%Y%m)
+MON_1M=$(date --date='1 month ago' +%Y%m)
+MONTH_1M=$(date --date='1 month ago' +%Y%m)
+MON_2M=$(date --date='2 month ago' +%Y%m)
+MONTH_2M=$(date --date='2 month ago' +%Y%m)
+
+DATE_0M_0D=$(date +%Y%m)01
+DATE_1M_0D=$(date --date='1 month ago' +%Y%m)01
+echo  ${DATE_1M_0D}  ${DATE_0M_0D}
+
+
+day=$(date +%d)
+if test $day -lt 28;then
+DATE_1m=$(date --date='1 month ago' +%Y-%m-)01
+DATE_1M=$(date --date='1 month ago' +%Y%m)01
+DATE_2M=$(date --date='2 month ago' +%Y%m)01
+DATE_3m=$(date --date='3 month ago' +%Y-%m-)01
+DATE_3M=$(date --date='3 month ago' +%Y%m)01
+DATE_4M=$(date --date='4 month ago' +%Y%m)01
+DATE_5M=$(date --date='5 month ago' +%Y%m)01
+DATE_6M=$(date --date='6 month ago' +%Y%m)01
+DATE_7M=$(date --date='7 month ago' +%Y%m)01
+DATE_8M=$(date --date='8 month ago' +%Y%m)01
+DATE_9M=$(date --date='9 month ago' +%Y%m)01
+DATE_10M=$(date --date='10 month ago' +%Y%m)01
+DATE_11M=$(date --date='11 month ago' +%Y%m)01
+DATE_13m=$(date --date='13 month ago' +%Y-%m)
+DATE_13M=$(date --date='13 month ago' +%Y%m)
+DATE_1y=$(date --date='1 year ago' +%Y-%m-)01
+DATE_1Y=$(date --date='1 year ago' +%Y%m)01
+DATE_2y=$(date --date='2 year ago' +%Y-%m-)01
+#DATE_2Y=$(date --date='2 year ago' +%Y%m)01
+DATE_2Y=$(date --date='17 month ago' +%Y%m)01
+DATE_0M=$(date --date='15 month ago' +%Y%m)01
+DATE_1Y_1M=$(date --date='1 year ago 1 month ago' +%Y%m)01
+DATE_1Y_2M=$(date --date='1 year ago 2 month ago' +%Y%m)01
+DATE_1Y_3M=$(date --date='1 year ago 3 month ago' +%Y%m)01
+DATE_1Y_4M=$(date --date='1 year ago 4 month ago' +%Y%m)01
+DATE_1Y_5M=$(date --date='1 year ago 5 month ago' +%Y%m)01
+DATE_1Y_6M=$(date --date='1 year ago 6 month ago' +%Y%m)01
+DATE_1Y_7M=$(date --date='1 year ago 7 month ago' +%Y%m)01
+DATE_1Y_8M=$(date --date='1 year ago 8 month ago' +%Y%m)01
+DATE_1Y_9M=$(date --date='1 year ago 9 month ago' +%Y%m)01
+DATE_1Y_10M=$(date --date='1 year ago 10 month ago' +%Y%m)01
+DATE_1Y_11M=$(date --date='1 year ago 11 month ago' +%Y%m)01
+else
+DATE_1m=$(date --date='1 month ago 10 day ago' +%Y-%m-)01
+DATE_1M=$(date --date='1 month ago 10 day ago' +%Y%m)01
+DATE_2M=$(date --date='2 month ago 10 day ago' +%Y%m)01
+DATE_3m=$(date --date='3 month ago 10 day ago' +%Y-%m-)01
+DATE_3M=$(date --date='3 month ago 10 day ago' +%Y%m)01
+DATE_4M=$(date --date='4 month ago 10 day ago' +%Y%m)01
+DATE_5M=$(date --date='5 month ago 10 day ago' +%Y%m)01
+DATE_6M=$(date --date='6 month ago 10 day ago' +%Y%m)01
+DATE_7M=$(date --date='7 month ago 10 day ago' +%Y%m)01
+DATE_8M=$(date --date='8 month ago 10 day ago' +%Y%m)01
+DATE_9M=$(date --date='9 month ago 10 day ago' +%Y%m)01
+DATE_10M=$(date --date='10 month ago 10 day ago' +%Y%m)01
+DATE_11M=$(date --date='11 month ago 10 day ago' +%Y%m)01
+DATE_13m=$(date --date='13 month ago 10 day ago' +%Y-%m)
+DATE_13M=$(date --date='13 month ago 10 day ago' +%Y%m)
+DATE_1y=$(date --date='1 year ago 10 day ago' +%Y-%m-)01
+DATE_1Y=$(date --date='1 year ago 10 day ago' +%Y%m)01
+DATE_2y=$(date --date='2 year ago 10 day ago' +%Y-%m-)01
+#DATE_2Y=$(date --date='2 year ago 10 day ago' +%Y%m)01
+DATE_2Y=$(date --date='17 month ago' +%Y%m)01
+DATE_0M=$(date --date='15 month ago' +%Y%m)01
+DATE_1Y_1M=$(date --date='1 year ago 1 month ago 10 day ago' +%Y%m)01
+DATE_1Y_2M=$(date --date='1 year ago 2 month ago 10 day ago' +%Y%m)01
+DATE_1Y_3M=$(date --date='1 year ago 3 month ago 10 day ago' +%Y%m)01
+DATE_1Y_4M=$(date --date='1 year ago 4 month ago 10 day ago' +%Y%m)01
+DATE_1Y_5M=$(date --date='1 year ago 5 month ago 10 day ago' +%Y%m)01
+DATE_1Y_6M=$(date --date='1 year ago 6 month ago 10 day ago' +%Y%m)01
+DATE_1Y_7M=$(date --date='1 year ago 7 month ago 10 day ago' +%Y%m)01
+DATE_1Y_8M=$(date --date='1 year ago 8 month ago 10 day ago' +%Y%m)01
+DATE_1Y_9M=$(date --date='1 year ago 9 month ago 10 day ago' +%Y%m)01
+DATE_1Y_10M=$(date --date='1 year ago 10 month ago 10 day ago' +%Y%m)01
+DATE_1Y_11M=$(date --date='1 year ago 11 month ago 10 day ago' +%Y%m)01
+fi 
+
+DATE=$(date +%Y-%m-%d)
+TODAY=$(date +%Y%m%d)
+
+
+
+
+
+
+echo '---------------------创建近2年内商户每个月的交易情况表-------------------'
+sudo -u hdfs hive <<EOF
+create table if not exists merdm.dm_trans_base_t1_mon( 
+   mer_id  string,  
+   cnt_m  bigint, 
+   amt_m  bigint, 
+   days_m  bigint, 
+   cards_m  bigint, 
+   max_amt_m  bigint, 
+   m09_amt_m  double, 
+   m08_amt_m  double, 
+   m07_amt_m  double, 
+   m06_amt_m  double, 
+   m05_amt_m  double, 
+   m04_amt_m  double, 
+   m03_amt_m  double, 
+   m02_amt_m  double, 
+   m01_amt_m  double, 
+   min_amt_m  bigint, 
+   avg_amt_m  double, 
+   max_ymd_m  string, 
+   min_ymd_m  string, 
+   cards_credit_m  bigint, 
+   credit_amt_m  bigint, 
+   credit_cnt_m  bigint, 
+   credit_avg_amt_m  double, 
+   credit_max_amt_m  bigint, 
+   credit_m09_amt_m  double, 
+   credit_m08_amt_m  double, 
+   credit_m07_amt_m  double, 
+   credit_m06_amt_m  double, 
+   credit_m05_amt_m  double, 
+   credit_m04_amt_m  double, 
+   credit_m03_amt_m  double, 
+   credit_m02_amt_m  double, 
+   credit_m01_amt_m  double, 
+   credit_min_amt_m  bigint, 
+   cards_debit_m  bigint, 
+   debit_amt_m  bigint, 
+   debit_cnt_m  bigint, 
+   debit_avg_amt_m  double, 
+   debit_max_amt_m  bigint, 
+   debit_m09_amt_m  double, 
+   debit_m08_amt_m  double, 
+   debit_m07_amt_m  double, 
+   debit_m06_amt_m  double, 
+   debit_m05_amt_m  double, 
+   debit_m04_amt_m  double, 
+   debit_m03_amt_m  double, 
+   debit_m02_amt_m  double, 
+   debit_m01_amt_m  double, 
+   debit_min_amt_m  bigint, 
+   nowork_amt_m  bigint, 
+   nowork_cnt_m  bigint, 
+   nowork_avg_amt_m  double, 
+   nowork_max_amt_m  bigint, 
+   nowork_m09_amt_m  double, 
+   nowork_m08_amt_m  double, 
+   nowork_m07_amt_m  double, 
+   nowork_m06_amt_m  double, 
+   nowork_m05_amt_m  double, 
+   nowork_m04_amt_m  double, 
+   nowork_m03_amt_m  double, 
+   nowork_m02_amt_m  double, 
+   nowork_m01_amt_m  double, 
+   nowork_min_amt_m  bigint, 
+   nowork_days_m  bigint, 
+   nowork_cards_m  bigint, 
+   nowork_cards_credit_m  bigint, 
+   nowork_credit_amt_m  bigint, 
+   nowork_credit_cnt_m  bigint, 
+   nowork_credit_avg_amt_m  double, 
+   nowork_credit_max_amt_m  bigint, 
+   nowork_credit_m09_amt_m  double, 
+   nowork_credit_m08_amt_m  double, 
+   nowork_credit_m07_amt_m  double, 
+   nowork_credit_m06_amt_m  double, 
+   nowork_credit_m05_amt_m  double, 
+   nowork_credit_m04_amt_m  double, 
+   nowork_credit_m03_amt_m  double, 
+   nowork_credit_m02_amt_m  double, 
+   nowork_credit_m01_amt_m  double, 
+   nowork_credit_min_amt_m  bigint, 
+   nowork_cards_debit_m  bigint, 
+   nowork_debit_amt_m  bigint, 
+   nowork_debit_cnt_m  bigint, 
+   nowork_debit_avg_amt_m  double, 
+   nowork_debit_max_amt_m  bigint, 
+   nowork_debit_m09_amt_m  double, 
+   nowork_debit_m08_amt_m  double, 
+   nowork_debit_m07_amt_m  double, 
+   nowork_debit_m06_amt_m  double, 
+   nowork_debit_m05_amt_m  double, 
+   nowork_debit_m04_amt_m  double, 
+   nowork_debit_m03_amt_m  double, 
+   nowork_debit_m02_amt_m  double, 
+   nowork_debit_m01_amt_m  double, 
+   nowork_debit_min_amt_m  bigint, 
+   mo_amt_m  bigint, 
+   mo_cnt_m  bigint, 
+   mo_avg_amt_m  double, 
+   mo_max_amt_m  bigint, 
+   mo_m09_amt_m  double, 
+   mo_m08_amt_m  double, 
+   mo_m07_amt_m  double, 
+   mo_m06_amt_m  double, 
+   mo_m05_amt_m  double, 
+   mo_m04_amt_m  double, 
+   mo_m03_amt_m  double, 
+   mo_m02_amt_m  double, 
+   mo_m01_amt_m  double, 
+   mo_min_amt_m  bigint, 
+   mo_days_m  bigint, 
+   mo_cards_m  bigint, 
+   mo_cards_credit_m  bigint, 
+   mo_credit_amt_m  bigint, 
+   mo_credit_cnt_m  bigint, 
+   mo_credit_avg_amt_m  double, 
+   mo_credit_max_amt_m  bigint, 
+   mo_credit_m09_amt_m  double, 
+   mo_credit_m08_amt_m  double, 
+   mo_credit_m07_amt_m  double, 
+   mo_credit_m06_amt_m  double, 
+   mo_credit_m05_amt_m  double, 
+   mo_credit_m04_amt_m  double, 
+   mo_credit_m03_amt_m  double, 
+   mo_credit_m02_amt_m  double, 
+   mo_credit_m01_amt_m  double, 
+   mo_credit_min_amt_m  bigint, 
+   mo_cards_debit_m  bigint, 
+   mo_debit_amt_m  bigint, 
+   mo_debit_cnt_m  bigint, 
+   mo_debit_avg_amt_m  double, 
+   mo_debit_max_amt_m  bigint, 
+   mo_debit_m09_amt_m  double, 
+   mo_debit_m08_amt_m  double, 
+   mo_debit_m07_amt_m  double, 
+   mo_debit_m06_amt_m  double, 
+   mo_debit_m05_amt_m  double, 
+   mo_debit_m04_amt_m  double, 
+   mo_debit_m03_amt_m  double, 
+   mo_debit_m02_amt_m  double, 
+   mo_debit_m01_amt_m  double, 
+   mo_debit_min_amt_m  bigint, 
+   af_amt_m  bigint, 
+   af_cnt_m  bigint, 
+   af_avg_amt_m  double, 
+   af_max_amt_m  bigint, 
+   af_m09_amt_m  double, 
+   af_m08_amt_m  double, 
+   af_m07_amt_m  double, 
+   af_m06_amt_m  double, 
+   af_m05_amt_m  double, 
+   af_m04_amt_m  double, 
+   af_m03_amt_m  double, 
+   af_m02_amt_m  double, 
+   af_m01_amt_m  double, 
+   af_min_amt_m  bigint, 
+   af_days_m  bigint, 
+   af_cards_m  bigint, 
+   af_cards_credit_m  bigint, 
+   af_credit_amt_m  bigint, 
+   af_credit_cnt_m  bigint, 
+   af_credit_avg_amt_m  double, 
+   af_credit_max_amt_m  bigint, 
+   af_credit_m09_amt_m  double, 
+   af_credit_m08_amt_m  double, 
+   af_credit_m07_amt_m  double, 
+   af_credit_m06_amt_m  double, 
+   af_credit_m05_amt_m  double, 
+   af_credit_m04_amt_m  double, 
+   af_credit_m03_amt_m  double, 
+   af_credit_m02_amt_m  double, 
+   af_credit_m01_amt_m  double, 
+   af_credit_min_amt_m  bigint, 
+   af_cards_debit_m  bigint, 
+   af_debit_amt_m  bigint, 
+   af_debit_cnt_m  bigint, 
+   af_debit_avg_amt_m  double, 
+   af_debit_max_amt_m  bigint, 
+   af_debit_m09_amt_m  double, 
+   af_debit_m08_amt_m  double, 
+   af_debit_m07_amt_m  double, 
+   af_debit_m06_amt_m  double, 
+   af_debit_m05_amt_m  double, 
+   af_debit_m04_amt_m  double, 
+   af_debit_m03_amt_m  double, 
+   af_debit_m02_amt_m  double, 
+   af_debit_m01_amt_m  double, 
+   af_debit_min_amt_m  bigint, 
+   ev_amt_m  bigint, 
+   ev_cnt_m  bigint, 
+   ev_avg_amt_m  double, 
+   ev_max_amt_m  bigint, 
+   ev_m09_amt_m  double, 
+   ev_m08_amt_m  double, 
+   ev_m07_amt_m  double, 
+   ev_m06_amt_m  double, 
+   ev_m05_amt_m  double, 
+   ev_m04_amt_m  double, 
+   ev_m03_amt_m  double, 
+   ev_m02_amt_m  double, 
+   ev_m01_amt_m  double, 
+   ev_min_amt_m  bigint, 
+   ev_days_m  bigint, 
+   ev_cards_m  bigint, 
+   ev_cards_credit_m  bigint, 
+   ev_credit_amt_m  bigint, 
+   ev_credit_cnt_m  bigint, 
+   ev_credit_avg_amt_m  double, 
+   ev_credit_max_amt_m  bigint, 
+   ev_credit_m09_amt_m  double, 
+   ev_credit_m08_amt_m  double, 
+   ev_credit_m07_amt_m  double, 
+   ev_credit_m06_amt_m  double, 
+   ev_credit_m05_amt_m  double, 
+   ev_credit_m04_amt_m  double, 
+   ev_credit_m03_amt_m  double, 
+   ev_credit_m02_amt_m  double, 
+   ev_credit_m01_amt_m  double, 
+   ev_credit_min_amt_m  bigint, 
+   ev_cards_debit_m  bigint, 
+   ev_debit_amt_m  bigint, 
+   ev_debit_cnt_m  bigint, 
+   ev_debit_avg_amt_m  double, 
+   ev_debit_max_amt_m  bigint, 
+   ev_debit_m09_amt_m  double, 
+   ev_debit_m08_amt_m  double, 
+   ev_debit_m07_amt_m  double, 
+   ev_debit_m06_amt_m  double, 
+   ev_debit_m05_amt_m  double, 
+   ev_debit_m04_amt_m  double, 
+   ev_debit_m03_amt_m  double, 
+   ev_debit_m02_amt_m  double, 
+   ev_debit_m01_amt_m  double, 
+   ev_debit_min_amt_m  bigint, 
+   mn_amt_m  bigint, 
+   mn_cnt_m  bigint, 
+   mn_avg_amt_m  double, 
+   mn_max_amt_m  bigint, 
+   mn_m09_amt_m  double, 
+   mn_m08_amt_m  double, 
+   mn_m07_amt_m  double, 
+   mn_m06_amt_m  double, 
+   mn_m05_amt_m  double, 
+   mn_m04_amt_m  double, 
+   mn_m03_amt_m  double, 
+   mn_m02_amt_m  double, 
+   mn_m01_amt_m  double, 
+   mn_min_amt_m  bigint, 
+   mn_days_m  bigint, 
+   mn_cards_m  bigint, 
+   mn_cards_credit_m  bigint, 
+   mn_credit_amt_m  bigint, 
+   mn_credit_cnt_m  bigint, 
+   mn_credit_avg_amt_m  double, 
+   mn_credit_max_amt_m  bigint, 
+   mn_credit_m09_amt_m  double, 
+   mn_credit_m08_amt_m  double, 
+   mn_credit_m07_amt_m  double, 
+   mn_credit_m06_amt_m  double, 
+   mn_credit_m05_amt_m  double, 
+   mn_credit_m04_amt_m  double, 
+   mn_credit_m03_amt_m  double, 
+   mn_credit_m02_amt_m  double, 
+   mn_credit_m01_amt_m  double, 
+   mn_credit_min_amt_m  bigint, 
+   mn_cards_debit_m  bigint, 
+   mn_debit_amt_m  bigint, 
+   mn_debit_cnt_m  bigint, 
+   mn_debit_avg_amt_m  double, 
+   mn_debit_max_amt_m  bigint, 
+   mn_debit_m09_amt_m  double, 
+   mn_debit_m08_amt_m  double, 
+   mn_debit_m07_amt_m  double, 
+   mn_debit_m06_amt_m  double, 
+   mn_debit_m05_amt_m  double, 
+   mn_debit_m04_amt_m  double, 
+   mn_debit_m03_amt_m  double, 
+   mn_debit_m02_amt_m  double, 
+   mn_debit_m01_amt_m  double, 
+   mn_debit_min_amt_m  bigint, 
+   no_amt_m  bigint, 
+   no_cnt_m  bigint, 
+   no_avg_amt_m  double, 
+   no_max_amt_m  bigint, 
+   no_m09_amt_m  double, 
+   no_m08_amt_m  double, 
+   no_m07_amt_m  double, 
+   no_m06_amt_m  double, 
+   no_m05_amt_m  double, 
+   no_m04_amt_m  double, 
+   no_m03_amt_m  double, 
+   no_m02_amt_m  double, 
+   no_m01_amt_m  double, 
+   no_min_amt_m  bigint, 
+   no_days_m  bigint, 
+   no_cards_m  bigint, 
+   no_cards_credit_m  bigint, 
+   no_credit_amt_m  bigint, 
+   no_credit_cnt_m  bigint, 
+   no_credit_avg_amt_m  double, 
+   no_credit_max_amt_m  bigint, 
+   no_credit_m09_amt_m  double, 
+   no_credit_m08_amt_m  double, 
+   no_credit_m07_amt_m  double, 
+   no_credit_m06_amt_m  double, 
+   no_credit_m05_amt_m  double, 
+   no_credit_m04_amt_m  double, 
+   no_credit_m03_amt_m  double, 
+   no_credit_m02_amt_m  double, 
+   no_credit_m01_amt_m  double, 
+   no_credit_min_amt_m  bigint, 
+   no_cards_debit_m  bigint, 
+   no_debit_amt_m  bigint, 
+   no_debit_cnt_m  bigint, 
+   no_debit_avg_amt_m  double, 
+   no_debit_max_amt_m  bigint, 
+   no_debit_m09_amt_m  double, 
+   no_debit_m08_amt_m  double, 
+   no_debit_m07_amt_m  double, 
+   no_debit_m06_amt_m  double, 
+   no_debit_m05_amt_m  double, 
+   no_debit_m04_amt_m  double, 
+   no_debit_m03_amt_m  double, 
+   no_debit_m02_amt_m  double, 
+   no_debit_m01_amt_m  double, 
+   no_debit_min_amt_m  bigint) 
+   partitioned by (orgid  string, mon string);
+
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME'--------------创建近2年内商户每个月的交易情况表-----------'$tmp 
+else
+echo $NOWTIME'--------------创建近2年内商户每个月的交易情况表-----------'$tmp 
+fi
+
+
+echo ${DATE_2Y} ${DATE_0M}
+
+
+echo '---------------近2年内商户每个月的交易情况-------------'
+
+#while true 
+#do 
+
+sudo -u hdfs hive <<EOF 
+
+set hive.exec.dynamic.partition.mode=nonstrict; 
+set hive.exec.dynamic.partition=true;
+set hive.exec.max.dynamic.partitions=5000;
+set hive.exec.max.dynamic.partitions.pernode=5000;
+set hive.exec.parallel=true;
+set hive.exec.parallel.thread.number=5;
+set hive.exec.max.created.files=655350;
+set mapreduce.map.memory.mb=5000;
+set mapreduce.reduce.memory.mb=5000;
+set mapreduce.map.java.opts=-Djava.net.preferIPv4Stack=true -Xms3000m -Xmx3000m;
+
+insert overwrite table merdm.dm_trans_base_t1_mon partition (orgid,mon)
+select mer_id,           
+           count(*) as cnt_m,
+           sum(trans_amt) as amt_m,
+           count(distinct ymd) as days_m, --交易天数
+           count(distinct cardno) as cards_m, --卡数
+           max(trans_amt) as max_amt_m,------最大交易额
+           percentile(trans_amt,0.9) as m09_amt_m,------9分位交易额
+           percentile(trans_amt,0.8) as m08_amt_m,------8分位交易额
+           percentile(trans_amt,0.7) as m07_amt_m,------7分位交易额
+           percentile(trans_amt,0.6) as m06_amt_m,------6分位交易额
+           percentile(trans_amt,0.5) as m05_amt_m,------5分位交易额
+           percentile(trans_amt,0.4) as m04_amt_m,------4分位交易额
+           percentile(trans_amt,0.3) as m03_amt_m,------3分位交易额
+           percentile(trans_amt,0.2) as m02_amt_m,------2分位交易额
+           percentile(trans_amt,0.1) as m01_amt_m,------1分位交易额
+           min(trans_amt) as min_amt_m, ------最小交易额
+           avg(trans_amt) as avg_amt_m,------笔均交易额
+           max(ymd) as max_ymd_m,------最大交易时间
+           min(ymd) as min_ymd_m, ------最小交易时间 
+           count(distinct case when card_kind='C' then cardno end) as cards_credit_m,  --信用卡数           
+           sum(case when card_kind='C' then trans_amt end) as credit_amt_m,    -------------信用卡交易额
+           count(case when card_kind='C' then trans_amt end) as credit_cnt_m,    -------------信用卡交易笔数
+           avg(case when card_kind='C' then trans_amt end) as credit_avg_amt_m,------信用卡笔均交易额
+           max(case when card_kind='C' then trans_amt end) as credit_max_amt_m,------信用卡最大交易额
+           percentile(case when card_kind='C' then trans_amt end,0.9) as credit_m09_amt_m,------信用卡9分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.8) as credit_m08_amt_m,------信用卡8分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.7) as credit_m07_amt_m,------信用卡7分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.6) as credit_m06_amt_m,------信用卡6分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.5) as credit_m05_amt_m,------信用卡5分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.4) as credit_m04_amt_m,------信用卡4分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.3) as credit_m03_amt_m,------信用卡3分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.2) as credit_m02_amt_m,------信用卡2分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.1) as credit_m01_amt_m,------信用卡1分位交易额
+           min(case when card_kind='C' then trans_amt end) as credit_min_amt_m, ------信用卡最小交易额           
+           count(distinct case when card_kind='D' then cardno end) as cards_debit_m,  --借记卡数           
+           sum(case when card_kind='D' then trans_amt end) as debit_amt_m,       -------------借记卡交易额
+           count(case when card_kind='D' then trans_amt end) as debit_cnt_m,     -------------借记卡交易笔数
+           avg(case when card_kind='D' then trans_amt end) as debit_avg_amt_m,------借记卡笔均交易额
+           max(case when card_kind='D' then trans_amt end) as debit_max_amt_m,------借记卡最大交易额
+           percentile(case when card_kind='D' then trans_amt end,0.9) as debit_m09_amt_m,------借记卡9分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.8) as debit_m08_amt_m,------借记卡8分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.7) as debit_m07_amt_m,------借记卡7分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.6) as debit_m06_amt_m,------借记卡6分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.5) as debit_m05_amt_m,------借记卡5分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.4) as debit_m04_amt_m,------借记卡4分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.3) as debit_m03_amt_m,------借记卡3分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.2) as debit_m02_amt_m,------借记卡2分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.1) as debit_m01_amt_m,------借记卡1分位交易额           
+           min(case when card_kind='D' then trans_amt end) as debit_min_amt_m, ------借记卡最小交易额  
+          
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_amt_m,  -----非工作时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_cnt_m,  -----非工作时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_avg_amt_m,  -----非工作时间笔均交易金额
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_max_amt_m,  -----非工作时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.9) as nowork_m09_amt_m,------非工作时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.8) as nowork_m08_amt_m,------非工作时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.7) as nowork_m07_amt_m,------非工作时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.6) as nowork_m06_amt_m,------非工作时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.5) as nowork_m05_amt_m,------非工作时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.4) as nowork_m04_amt_m,------非工作时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.3) as nowork_m03_amt_m,------非工作时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.2) as nowork_m02_amt_m,------非工作时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.1) as nowork_m01_amt_m,------非工作时间1分位交易额
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_min_amt_m,  -----非工作时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then ymd end) as nowork_days_m, --非工作时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then cardno end) as nowork_cards_m, --非工作时间交易卡数
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then cardno end) as nowork_cards_credit_m,  --非工作时间信用卡数  
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_amt_m,    -------------非工作时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_cnt_m,    -------------非工作时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_avg_amt_m,------非工作时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_max_amt_m,------非工作时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.9) as nowork_credit_m09_amt_m,------非工作时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.8) as nowork_credit_m08_amt_m,------非工作时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.7) as nowork_credit_m07_amt_m,------非工作时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.6) as nowork_credit_m06_amt_m,------非工作时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.5) as nowork_credit_m05_amt_m,------非工作时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.4) as nowork_credit_m04_amt_m,------非工作时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.3) as nowork_credit_m03_amt_m,------非工作时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.2) as nowork_credit_m02_amt_m,------非工作时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.1) as nowork_credit_m01_amt_m,------非工作时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_min_amt_m, ------非工作时间信用卡最小交易额           
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then cardno end) as nowork_cards_debit_m,  --非工作时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_amt_m,       -------------非工作时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_cnt_m,     -------------非工作时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_avg_amt_m,------非工作时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_max_amt_m,------非工作时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.9) as nowork_debit_m09_amt_m,------非工作时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.8) as nowork_debit_m08_amt_m,------非工作时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.7) as nowork_debit_m07_amt_m,------非工作时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.6) as nowork_debit_m06_amt_m,------非工作时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.5) as nowork_debit_m05_amt_m,------非工作时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.4) as nowork_debit_m04_amt_m,------非工作时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.3) as nowork_debit_m03_amt_m,------非工作时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.2) as nowork_debit_m02_amt_m,------非工作时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.1) as nowork_debit_m01_amt_m,------非工作时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_min_amt_m, ------非工作时间借记卡最小交易额 
+      
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_amt_m,  -----6:12时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_cnt_m,  -----6:12时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_avg_amt_m,  -----6:12时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_max_amt_m,  -----6:12时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.9) as mo_m09_amt_m,------6:12时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.8) as mo_m08_amt_m,------6:12时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.7) as mo_m07_amt_m,------6:12时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.6) as mo_m06_amt_m,------6:12时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.5) as mo_m05_amt_m,------6:12时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.4) as mo_m04_amt_m,------6:12时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.3) as mo_m03_amt_m,------6:12时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.2) as mo_m02_amt_m,------6:12时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.1) as mo_m01_amt_m,------6:12时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_min_amt_m,  -----6:12时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then ymd end) as mo_days_m, --6:12时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then cardno end) as mo_cards_m, --6:12时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then cardno end) as mo_cards_credit_m,  --6:12时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_amt_m,    -------------6:12时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_cnt_m,    -------------6:12时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_avg_amt_m,------6:12时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_max_amt_m,------6:12时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.9) as mo_credit_m09_amt_m,------6:12时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.8) as mo_credit_m08_amt_m,------6:12时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.7) as mo_credit_m07_amt_m,------6:12时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.6) as mo_credit_m06_amt_m,------6:12时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.5) as mo_credit_m05_amt_m,------6:12时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.4) as mo_credit_m04_amt_m,------6:12时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.3) as mo_credit_m03_amt_m,------6:12时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.2) as mo_credit_m02_amt_m,------6:12时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.1) as mo_credit_m01_amt_m,------6:12时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_min_amt_m, ------6:12时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then cardno end) as mo_cards_debit_m,  --6:12时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_amt_m,       -------------6:12时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_cnt_m,     -------------6:12时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_avg_amt_m,------6:12时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_max_amt_m,------6:12时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.9) as mo_debit_m09_amt_m,------6:12时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.8) as mo_debit_m08_amt_m,------6:12时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.7) as mo_debit_m07_amt_m,------6:12时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.6) as mo_debit_m06_amt_m,------6:12时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.5) as mo_debit_m05_amt_m,------6:12时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.4) as mo_debit_m04_amt_m,------6:12时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.3) as mo_debit_m03_amt_m,------6:12时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.2) as mo_debit_m02_amt_m,------6:12时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.1) as mo_debit_m01_amt_m,------6:12时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_min_amt_m, ------6:12时间借记卡最小交易额 
+            
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_amt_m,  -----12:18时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_cnt_m,  -----12:18时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_avg_amt_m,  -----12:18时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_max_amt_m,  -----12:18时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.9) as af_m09_amt_m,------12:18时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.8) as af_m08_amt_m,------12:18时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.7) as af_m07_amt_m,------12:18时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.6) as af_m06_amt_m,------12:18时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.5) as af_m05_amt_m,------12:18时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.4) as af_m04_amt_m,------12:18时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.3) as af_m03_amt_m,------12:18时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.2) as af_m02_amt_m,------12:18时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.1) as af_m01_amt_m,------12:18时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_min_amt_m,  -----12:18时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then ymd end) as af_days_m, --12:18时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then cardno end) as af_cards_m, --12:18时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then cardno end) as af_cards_credit_m,  --12:18时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_amt_m,    -------------12:18时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_cnt_m,    -------------12:18时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_avg_amt_m,------12:18时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_max_amt_m,------12:18时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.9) as af_credit_m09_amt_m,------12:18时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.8) as af_credit_m08_amt_m,------12:18时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.7) as af_credit_m07_amt_m,------12:18时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.6) as af_credit_m06_amt_m,------12:18时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.5) as af_credit_m05_amt_m,------12:18时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.4) as af_credit_m04_amt_m,------12:18时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.3) as af_credit_m03_amt_m,------12:18时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.2) as af_credit_m02_amt_m,------12:18时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.1) as af_credit_m01_amt_m,------12:18时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_min_amt_m, ------12:18时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then cardno end) as af_cards_debit_m,  --12:18时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_amt_m,       -------------12:18时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_cnt_m,     -------------12:18时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_avg_amt_m,------12:18时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_max_amt_m,------12:18时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.9) as af_debit_m09_amt_m,------12:18时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.8) as af_debit_m08_amt_m,------12:18时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.7) as af_debit_m07_amt_m,------12:18时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.6) as af_debit_m06_amt_m,------12:18时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.5) as af_debit_m05_amt_m,------12:18时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.4) as af_debit_m04_amt_m,------12:18时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.3) as af_debit_m03_amt_m,------12:18时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.2) as af_debit_m02_amt_m,------12:18时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.1) as af_debit_m01_amt_m,------12:18时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_min_amt_m, ------12:18时间借记卡最小交易额 
+
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_amt_m,  -----18:24时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_cnt_m,  -----18:24时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_avg_amt_m,  -----18:24时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_max_amt_m,  -----18:24时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.9) as ev_m09_amt_m,------18:24时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.8) as ev_m08_amt_m,------18:24时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.7) as ev_m07_amt_m,------18:24时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.6) as ev_m06_amt_m,------18:24时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.5) as ev_m05_amt_m,------18:24时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.4) as ev_m04_amt_m,------18:24时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.3) as ev_m03_amt_m,------18:24时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.2) as ev_m02_amt_m,------18:24时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.1) as ev_m01_amt_m,------18:24时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_min_amt_m,  -----18:24时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then ymd end) as ev_days_m, --18:24时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then cardno end) as ev_cards_m, --18:24时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then cardno end) as ev_cards_credit_m,  --18:24时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_amt_m,    -------------18:24时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_cnt_m,    -------------18:24时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_avg_amt_m,------18:24时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_max_amt_m,------18:24时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.9) as ev_credit_m09_amt_m,------18:24时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.8) as ev_credit_m08_amt_m,------18:24时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.7) as ev_credit_m07_amt_m,------18:24时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.6) as ev_credit_m06_amt_m,------18:24时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.5) as ev_credit_m05_amt_m,------18:24时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.4) as ev_credit_m04_amt_m,------18:24时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.3) as ev_credit_m03_amt_m,------18:24时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.2) as ev_credit_m02_amt_m,------18:24时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.1) as ev_credit_m01_amt_m,------18:24时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_min_amt_m, ------18:24时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then cardno end) as ev_cards_debit_m,  --18:24时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_amt_m,       -------------18:24时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_cnt_m,     -------------18:24时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_avg_amt_m,------18:24时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_max_amt_m,------18:24时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.9) as ev_debit_m09_amt_m,------18:24时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.8) as ev_debit_m08_amt_m,------18:24时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.7) as ev_debit_m07_amt_m,------18:24时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.6) as ev_debit_m06_amt_m,------18:24时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.5) as ev_debit_m05_amt_m,------18:24时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.4) as ev_debit_m04_amt_m,------18:24时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.3) as ev_debit_m03_amt_m,------18:24时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.2) as ev_debit_m02_amt_m,------18:24时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.1) as ev_debit_m01_amt_m,------18:24时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_min_amt_m, ------18:24时间借记卡最小交易额 
+                      
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_amt_m,  -----00:06时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_cnt_m,  -----00:06时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_avg_amt_m,  -----00:06时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_max_amt_m,  -----00:06时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.9) as mn_m09_amt_m,------00:06时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.8) as mn_m08_amt_m,------00:06时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.7) as mn_m07_amt_m,------00:06时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.6) as mn_m06_amt_m,------00:06时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.5) as mn_m05_amt_m,------00:06时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.4) as mn_m04_amt_m,------00:06时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.3) as mn_m03_amt_m,------00:06时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.2) as mn_m02_amt_m,------00:06时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.1) as mn_m01_amt_m,------00:06时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_min_amt_m,  -----00:06时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then ymd end) as mn_days_m, --00:06时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then cardno end) as mn_cards_m, --00:06时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then cardno end) as mn_cards_credit_m,  --00:06时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_amt_m,    -------------00:06时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_cnt_m,    -------------00:06时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_avg_amt_m,------00:06时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_max_amt_m,------00:06时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.9) as mn_credit_m09_amt_m,------00:06时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.8) as mn_credit_m08_amt_m,------00:06时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.7) as mn_credit_m07_amt_m,------00:06时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.6) as mn_credit_m06_amt_m,------00:06时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.5) as mn_credit_m05_amt_m,------00:06时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.4) as mn_credit_m04_amt_m,------00:06时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.3) as mn_credit_m03_amt_m,------00:06时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.2) as mn_credit_m02_amt_m,------00:06时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.1) as mn_credit_m01_amt_m,------00:06时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_min_amt_m, ------00:06时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then cardno end) as mn_cards_debit_m,  --00:06时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_amt_m,       -------------00:06时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_cnt_m,     -------------00:06时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_avg_amt_m,------00:06时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_max_amt_m,------00:06时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.9) as mn_debit_m09_amt_m,------00:06时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.8) as mn_debit_m08_amt_m,------00:06时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.7) as mn_debit_m07_amt_m,------00:06时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.6) as mn_debit_m06_amt_m,------00:06时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.5) as mn_debit_m05_amt_m,------00:06时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.4) as mn_debit_m04_amt_m,------00:06时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.3) as mn_debit_m03_amt_m,------00:06时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.2) as mn_debit_m02_amt_m,------00:06时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.1) as mn_debit_m01_amt_m,------00:06时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_min_amt_m, ------00:06时间借记卡最小交易额 
+            
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_amt_m,  -----1130:1330午餐时间时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_cnt_m,  -----1130:1330午餐时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_avg_amt_m,  -----1130:1330午餐时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_max_amt_m,  -----1130:1330午餐时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.9) as no_m09_amt_m,------1130:1330午餐时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.8) as no_m08_amt_m,------1130:1330午餐时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.7) as no_m07_amt_m,------1130:1330午餐时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.6) as no_m06_amt_m,------1130:1330午餐时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.5) as no_m05_amt_m,------1130:1330午餐时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.4) as no_m04_amt_m,------1130:1330午餐时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.3) as no_m03_amt_m,------1130:1330午餐时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.2) as no_m02_amt_m,------1130:1330午餐时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.1) as no_m01_amt_m,------1130:1330午餐时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_min_amt_m,  -----1130:1330午餐时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then ymd end) as no_days_m, --1130:1330午餐时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then cardno end) as no_cards_m, --1130:1330午餐时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then cardno end) as no_cards_credit_m,  --1130:1330午餐时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_amt_m,    -------------1130:1330午餐时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_cnt_m,    -------------1130:1330午餐时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_avg_amt_m,------1130:1330午餐时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_max_amt_m,------1130:1330午餐时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.9) as no_credit_m09_amt_m,------1130:1330午餐时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.8) as no_credit_m08_amt_m,------1130:1330午餐时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.7) as no_credit_m07_amt_m,------1130:1330午餐时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.6) as no_credit_m06_amt_m,------1130:1330午餐时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.5) as no_credit_m05_amt_m,------1130:1330午餐时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.4) as no_credit_m04_amt_m,------1130:1330午餐时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.3) as no_credit_m03_amt_m,------1130:1330午餐时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.2) as no_credit_m02_amt_m,------1130:1330午餐时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.1) as no_credit_m01_amt_m,------1130:1330午餐时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_min_amt_m, ------1130:1330午餐时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then cardno end) as no_cards_debit_m,  --1130:1330午餐时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_amt_m,       -------------1130:1330午餐时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_cnt_m,     -------------1130:1330午餐时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_avg_amt_m,------1130:1330午餐时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_max_amt_m,------1130:1330午餐时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.9) as no_debit_m09_amt_m,------1130:1330午餐时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.8) as no_debit_m08_amt_m,------1130:1330午餐时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.7) as no_debit_m07_amt_m,------1130:1330午餐时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.6) as no_debit_m06_amt_m,------1130:1330午餐时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.5) as no_debit_m05_amt_m,------1130:1330午餐时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.4) as no_debit_m04_amt_m,------1130:1330午餐时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.3) as no_debit_m03_amt_m,------1130:1330午餐时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.2) as no_debit_m02_amt_m,------1130:1330午餐时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.1) as no_debit_m01_amt_m,------1130:1330午餐时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_min_amt_m, ------1130:1330午餐时间借记卡最小交易额 
+ orgid,substr(ymd,1,6) as mon
+          
+    from (
+      select * from hdw.lklpos_atmtxnjnl_success 
+      where  ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}' and trans_amt>0 
+      union all
+      select * from hdw.wbpos_atmtxnjnl_success 
+      where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}'
+    ) a 
+    group by orgid,mer_id,substr(ymd,1,6);
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME '--------------近2年内商户每个月的交易情况 创建成功--------'$tmp  
+else
+echo $NOWTIME '--------------近2年内商户每个月的交易情况 创建失败--------'$tmp  
+fi 
+
+#done
+
+
+
+
+
+
+
+echo '---------------------创建近2年内商户每个月的工作日交易情况表-------------------'
+sudo -u hdfs hive <<EOF
+create table if not exists merdm.dm_trans_workday_t1_mon( 
+   mer_id  string,  
+   cnt_m  bigint, 
+   amt_m  bigint, 
+   days_m  bigint, 
+   cards_m  bigint, 
+   max_amt_m  bigint, 
+   m09_amt_m  double, 
+   m08_amt_m  double, 
+   m07_amt_m  double, 
+   m06_amt_m  double, 
+   m05_amt_m  double, 
+   m04_amt_m  double, 
+   m03_amt_m  double, 
+   m02_amt_m  double, 
+   m01_amt_m  double, 
+   min_amt_m  bigint, 
+   avg_amt_m  double, 
+   max_ymd_m  string, 
+   min_ymd_m  string, 
+   cards_credit_m  bigint, 
+   credit_amt_m  bigint, 
+   credit_cnt_m  bigint, 
+   credit_avg_amt_m  double, 
+   credit_max_amt_m  bigint, 
+   credit_m09_amt_m  double, 
+   credit_m08_amt_m  double, 
+   credit_m07_amt_m  double, 
+   credit_m06_amt_m  double, 
+   credit_m05_amt_m  double, 
+   credit_m04_amt_m  double, 
+   credit_m03_amt_m  double, 
+   credit_m02_amt_m  double, 
+   credit_m01_amt_m  double, 
+   credit_min_amt_m  bigint, 
+   cards_debit_m  bigint, 
+   debit_amt_m  bigint, 
+   debit_cnt_m  bigint, 
+   debit_avg_amt_m  double, 
+   debit_max_amt_m  bigint, 
+   debit_m09_amt_m  double, 
+   debit_m08_amt_m  double, 
+   debit_m07_amt_m  double, 
+   debit_m06_amt_m  double, 
+   debit_m05_amt_m  double, 
+   debit_m04_amt_m  double, 
+   debit_m03_amt_m  double, 
+   debit_m02_amt_m  double, 
+   debit_m01_amt_m  double, 
+   debit_min_amt_m  bigint, 
+   nowork_amt_m  bigint, 
+   nowork_cnt_m  bigint, 
+   nowork_avg_amt_m  double, 
+   nowork_max_amt_m  bigint, 
+   nowork_m09_amt_m  double, 
+   nowork_m08_amt_m  double, 
+   nowork_m07_amt_m  double, 
+   nowork_m06_amt_m  double, 
+   nowork_m05_amt_m  double, 
+   nowork_m04_amt_m  double, 
+   nowork_m03_amt_m  double, 
+   nowork_m02_amt_m  double, 
+   nowork_m01_amt_m  double, 
+   nowork_min_amt_m  bigint, 
+   nowork_days_m  bigint, 
+   nowork_cards_m  bigint, 
+   nowork_cards_credit_m  bigint, 
+   nowork_credit_amt_m  bigint, 
+   nowork_credit_cnt_m  bigint, 
+   nowork_credit_avg_amt_m  double, 
+   nowork_credit_max_amt_m  bigint, 
+   nowork_credit_m09_amt_m  double, 
+   nowork_credit_m08_amt_m  double, 
+   nowork_credit_m07_amt_m  double, 
+   nowork_credit_m06_amt_m  double, 
+   nowork_credit_m05_amt_m  double, 
+   nowork_credit_m04_amt_m  double, 
+   nowork_credit_m03_amt_m  double, 
+   nowork_credit_m02_amt_m  double, 
+   nowork_credit_m01_amt_m  double, 
+   nowork_credit_min_amt_m  bigint, 
+   nowork_cards_debit_m  bigint, 
+   nowork_debit_amt_m  bigint, 
+   nowork_debit_cnt_m  bigint, 
+   nowork_debit_avg_amt_m  double, 
+   nowork_debit_max_amt_m  bigint, 
+   nowork_debit_m09_amt_m  double, 
+   nowork_debit_m08_amt_m  double, 
+   nowork_debit_m07_amt_m  double, 
+   nowork_debit_m06_amt_m  double, 
+   nowork_debit_m05_amt_m  double, 
+   nowork_debit_m04_amt_m  double, 
+   nowork_debit_m03_amt_m  double, 
+   nowork_debit_m02_amt_m  double, 
+   nowork_debit_m01_amt_m  double, 
+   nowork_debit_min_amt_m  bigint, 
+   mo_amt_m  bigint, 
+   mo_cnt_m  bigint, 
+   mo_avg_amt_m  double, 
+   mo_max_amt_m  bigint, 
+   mo_m09_amt_m  double, 
+   mo_m08_amt_m  double, 
+   mo_m07_amt_m  double, 
+   mo_m06_amt_m  double, 
+   mo_m05_amt_m  double, 
+   mo_m04_amt_m  double, 
+   mo_m03_amt_m  double, 
+   mo_m02_amt_m  double, 
+   mo_m01_amt_m  double, 
+   mo_min_amt_m  bigint, 
+   mo_days_m  bigint, 
+   mo_cards_m  bigint, 
+   mo_cards_credit_m  bigint, 
+   mo_credit_amt_m  bigint, 
+   mo_credit_cnt_m  bigint, 
+   mo_credit_avg_amt_m  double, 
+   mo_credit_max_amt_m  bigint, 
+   mo_credit_m09_amt_m  double, 
+   mo_credit_m08_amt_m  double, 
+   mo_credit_m07_amt_m  double, 
+   mo_credit_m06_amt_m  double, 
+   mo_credit_m05_amt_m  double, 
+   mo_credit_m04_amt_m  double, 
+   mo_credit_m03_amt_m  double, 
+   mo_credit_m02_amt_m  double, 
+   mo_credit_m01_amt_m  double, 
+   mo_credit_min_amt_m  bigint, 
+   mo_cards_debit_m  bigint, 
+   mo_debit_amt_m  bigint, 
+   mo_debit_cnt_m  bigint, 
+   mo_debit_avg_amt_m  double, 
+   mo_debit_max_amt_m  bigint, 
+   mo_debit_m09_amt_m  double, 
+   mo_debit_m08_amt_m  double, 
+   mo_debit_m07_amt_m  double, 
+   mo_debit_m06_amt_m  double, 
+   mo_debit_m05_amt_m  double, 
+   mo_debit_m04_amt_m  double, 
+   mo_debit_m03_amt_m  double, 
+   mo_debit_m02_amt_m  double, 
+   mo_debit_m01_amt_m  double, 
+   mo_debit_min_amt_m  bigint, 
+   af_amt_m  bigint, 
+   af_cnt_m  bigint, 
+   af_avg_amt_m  double, 
+   af_max_amt_m  bigint, 
+   af_m09_amt_m  double, 
+   af_m08_amt_m  double, 
+   af_m07_amt_m  double, 
+   af_m06_amt_m  double, 
+   af_m05_amt_m  double, 
+   af_m04_amt_m  double, 
+   af_m03_amt_m  double, 
+   af_m02_amt_m  double, 
+   af_m01_amt_m  double, 
+   af_min_amt_m  bigint, 
+   af_days_m  bigint, 
+   af_cards_m  bigint, 
+   af_cards_credit_m  bigint, 
+   af_credit_amt_m  bigint, 
+   af_credit_cnt_m  bigint, 
+   af_credit_avg_amt_m  double, 
+   af_credit_max_amt_m  bigint, 
+   af_credit_m09_amt_m  double, 
+   af_credit_m08_amt_m  double, 
+   af_credit_m07_amt_m  double, 
+   af_credit_m06_amt_m  double, 
+   af_credit_m05_amt_m  double, 
+   af_credit_m04_amt_m  double, 
+   af_credit_m03_amt_m  double, 
+   af_credit_m02_amt_m  double, 
+   af_credit_m01_amt_m  double, 
+   af_credit_min_amt_m  bigint, 
+   af_cards_debit_m  bigint, 
+   af_debit_amt_m  bigint, 
+   af_debit_cnt_m  bigint, 
+   af_debit_avg_amt_m  double, 
+   af_debit_max_amt_m  bigint, 
+   af_debit_m09_amt_m  double, 
+   af_debit_m08_amt_m  double, 
+   af_debit_m07_amt_m  double, 
+   af_debit_m06_amt_m  double, 
+   af_debit_m05_amt_m  double, 
+   af_debit_m04_amt_m  double, 
+   af_debit_m03_amt_m  double, 
+   af_debit_m02_amt_m  double, 
+   af_debit_m01_amt_m  double, 
+   af_debit_min_amt_m  bigint, 
+   ev_amt_m  bigint, 
+   ev_cnt_m  bigint, 
+   ev_avg_amt_m  double, 
+   ev_max_amt_m  bigint, 
+   ev_m09_amt_m  double, 
+   ev_m08_amt_m  double, 
+   ev_m07_amt_m  double, 
+   ev_m06_amt_m  double, 
+   ev_m05_amt_m  double, 
+   ev_m04_amt_m  double, 
+   ev_m03_amt_m  double, 
+   ev_m02_amt_m  double, 
+   ev_m01_amt_m  double, 
+   ev_min_amt_m  bigint, 
+   ev_days_m  bigint, 
+   ev_cards_m  bigint, 
+   ev_cards_credit_m  bigint, 
+   ev_credit_amt_m  bigint, 
+   ev_credit_cnt_m  bigint, 
+   ev_credit_avg_amt_m  double, 
+   ev_credit_max_amt_m  bigint, 
+   ev_credit_m09_amt_m  double, 
+   ev_credit_m08_amt_m  double, 
+   ev_credit_m07_amt_m  double, 
+   ev_credit_m06_amt_m  double, 
+   ev_credit_m05_amt_m  double, 
+   ev_credit_m04_amt_m  double, 
+   ev_credit_m03_amt_m  double, 
+   ev_credit_m02_amt_m  double, 
+   ev_credit_m01_amt_m  double, 
+   ev_credit_min_amt_m  bigint, 
+   ev_cards_debit_m  bigint, 
+   ev_debit_amt_m  bigint, 
+   ev_debit_cnt_m  bigint, 
+   ev_debit_avg_amt_m  double, 
+   ev_debit_max_amt_m  bigint, 
+   ev_debit_m09_amt_m  double, 
+   ev_debit_m08_amt_m  double, 
+   ev_debit_m07_amt_m  double, 
+   ev_debit_m06_amt_m  double, 
+   ev_debit_m05_amt_m  double, 
+   ev_debit_m04_amt_m  double, 
+   ev_debit_m03_amt_m  double, 
+   ev_debit_m02_amt_m  double, 
+   ev_debit_m01_amt_m  double, 
+   ev_debit_min_amt_m  bigint, 
+   mn_amt_m  bigint, 
+   mn_cnt_m  bigint, 
+   mn_avg_amt_m  double, 
+   mn_max_amt_m  bigint, 
+   mn_m09_amt_m  double, 
+   mn_m08_amt_m  double, 
+   mn_m07_amt_m  double, 
+   mn_m06_amt_m  double, 
+   mn_m05_amt_m  double, 
+   mn_m04_amt_m  double, 
+   mn_m03_amt_m  double, 
+   mn_m02_amt_m  double, 
+   mn_m01_amt_m  double, 
+   mn_min_amt_m  bigint, 
+   mn_days_m  bigint, 
+   mn_cards_m  bigint, 
+   mn_cards_credit_m  bigint, 
+   mn_credit_amt_m  bigint, 
+   mn_credit_cnt_m  bigint, 
+   mn_credit_avg_amt_m  double, 
+   mn_credit_max_amt_m  bigint, 
+   mn_credit_m09_amt_m  double, 
+   mn_credit_m08_amt_m  double, 
+   mn_credit_m07_amt_m  double, 
+   mn_credit_m06_amt_m  double, 
+   mn_credit_m05_amt_m  double, 
+   mn_credit_m04_amt_m  double, 
+   mn_credit_m03_amt_m  double, 
+   mn_credit_m02_amt_m  double, 
+   mn_credit_m01_amt_m  double, 
+   mn_credit_min_amt_m  bigint, 
+   mn_cards_debit_m  bigint, 
+   mn_debit_amt_m  bigint, 
+   mn_debit_cnt_m  bigint, 
+   mn_debit_avg_amt_m  double, 
+   mn_debit_max_amt_m  bigint, 
+   mn_debit_m09_amt_m  double, 
+   mn_debit_m08_amt_m  double, 
+   mn_debit_m07_amt_m  double, 
+   mn_debit_m06_amt_m  double, 
+   mn_debit_m05_amt_m  double, 
+   mn_debit_m04_amt_m  double, 
+   mn_debit_m03_amt_m  double, 
+   mn_debit_m02_amt_m  double, 
+   mn_debit_m01_amt_m  double, 
+   mn_debit_min_amt_m  bigint, 
+   no_amt_m  bigint, 
+   no_cnt_m  bigint, 
+   no_avg_amt_m  double, 
+   no_max_amt_m  bigint, 
+   no_m09_amt_m  double, 
+   no_m08_amt_m  double, 
+   no_m07_amt_m  double, 
+   no_m06_amt_m  double, 
+   no_m05_amt_m  double, 
+   no_m04_amt_m  double, 
+   no_m03_amt_m  double, 
+   no_m02_amt_m  double, 
+   no_m01_amt_m  double, 
+   no_min_amt_m  bigint, 
+   no_days_m  bigint, 
+   no_cards_m  bigint, 
+   no_cards_credit_m  bigint, 
+   no_credit_amt_m  bigint, 
+   no_credit_cnt_m  bigint, 
+   no_credit_avg_amt_m  double, 
+   no_credit_max_amt_m  bigint, 
+   no_credit_m09_amt_m  double, 
+   no_credit_m08_amt_m  double, 
+   no_credit_m07_amt_m  double, 
+   no_credit_m06_amt_m  double, 
+   no_credit_m05_amt_m  double, 
+   no_credit_m04_amt_m  double, 
+   no_credit_m03_amt_m  double, 
+   no_credit_m02_amt_m  double, 
+   no_credit_m01_amt_m  double, 
+   no_credit_min_amt_m  bigint, 
+   no_cards_debit_m  bigint, 
+   no_debit_amt_m  bigint, 
+   no_debit_cnt_m  bigint, 
+   no_debit_avg_amt_m  double, 
+   no_debit_max_amt_m  bigint, 
+   no_debit_m09_amt_m  double, 
+   no_debit_m08_amt_m  double, 
+   no_debit_m07_amt_m  double, 
+   no_debit_m06_amt_m  double, 
+   no_debit_m05_amt_m  double, 
+   no_debit_m04_amt_m  double, 
+   no_debit_m03_amt_m  double, 
+   no_debit_m02_amt_m  double, 
+   no_debit_m01_amt_m  double, 
+   no_debit_min_amt_m  bigint) 
+   partitioned by (orgid  string, mon string);
+
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME'--------------创建近2年内商户每个月的工作日交易情况表-----------'$tmp 
+else
+echo $NOWTIME'--------------创建近2年内商户每个月的工作日交易情况表-----------'$tmp 
+fi
+
+
+
+echo '---------------近2年内商户每个月的工作日交易情况-------------'
+
+#while true 
+#do 
+
+sudo -u hdfs hive <<EOF 
+
+set hive.exec.dynamic.partition.mode=nonstrict; 
+set hive.exec.dynamic.partition=true;
+set hive.exec.max.dynamic.partitions=5000;
+set hive.exec.max.dynamic.partitions.pernode=5000;
+
+
+set hive.exec.parallel=true;
+set hive.exec.parallel.thread.number=5;
+set hive.exec.max.created.files=655350;
+set mapreduce.map.memory.mb=2000;
+set mapreduce.reduce.memory.mb=2000;
+set mapreduce.map.java.opts=-Djava.net.preferIPv4Stack=true -Xms1200m -Xmx1200m;
+
+
+insert overwrite table merdm.dm_trans_workday_t1_mon partition (orgid,mon)
+select    mer_id,
+           count(*) as cnt_m,
+           sum(trans_amt) as amt_m,
+           count(distinct ymd) as days_m, --交易天数
+           count(distinct cardno) as cards_m, --卡数
+           max(trans_amt) as max_amt_m,------最大交易额
+           percentile(trans_amt,0.9) as m09_amt_m,------9分位交易额
+           percentile(trans_amt,0.8) as m08_amt_m,------8分位交易额
+           percentile(trans_amt,0.7) as m07_amt_m,------7分位交易额
+           percentile(trans_amt,0.6) as m06_amt_m,------6分位交易额
+           percentile(trans_amt,0.5) as m05_amt_m,------5分位交易额
+           percentile(trans_amt,0.4) as m04_amt_m,------4分位交易额
+           percentile(trans_amt,0.3) as m03_amt_m,------3分位交易额
+           percentile(trans_amt,0.2) as m02_amt_m,------2分位交易额
+           percentile(trans_amt,0.1) as m01_amt_m,------1分位交易额
+           min(trans_amt) as min_amt_m, ------最小交易额
+           avg(trans_amt) as avg_amt_m,------笔均交易额
+           max(ymd) as max_ymd_m,------最大交易时间
+           min(ymd) as min_ymd_m, ------最小交易时间 
+           count(distinct case when card_kind='C' then cardno end) as cards_credit_m,  --信用卡数           
+           sum(case when card_kind='C' then trans_amt end) as credit_amt_m,    -------------信用卡交易额
+           count(case when card_kind='C' then trans_amt end) as credit_cnt_m,    -------------信用卡交易笔数
+           avg(case when card_kind='C' then trans_amt end) as credit_avg_amt_m,------信用卡笔均交易额
+           max(case when card_kind='C' then trans_amt end) as credit_max_amt_m,------信用卡最大交易额
+           percentile(case when card_kind='C' then trans_amt end,0.9) as credit_m09_amt_m,------信用卡9分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.8) as credit_m08_amt_m,------信用卡8分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.7) as credit_m07_amt_m,------信用卡7分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.6) as credit_m06_amt_m,------信用卡6分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.5) as credit_m05_amt_m,------信用卡5分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.4) as credit_m04_amt_m,------信用卡4分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.3) as credit_m03_amt_m,------信用卡3分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.2) as credit_m02_amt_m,------信用卡2分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.1) as credit_m01_amt_m,------信用卡1分位交易额
+           min(case when card_kind='C' then trans_amt end) as credit_min_amt_m, ------信用卡最小交易额           
+           count(distinct case when card_kind='D' then cardno end) as cards_debit_m,  --借记卡数           
+           sum(case when card_kind='D' then trans_amt end) as debit_amt_m,       -------------借记卡交易额
+           count(case when card_kind='D' then trans_amt end) as debit_cnt_m,     -------------借记卡交易笔数
+           avg(case when card_kind='D' then trans_amt end) as debit_avg_amt_m,------借记卡笔均交易额
+           max(case when card_kind='D' then trans_amt end) as debit_max_amt_m,------借记卡最大交易额
+           percentile(case when card_kind='D' then trans_amt end,0.9) as debit_m09_amt_m,------借记卡9分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.8) as debit_m08_amt_m,------借记卡8分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.7) as debit_m07_amt_m,------借记卡7分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.6) as debit_m06_amt_m,------借记卡6分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.5) as debit_m05_amt_m,------借记卡5分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.4) as debit_m04_amt_m,------借记卡4分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.3) as debit_m03_amt_m,------借记卡3分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.2) as debit_m02_amt_m,------借记卡2分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.1) as debit_m01_amt_m,------借记卡1分位交易额           
+           min(case when card_kind='D' then trans_amt end) as debit_min_amt_m, ------借记卡最小交易额  
+          
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_amt_m,  -----非工作时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_cnt_m,  -----非工作时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_avg_amt_m,  -----非工作时间笔均交易金额
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_max_amt_m,  -----非工作时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.9) as nowork_m09_amt_m,------非工作时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.8) as nowork_m08_amt_m,------非工作时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.7) as nowork_m07_amt_m,------非工作时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.6) as nowork_m06_amt_m,------非工作时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.5) as nowork_m05_amt_m,------非工作时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.4) as nowork_m04_amt_m,------非工作时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.3) as nowork_m03_amt_m,------非工作时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.2) as nowork_m02_amt_m,------非工作时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.1) as nowork_m01_amt_m,------非工作时间1分位交易额
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_min_amt_m,  -----非工作时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then ymd end) as nowork_days_m, --非工作时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then cardno end) as nowork_cards_m, --非工作时间交易卡数
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then cardno end) as nowork_cards_credit_m,  --非工作时间信用卡数  
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_amt_m,    -------------非工作时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_cnt_m,    -------------非工作时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_avg_amt_m,------非工作时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_max_amt_m,------非工作时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.9) as nowork_credit_m09_amt_m,------非工作时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.8) as nowork_credit_m08_amt_m,------非工作时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.7) as nowork_credit_m07_amt_m,------非工作时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.6) as nowork_credit_m06_amt_m,------非工作时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.5) as nowork_credit_m05_amt_m,------非工作时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.4) as nowork_credit_m04_amt_m,------非工作时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.3) as nowork_credit_m03_amt_m,------非工作时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.2) as nowork_credit_m02_amt_m,------非工作时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.1) as nowork_credit_m01_amt_m,------非工作时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_min_amt_m, ------非工作时间信用卡最小交易额           
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then cardno end) as nowork_cards_debit_m,  --非工作时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_amt_m,       -------------非工作时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_cnt_m,     -------------非工作时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_avg_amt_m,------非工作时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_max_amt_m,------非工作时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.9) as nowork_debit_m09_amt_m,------非工作时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.8) as nowork_debit_m08_amt_m,------非工作时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.7) as nowork_debit_m07_amt_m,------非工作时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.6) as nowork_debit_m06_amt_m,------非工作时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.5) as nowork_debit_m05_amt_m,------非工作时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.4) as nowork_debit_m04_amt_m,------非工作时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.3) as nowork_debit_m03_amt_m,------非工作时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.2) as nowork_debit_m02_amt_m,------非工作时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.1) as nowork_debit_m01_amt_m,------非工作时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_min_amt_m, ------非工作时间借记卡最小交易额 
+                  
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_amt_m,  -----6:12时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_cnt_m,  -----6:12时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_avg_amt_m,  -----6:12时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_max_amt_m,  -----6:12时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.9) as mo_m09_amt_m,------6:12时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.8) as mo_m08_amt_m,------6:12时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.7) as mo_m07_amt_m,------6:12时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.6) as mo_m06_amt_m,------6:12时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.5) as mo_m05_amt_m,------6:12时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.4) as mo_m04_amt_m,------6:12时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.3) as mo_m03_amt_m,------6:12时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.2) as mo_m02_amt_m,------6:12时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.1) as mo_m01_amt_m,------6:12时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_min_amt_m,  -----6:12时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then ymd end) as mo_days_m, --6:12时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then cardno end) as mo_cards_m, --6:12时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then cardno end) as mo_cards_credit_m,  --6:12时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_amt_m,    -------------6:12时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_cnt_m,    -------------6:12时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_avg_amt_m,------6:12时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_max_amt_m,------6:12时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.9) as mo_credit_m09_amt_m,------6:12时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.8) as mo_credit_m08_amt_m,------6:12时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.7) as mo_credit_m07_amt_m,------6:12时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.6) as mo_credit_m06_amt_m,------6:12时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.5) as mo_credit_m05_amt_m,------6:12时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.4) as mo_credit_m04_amt_m,------6:12时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.3) as mo_credit_m03_amt_m,------6:12时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.2) as mo_credit_m02_amt_m,------6:12时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.1) as mo_credit_m01_amt_m,------6:12时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_min_amt_m, ------6:12时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then cardno end) as mo_cards_debit_m,  --6:12时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_amt_m,       -------------6:12时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_cnt_m,     -------------6:12时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_avg_amt_m,------6:12时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_max_amt_m,------6:12时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.9) as mo_debit_m09_amt_m,------6:12时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.8) as mo_debit_m08_amt_m,------6:12时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.7) as mo_debit_m07_amt_m,------6:12时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.6) as mo_debit_m06_amt_m,------6:12时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.5) as mo_debit_m05_amt_m,------6:12时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.4) as mo_debit_m04_amt_m,------6:12时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.3) as mo_debit_m03_amt_m,------6:12时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.2) as mo_debit_m02_amt_m,------6:12时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.1) as mo_debit_m01_amt_m,------6:12时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_min_amt_m, ------6:12时间借记卡最小交易额 
+           
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_amt_m,  -----12:18时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_cnt_m,  -----12:18时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_avg_amt_m,  -----12:18时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_max_amt_m,  -----12:18时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.9) as af_m09_amt_m,------12:18时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.8) as af_m08_amt_m,------12:18时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.7) as af_m07_amt_m,------12:18时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.6) as af_m06_amt_m,------12:18时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.5) as af_m05_amt_m,------12:18时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.4) as af_m04_amt_m,------12:18时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.3) as af_m03_amt_m,------12:18时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.2) as af_m02_amt_m,------12:18时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.1) as af_m01_amt_m,------12:18时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_min_amt_m,  -----12:18时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then ymd end) as af_days_m, --12:18时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then cardno end) as af_cards_m, --12:18时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then cardno end) as af_cards_credit_m,  --12:18时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_amt_m,    -------------12:18时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_cnt_m,    -------------12:18时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_avg_amt_m,------12:18时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_max_amt_m,------12:18时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.9) as af_credit_m09_amt_m,------12:18时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.8) as af_credit_m08_amt_m,------12:18时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.7) as af_credit_m07_amt_m,------12:18时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.6) as af_credit_m06_amt_m,------12:18时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.5) as af_credit_m05_amt_m,------12:18时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.4) as af_credit_m04_amt_m,------12:18时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.3) as af_credit_m03_amt_m,------12:18时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.2) as af_credit_m02_amt_m,------12:18时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.1) as af_credit_m01_amt_m,------12:18时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_min_amt_m, ------12:18时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then cardno end) as af_cards_debit_m,  --12:18时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_amt_m,       -------------12:18时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_cnt_m,     -------------12:18时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_avg_amt_m,------12:18时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_max_amt_m,------12:18时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.9) as af_debit_m09_amt_m,------12:18时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.8) as af_debit_m08_amt_m,------12:18时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.7) as af_debit_m07_amt_m,------12:18时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.6) as af_debit_m06_amt_m,------12:18时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.5) as af_debit_m05_amt_m,------12:18时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.4) as af_debit_m04_amt_m,------12:18时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.3) as af_debit_m03_amt_m,------12:18时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.2) as af_debit_m02_amt_m,------12:18时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.1) as af_debit_m01_amt_m,------12:18时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_min_amt_m, ------12:18时间借记卡最小交易额 
+
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_amt_m,  -----18:24时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_cnt_m,  -----18:24时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_avg_amt_m,  -----18:24时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_max_amt_m,  -----18:24时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.9) as ev_m09_amt_m,------18:24时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.8) as ev_m08_amt_m,------18:24时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.7) as ev_m07_amt_m,------18:24时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.6) as ev_m06_amt_m,------18:24时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.5) as ev_m05_amt_m,------18:24时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.4) as ev_m04_amt_m,------18:24时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.3) as ev_m03_amt_m,------18:24时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.2) as ev_m02_amt_m,------18:24时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.1) as ev_m01_amt_m,------18:24时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_min_amt_m,  -----18:24时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then ymd end) as ev_days_m, --18:24时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then cardno end) as ev_cards_m, --18:24时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then cardno end) as ev_cards_credit_m,  --18:24时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_amt_m,    -------------18:24时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_cnt_m,    -------------18:24时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_avg_amt_m,------18:24时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_max_amt_m,------18:24时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.9) as ev_credit_m09_amt_m,------18:24时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.8) as ev_credit_m08_amt_m,------18:24时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.7) as ev_credit_m07_amt_m,------18:24时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.6) as ev_credit_m06_amt_m,------18:24时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.5) as ev_credit_m05_amt_m,------18:24时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.4) as ev_credit_m04_amt_m,------18:24时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.3) as ev_credit_m03_amt_m,------18:24时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.2) as ev_credit_m02_amt_m,------18:24时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.1) as ev_credit_m01_amt_m,------18:24时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_min_amt_m, ------18:24时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then cardno end) as ev_cards_debit_m,  --18:24时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_amt_m,       -------------18:24时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_cnt_m,     -------------18:24时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_avg_amt_m,------18:24时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_max_amt_m,------18:24时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.9) as ev_debit_m09_amt_m,------18:24时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.8) as ev_debit_m08_amt_m,------18:24时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.7) as ev_debit_m07_amt_m,------18:24时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.6) as ev_debit_m06_amt_m,------18:24时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.5) as ev_debit_m05_amt_m,------18:24时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.4) as ev_debit_m04_amt_m,------18:24时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.3) as ev_debit_m03_amt_m,------18:24时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.2) as ev_debit_m02_amt_m,------18:24时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.1) as ev_debit_m01_amt_m,------18:24时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_min_amt_m, ------18:24时间借记卡最小交易额 
+                     
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_amt_m,  -----00:06时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_cnt_m,  -----00:06时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_avg_amt_m,  -----00:06时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_max_amt_m,  -----00:06时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.9) as mn_m09_amt_m,------00:06时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.8) as mn_m08_amt_m,------00:06时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.7) as mn_m07_amt_m,------00:06时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.6) as mn_m06_amt_m,------00:06时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.5) as mn_m05_amt_m,------00:06时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.4) as mn_m04_amt_m,------00:06时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.3) as mn_m03_amt_m,------00:06时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.2) as mn_m02_amt_m,------00:06时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.1) as mn_m01_amt_m,------00:06时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_min_amt_m,  -----00:06时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then ymd end) as mn_days_m, --00:06时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then cardno end) as mn_cards_m, --00:06时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then cardno end) as mn_cards_credit_m,  --00:06时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_amt_m,    -------------00:06时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_cnt_m,    -------------00:06时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_avg_amt_m,------00:06时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_max_amt_m,------00:06时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.9) as mn_credit_m09_amt_m,------00:06时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.8) as mn_credit_m08_amt_m,------00:06时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.7) as mn_credit_m07_amt_m,------00:06时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.6) as mn_credit_m06_amt_m,------00:06时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.5) as mn_credit_m05_amt_m,------00:06时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.4) as mn_credit_m04_amt_m,------00:06时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.3) as mn_credit_m03_amt_m,------00:06时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.2) as mn_credit_m02_amt_m,------00:06时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.1) as mn_credit_m01_amt_m,------00:06时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_min_amt_m, ------00:06时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then cardno end) as mn_cards_debit_m,  --00:06时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_amt_m,       -------------00:06时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_cnt_m,     -------------00:06时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_avg_amt_m,------00:06时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_max_amt_m,------00:06时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.9) as mn_debit_m09_amt_m,------00:06时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.8) as mn_debit_m08_amt_m,------00:06时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.7) as mn_debit_m07_amt_m,------00:06时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.6) as mn_debit_m06_amt_m,------00:06时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.5) as mn_debit_m05_amt_m,------00:06时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.4) as mn_debit_m04_amt_m,------00:06时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.3) as mn_debit_m03_amt_m,------00:06时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.2) as mn_debit_m02_amt_m,------00:06时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.1) as mn_debit_m01_amt_m,------00:06时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_min_amt_m, ------00:06时间借记卡最小交易额 
+            
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_amt_m,  -----1130:1330午餐时间时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_cnt_m,  -----1130:1330午餐时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_avg_amt_m,  -----1130:1330午餐时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_max_amt_m,  -----1130:1330午餐时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.9) as no_m09_amt_m,------1130:1330午餐时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.8) as no_m08_amt_m,------1130:1330午餐时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.7) as no_m07_amt_m,------1130:1330午餐时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.6) as no_m06_amt_m,------1130:1330午餐时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.5) as no_m05_amt_m,------1130:1330午餐时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.4) as no_m04_amt_m,------1130:1330午餐时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.3) as no_m03_amt_m,------1130:1330午餐时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.2) as no_m02_amt_m,------1130:1330午餐时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.1) as no_m01_amt_m,------1130:1330午餐时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_min_amt_m,  -----1130:1330午餐时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then ymd end) as no_days_m, --1130:1330午餐时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then cardno end) as no_cards_m, --1130:1330午餐时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then cardno end) as no_cards_credit_m,  --1130:1330午餐时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_amt_m,    -------------1130:1330午餐时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_cnt_m,    -------------1130:1330午餐时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_avg_amt_m,------1130:1330午餐时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_max_amt_m,------1130:1330午餐时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.9) as no_credit_m09_amt_m,------1130:1330午餐时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.8) as no_credit_m08_amt_m,------1130:1330午餐时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.7) as no_credit_m07_amt_m,------1130:1330午餐时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.6) as no_credit_m06_amt_m,------1130:1330午餐时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.5) as no_credit_m05_amt_m,------1130:1330午餐时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.4) as no_credit_m04_amt_m,------1130:1330午餐时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.3) as no_credit_m03_amt_m,------1130:1330午餐时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.2) as no_credit_m02_amt_m,------1130:1330午餐时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.1) as no_credit_m01_amt_m,------1130:1330午餐时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_min_amt_m, ------1130:1330午餐时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then cardno end) as no_cards_debit_m,  --1130:1330午餐时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_amt_m,       -------------1130:1330午餐时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_cnt_m,     -------------1130:1330午餐时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_avg_amt_m,------1130:1330午餐时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_max_amt_m,------1130:1330午餐时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.9) as no_debit_m09_amt_m,------1130:1330午餐时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.8) as no_debit_m08_amt_m,------1130:1330午餐时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.7) as no_debit_m07_amt_m,------1130:1330午餐时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.6) as no_debit_m06_amt_m,------1130:1330午餐时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.5) as no_debit_m05_amt_m,------1130:1330午餐时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.4) as no_debit_m04_amt_m,------1130:1330午餐时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.3) as no_debit_m03_amt_m,------1130:1330午餐时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.2) as no_debit_m02_amt_m,------1130:1330午餐时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.1) as no_debit_m01_amt_m,------1130:1330午餐时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_min_amt_m, ------1130:1330午餐时间借记卡最小交易额  
+  orgid,substr(ymd,1,6) as mon
+    from (
+      select t1.*
+      from 
+      (select * from hdw.lklpos_atmtxnjnl_success 
+      where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}'      
+      union all
+      select * from hdw.wbpos_atmtxnjnl_success 
+      where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}' 
+      )t1 
+      join (select * from edm.d_base_t_date where workday=1) t2 
+      on substr(t1.txn_data,1,10)=substr(t2.dateid,1,10) 
+    ) a 
+    group by orgid,mer_id,substr(ymd,1,6);
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME '--------------近2年内商户每个月工作日交易情况 创建成功--------'$tmp  
+else
+echo $NOWTIME '--------------近2年内商户每个月工作日交易情况 创建失败--------'$tmp  
+fi 
+
+#done
+
+
+
+
+
+
+
+echo '---------------------创建近2年内商户每个月休息日交易情况表-------------------'
+sudo -u hdfs hive <<EOF
+create table if not exists merdm.dm_trans_rest_t1_mon( 
+   mer_id  string,  
+   cnt_m  bigint, 
+   amt_m  bigint, 
+   days_m  bigint, 
+   cards_m  bigint, 
+   max_amt_m  bigint, 
+   m09_amt_m  double, 
+   m08_amt_m  double, 
+   m07_amt_m  double, 
+   m06_amt_m  double, 
+   m05_amt_m  double, 
+   m04_amt_m  double, 
+   m03_amt_m  double, 
+   m02_amt_m  double, 
+   m01_amt_m  double, 
+   min_amt_m  bigint, 
+   avg_amt_m  double, 
+   max_ymd_m  string, 
+   min_ymd_m  string, 
+   cards_credit_m  bigint, 
+   credit_amt_m  bigint, 
+   credit_cnt_m  bigint, 
+   credit_avg_amt_m  double, 
+   credit_max_amt_m  bigint, 
+   credit_m09_amt_m  double, 
+   credit_m08_amt_m  double, 
+   credit_m07_amt_m  double, 
+   credit_m06_amt_m  double, 
+   credit_m05_amt_m  double, 
+   credit_m04_amt_m  double, 
+   credit_m03_amt_m  double, 
+   credit_m02_amt_m  double, 
+   credit_m01_amt_m  double, 
+   credit_min_amt_m  bigint, 
+   cards_debit_m  bigint, 
+   debit_amt_m  bigint, 
+   debit_cnt_m  bigint, 
+   debit_avg_amt_m  double, 
+   debit_max_amt_m  bigint, 
+   debit_m09_amt_m  double, 
+   debit_m08_amt_m  double, 
+   debit_m07_amt_m  double, 
+   debit_m06_amt_m  double, 
+   debit_m05_amt_m  double, 
+   debit_m04_amt_m  double, 
+   debit_m03_amt_m  double, 
+   debit_m02_amt_m  double, 
+   debit_m01_amt_m  double, 
+   debit_min_amt_m  bigint, 
+   nowork_amt_m  bigint, 
+   nowork_cnt_m  bigint, 
+   nowork_avg_amt_m  double, 
+   nowork_max_amt_m  bigint, 
+   nowork_m09_amt_m  double, 
+   nowork_m08_amt_m  double, 
+   nowork_m07_amt_m  double, 
+   nowork_m06_amt_m  double, 
+   nowork_m05_amt_m  double, 
+   nowork_m04_amt_m  double, 
+   nowork_m03_amt_m  double, 
+   nowork_m02_amt_m  double, 
+   nowork_m01_amt_m  double, 
+   nowork_min_amt_m  bigint, 
+   nowork_days_m  bigint, 
+   nowork_cards_m  bigint, 
+   nowork_cards_credit_m  bigint, 
+   nowork_credit_amt_m  bigint, 
+   nowork_credit_cnt_m  bigint, 
+   nowork_credit_avg_amt_m  double, 
+   nowork_credit_max_amt_m  bigint, 
+   nowork_credit_m09_amt_m  double, 
+   nowork_credit_m08_amt_m  double, 
+   nowork_credit_m07_amt_m  double, 
+   nowork_credit_m06_amt_m  double, 
+   nowork_credit_m05_amt_m  double, 
+   nowork_credit_m04_amt_m  double, 
+   nowork_credit_m03_amt_m  double, 
+   nowork_credit_m02_amt_m  double, 
+   nowork_credit_m01_amt_m  double, 
+   nowork_credit_min_amt_m  bigint, 
+   nowork_cards_debit_m  bigint, 
+   nowork_debit_amt_m  bigint, 
+   nowork_debit_cnt_m  bigint, 
+   nowork_debit_avg_amt_m  double, 
+   nowork_debit_max_amt_m  bigint, 
+   nowork_debit_m09_amt_m  double, 
+   nowork_debit_m08_amt_m  double, 
+   nowork_debit_m07_amt_m  double, 
+   nowork_debit_m06_amt_m  double, 
+   nowork_debit_m05_amt_m  double, 
+   nowork_debit_m04_amt_m  double, 
+   nowork_debit_m03_amt_m  double, 
+   nowork_debit_m02_amt_m  double, 
+   nowork_debit_m01_amt_m  double, 
+   nowork_debit_min_amt_m  bigint, 
+   mo_amt_m  bigint, 
+   mo_cnt_m  bigint, 
+   mo_avg_amt_m  double, 
+   mo_max_amt_m  bigint, 
+   mo_m09_amt_m  double, 
+   mo_m08_amt_m  double, 
+   mo_m07_amt_m  double, 
+   mo_m06_amt_m  double, 
+   mo_m05_amt_m  double, 
+   mo_m04_amt_m  double, 
+   mo_m03_amt_m  double, 
+   mo_m02_amt_m  double, 
+   mo_m01_amt_m  double, 
+   mo_min_amt_m  bigint, 
+   mo_days_m  bigint, 
+   mo_cards_m  bigint, 
+   mo_cards_credit_m  bigint, 
+   mo_credit_amt_m  bigint, 
+   mo_credit_cnt_m  bigint, 
+   mo_credit_avg_amt_m  double, 
+   mo_credit_max_amt_m  bigint, 
+   mo_credit_m09_amt_m  double, 
+   mo_credit_m08_amt_m  double, 
+   mo_credit_m07_amt_m  double, 
+   mo_credit_m06_amt_m  double, 
+   mo_credit_m05_amt_m  double, 
+   mo_credit_m04_amt_m  double, 
+   mo_credit_m03_amt_m  double, 
+   mo_credit_m02_amt_m  double, 
+   mo_credit_m01_amt_m  double, 
+   mo_credit_min_amt_m  bigint, 
+   mo_cards_debit_m  bigint, 
+   mo_debit_amt_m  bigint, 
+   mo_debit_cnt_m  bigint, 
+   mo_debit_avg_amt_m  double, 
+   mo_debit_max_amt_m  bigint, 
+   mo_debit_m09_amt_m  double, 
+   mo_debit_m08_amt_m  double, 
+   mo_debit_m07_amt_m  double, 
+   mo_debit_m06_amt_m  double, 
+   mo_debit_m05_amt_m  double, 
+   mo_debit_m04_amt_m  double, 
+   mo_debit_m03_amt_m  double, 
+   mo_debit_m02_amt_m  double, 
+   mo_debit_m01_amt_m  double, 
+   mo_debit_min_amt_m  bigint, 
+   af_amt_m  bigint, 
+   af_cnt_m  bigint, 
+   af_avg_amt_m  double, 
+   af_max_amt_m  bigint, 
+   af_m09_amt_m  double, 
+   af_m08_amt_m  double, 
+   af_m07_amt_m  double, 
+   af_m06_amt_m  double, 
+   af_m05_amt_m  double, 
+   af_m04_amt_m  double, 
+   af_m03_amt_m  double, 
+   af_m02_amt_m  double, 
+   af_m01_amt_m  double, 
+   af_min_amt_m  bigint, 
+   af_days_m  bigint, 
+   af_cards_m  bigint, 
+   af_cards_credit_m  bigint, 
+   af_credit_amt_m  bigint, 
+   af_credit_cnt_m  bigint, 
+   af_credit_avg_amt_m  double, 
+   af_credit_max_amt_m  bigint, 
+   af_credit_m09_amt_m  double, 
+   af_credit_m08_amt_m  double, 
+   af_credit_m07_amt_m  double, 
+   af_credit_m06_amt_m  double, 
+   af_credit_m05_amt_m  double, 
+   af_credit_m04_amt_m  double, 
+   af_credit_m03_amt_m  double, 
+   af_credit_m02_amt_m  double, 
+   af_credit_m01_amt_m  double, 
+   af_credit_min_amt_m  bigint, 
+   af_cards_debit_m  bigint, 
+   af_debit_amt_m  bigint, 
+   af_debit_cnt_m  bigint, 
+   af_debit_avg_amt_m  double, 
+   af_debit_max_amt_m  bigint, 
+   af_debit_m09_amt_m  double, 
+   af_debit_m08_amt_m  double, 
+   af_debit_m07_amt_m  double, 
+   af_debit_m06_amt_m  double, 
+   af_debit_m05_amt_m  double, 
+   af_debit_m04_amt_m  double, 
+   af_debit_m03_amt_m  double, 
+   af_debit_m02_amt_m  double, 
+   af_debit_m01_amt_m  double, 
+   af_debit_min_amt_m  bigint, 
+   ev_amt_m  bigint, 
+   ev_cnt_m  bigint, 
+   ev_avg_amt_m  double, 
+   ev_max_amt_m  bigint, 
+   ev_m09_amt_m  double, 
+   ev_m08_amt_m  double, 
+   ev_m07_amt_m  double, 
+   ev_m06_amt_m  double, 
+   ev_m05_amt_m  double, 
+   ev_m04_amt_m  double, 
+   ev_m03_amt_m  double, 
+   ev_m02_amt_m  double, 
+   ev_m01_amt_m  double, 
+   ev_min_amt_m  bigint, 
+   ev_days_m  bigint, 
+   ev_cards_m  bigint, 
+   ev_cards_credit_m  bigint, 
+   ev_credit_amt_m  bigint, 
+   ev_credit_cnt_m  bigint, 
+   ev_credit_avg_amt_m  double, 
+   ev_credit_max_amt_m  bigint, 
+   ev_credit_m09_amt_m  double, 
+   ev_credit_m08_amt_m  double, 
+   ev_credit_m07_amt_m  double, 
+   ev_credit_m06_amt_m  double, 
+   ev_credit_m05_amt_m  double, 
+   ev_credit_m04_amt_m  double, 
+   ev_credit_m03_amt_m  double, 
+   ev_credit_m02_amt_m  double, 
+   ev_credit_m01_amt_m  double, 
+   ev_credit_min_amt_m  bigint, 
+   ev_cards_debit_m  bigint, 
+   ev_debit_amt_m  bigint, 
+   ev_debit_cnt_m  bigint, 
+   ev_debit_avg_amt_m  double, 
+   ev_debit_max_amt_m  bigint, 
+   ev_debit_m09_amt_m  double, 
+   ev_debit_m08_amt_m  double, 
+   ev_debit_m07_amt_m  double, 
+   ev_debit_m06_amt_m  double, 
+   ev_debit_m05_amt_m  double, 
+   ev_debit_m04_amt_m  double, 
+   ev_debit_m03_amt_m  double, 
+   ev_debit_m02_amt_m  double, 
+   ev_debit_m01_amt_m  double, 
+   ev_debit_min_amt_m  bigint, 
+   mn_amt_m  bigint, 
+   mn_cnt_m  bigint, 
+   mn_avg_amt_m  double, 
+   mn_max_amt_m  bigint, 
+   mn_m09_amt_m  double, 
+   mn_m08_amt_m  double, 
+   mn_m07_amt_m  double, 
+   mn_m06_amt_m  double, 
+   mn_m05_amt_m  double, 
+   mn_m04_amt_m  double, 
+   mn_m03_amt_m  double, 
+   mn_m02_amt_m  double, 
+   mn_m01_amt_m  double, 
+   mn_min_amt_m  bigint, 
+   mn_days_m  bigint, 
+   mn_cards_m  bigint, 
+   mn_cards_credit_m  bigint, 
+   mn_credit_amt_m  bigint, 
+   mn_credit_cnt_m  bigint, 
+   mn_credit_avg_amt_m  double, 
+   mn_credit_max_amt_m  bigint, 
+   mn_credit_m09_amt_m  double, 
+   mn_credit_m08_amt_m  double, 
+   mn_credit_m07_amt_m  double, 
+   mn_credit_m06_amt_m  double, 
+   mn_credit_m05_amt_m  double, 
+   mn_credit_m04_amt_m  double, 
+   mn_credit_m03_amt_m  double, 
+   mn_credit_m02_amt_m  double, 
+   mn_credit_m01_amt_m  double, 
+   mn_credit_min_amt_m  bigint, 
+   mn_cards_debit_m  bigint, 
+   mn_debit_amt_m  bigint, 
+   mn_debit_cnt_m  bigint, 
+   mn_debit_avg_amt_m  double, 
+   mn_debit_max_amt_m  bigint, 
+   mn_debit_m09_amt_m  double, 
+   mn_debit_m08_amt_m  double, 
+   mn_debit_m07_amt_m  double, 
+   mn_debit_m06_amt_m  double, 
+   mn_debit_m05_amt_m  double, 
+   mn_debit_m04_amt_m  double, 
+   mn_debit_m03_amt_m  double, 
+   mn_debit_m02_amt_m  double, 
+   mn_debit_m01_amt_m  double, 
+   mn_debit_min_amt_m  bigint, 
+   no_amt_m  bigint, 
+   no_cnt_m  bigint, 
+   no_avg_amt_m  double, 
+   no_max_amt_m  bigint, 
+   no_m09_amt_m  double, 
+   no_m08_amt_m  double, 
+   no_m07_amt_m  double, 
+   no_m06_amt_m  double, 
+   no_m05_amt_m  double, 
+   no_m04_amt_m  double, 
+   no_m03_amt_m  double, 
+   no_m02_amt_m  double, 
+   no_m01_amt_m  double, 
+   no_min_amt_m  bigint, 
+   no_days_m  bigint, 
+   no_cards_m  bigint, 
+   no_cards_credit_m  bigint, 
+   no_credit_amt_m  bigint, 
+   no_credit_cnt_m  bigint, 
+   no_credit_avg_amt_m  double, 
+   no_credit_max_amt_m  bigint, 
+   no_credit_m09_amt_m  double, 
+   no_credit_m08_amt_m  double, 
+   no_credit_m07_amt_m  double, 
+   no_credit_m06_amt_m  double, 
+   no_credit_m05_amt_m  double, 
+   no_credit_m04_amt_m  double, 
+   no_credit_m03_amt_m  double, 
+   no_credit_m02_amt_m  double, 
+   no_credit_m01_amt_m  double, 
+   no_credit_min_amt_m  bigint, 
+   no_cards_debit_m  bigint, 
+   no_debit_amt_m  bigint, 
+   no_debit_cnt_m  bigint, 
+   no_debit_avg_amt_m  double, 
+   no_debit_max_amt_m  bigint, 
+   no_debit_m09_amt_m  double, 
+   no_debit_m08_amt_m  double, 
+   no_debit_m07_amt_m  double, 
+   no_debit_m06_amt_m  double, 
+   no_debit_m05_amt_m  double, 
+   no_debit_m04_amt_m  double, 
+   no_debit_m03_amt_m  double, 
+   no_debit_m02_amt_m  double, 
+   no_debit_m01_amt_m  double, 
+   no_debit_min_amt_m  bigint) 
+   partitioned by (orgid  string, mon string);
+
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME'--------------创建近2年内商户每个月休息日交易情况表-----------'$tmp 
+else
+echo $NOWTIME'--------------创建近2年内商户每个月休息日交易情况表-----------'$tmp 
+fi
+
+
+
+echo '---------------近2年内商户每个月休息日交易情况表-------------'
+
+#while true 
+#do 
+
+sudo -u hdfs hive <<EOF 
+
+set hive.exec.dynamic.partition.mode=nonstrict; 
+set hive.exec.dynamic.partition=true;
+set hive.exec.max.dynamic.partitions=5000;
+set hive.exec.max.dynamic.partitions.pernode=5000;
+
+set hive.exec.parallel=true;
+set hive.exec.parallel.thread.number=5;
+set hive.exec.max.created.files=655350;
+set mapreduce.map.memory.mb=2000;
+set mapreduce.reduce.memory.mb=2000;
+set mapreduce.map.java.opts=-Djava.net.preferIPv4Stack=true -Xms1200m -Xmx1200m;
+
+
+insert overwrite table merdm.dm_trans_rest_t1_mon partition (orgid,mon)
+select     mer_id,
+           count(*) as cnt_m,
+           sum(trans_amt) as amt_m,
+           count(distinct ymd) as days_m, --交易天数
+           count(distinct cardno) as cards_m, --卡数
+           max(trans_amt) as max_amt_m,------最大交易额
+           percentile(trans_amt,0.9) as m09_amt_m,------9分位交易额
+           percentile(trans_amt,0.8) as m08_amt_m,------8分位交易额
+           percentile(trans_amt,0.7) as m07_amt_m,------7分位交易额
+           percentile(trans_amt,0.6) as m06_amt_m,------6分位交易额
+           percentile(trans_amt,0.5) as m05_amt_m,------5分位交易额
+           percentile(trans_amt,0.4) as m04_amt_m,------4分位交易额
+           percentile(trans_amt,0.3) as m03_amt_m,------3分位交易额
+           percentile(trans_amt,0.2) as m02_amt_m,------2分位交易额
+           percentile(trans_amt,0.1) as m01_amt_m,------1分位交易额
+           min(trans_amt) as min_amt_m, ------最小交易额
+           avg(trans_amt) as avg_amt_m,------笔均交易额
+           max(ymd) as max_ymd_m,------最大交易时间
+           min(ymd) as min_ymd_m, ------最小交易时间 
+           count(distinct case when card_kind='C' then cardno end) as cards_credit_m,  --信用卡数           
+           sum(case when card_kind='C' then trans_amt end) as credit_amt_m,    -------------信用卡交易额
+           count(case when card_kind='C' then trans_amt end) as credit_cnt_m,    -------------信用卡交易笔数
+           avg(case when card_kind='C' then trans_amt end) as credit_avg_amt_m,------信用卡笔均交易额
+           max(case when card_kind='C' then trans_amt end) as credit_max_amt_m,------信用卡最大交易额
+           percentile(case when card_kind='C' then trans_amt end,0.9) as credit_m09_amt_m,------信用卡9分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.8) as credit_m08_amt_m,------信用卡8分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.7) as credit_m07_amt_m,------信用卡7分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.6) as credit_m06_amt_m,------信用卡6分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.5) as credit_m05_amt_m,------信用卡5分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.4) as credit_m04_amt_m,------信用卡4分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.3) as credit_m03_amt_m,------信用卡3分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.2) as credit_m02_amt_m,------信用卡2分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.1) as credit_m01_amt_m,------信用卡1分位交易额
+           min(case when card_kind='C' then trans_amt end) as credit_min_amt_m, ------信用卡最小交易额           
+           count(distinct case when card_kind='D' then cardno end) as cards_debit_m,  --借记卡数           
+           sum(case when card_kind='D' then trans_amt end) as debit_amt_m,       -------------借记卡交易额
+           count(case when card_kind='D' then trans_amt end) as debit_cnt_m,     -------------借记卡交易笔数
+           avg(case when card_kind='D' then trans_amt end) as debit_avg_amt_m,------借记卡笔均交易额
+           max(case when card_kind='D' then trans_amt end) as debit_max_amt_m,------借记卡最大交易额
+           percentile(case when card_kind='D' then trans_amt end,0.9) as debit_m09_amt_m,------借记卡9分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.8) as debit_m08_amt_m,------借记卡8分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.7) as debit_m07_amt_m,------借记卡7分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.6) as debit_m06_amt_m,------借记卡6分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.5) as debit_m05_amt_m,------借记卡5分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.4) as debit_m04_amt_m,------借记卡4分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.3) as debit_m03_amt_m,------借记卡3分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.2) as debit_m02_amt_m,------借记卡2分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.1) as debit_m01_amt_m,------借记卡1分位交易额           
+           min(case when card_kind='D' then trans_amt end) as debit_min_amt_m, ------借记卡最小交易额  
+          
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_amt_m,  -----非工作时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_cnt_m,  -----非工作时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_avg_amt_m,  -----非工作时间笔均交易金额
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_max_amt_m,  -----非工作时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.9) as nowork_m09_amt_m,------非工作时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.8) as nowork_m08_amt_m,------非工作时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.7) as nowork_m07_amt_m,------非工作时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.6) as nowork_m06_amt_m,------非工作时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.5) as nowork_m05_amt_m,------非工作时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.4) as nowork_m04_amt_m,------非工作时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.3) as nowork_m03_amt_m,------非工作时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.2) as nowork_m02_amt_m,------非工作时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.1) as nowork_m01_amt_m,------非工作时间1分位交易额
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_min_amt_m,  -----非工作时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then ymd end) as nowork_days_m, --非工作时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then cardno end) as nowork_cards_m, --非工作时间交易卡数
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then cardno end) as nowork_cards_credit_m,  --非工作时间信用卡数  
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_amt_m,    -------------非工作时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_cnt_m,    -------------非工作时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_avg_amt_m,------非工作时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_max_amt_m,------非工作时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.9) as nowork_credit_m09_amt_m,------非工作时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.8) as nowork_credit_m08_amt_m,------非工作时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.7) as nowork_credit_m07_amt_m,------非工作时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.6) as nowork_credit_m06_amt_m,------非工作时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.5) as nowork_credit_m05_amt_m,------非工作时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.4) as nowork_credit_m04_amt_m,------非工作时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.3) as nowork_credit_m03_amt_m,------非工作时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.2) as nowork_credit_m02_amt_m,------非工作时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.1) as nowork_credit_m01_amt_m,------非工作时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_credit_min_amt_m, ------非工作时间信用卡最小交易额           
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then cardno end) as nowork_cards_debit_m,  --非工作时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_amt_m,       -------------非工作时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_cnt_m,     -------------非工作时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_avg_amt_m,------非工作时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_max_amt_m,------非工作时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.9) as nowork_debit_m09_amt_m,------非工作时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.8) as nowork_debit_m08_amt_m,------非工作时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.7) as nowork_debit_m07_amt_m,------非工作时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.6) as nowork_debit_m06_amt_m,------非工作时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.5) as nowork_debit_m05_amt_m,------非工作时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.4) as nowork_debit_m04_amt_m,------非工作时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.3) as nowork_debit_m03_amt_m,------非工作时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.2) as nowork_debit_m02_amt_m,------非工作时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end,0.1) as nowork_debit_m01_amt_m,------非工作时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>'220000' or from_unixtime(unix_timestamp(txn_data),'HHmmss')<'090000') then trans_amt end) as nowork_debit_min_amt_m, ------非工作时间借记卡最小交易额 
+         
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_amt_m,  -----6:12时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_cnt_m,  -----6:12时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_avg_amt_m,  -----6:12时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_max_amt_m,  -----6:12时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.9) as mo_m09_amt_m,------6:12时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.8) as mo_m08_amt_m,------6:12时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.7) as mo_m07_amt_m,------6:12时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.6) as mo_m06_amt_m,------6:12时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.5) as mo_m05_amt_m,------6:12时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.4) as mo_m04_amt_m,------6:12时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.3) as mo_m03_amt_m,------6:12时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.2) as mo_m02_amt_m,------6:12时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end,0.1) as mo_m01_amt_m,------6:12时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then trans_amt end) as mo_min_amt_m,  -----6:12时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then ymd end) as mo_days_m, --6:12时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then cardno end) as mo_cards_m, --6:12时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000') then cardno end) as mo_cards_credit_m,  --6:12时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_amt_m,    -------------6:12时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_cnt_m,    -------------6:12时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_avg_amt_m,------6:12时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_max_amt_m,------6:12时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.9) as mo_credit_m09_amt_m,------6:12时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.8) as mo_credit_m08_amt_m,------6:12时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.7) as mo_credit_m07_amt_m,------6:12时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.6) as mo_credit_m06_amt_m,------6:12时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.5) as mo_credit_m05_amt_m,------6:12时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.4) as mo_credit_m04_amt_m,------6:12时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.3) as mo_credit_m03_amt_m,------6:12时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.2) as mo_credit_m02_amt_m,------6:12时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.1) as mo_credit_m01_amt_m,------6:12时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_credit_min_amt_m, ------6:12时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then cardno end) as mo_cards_debit_m,  --6:12时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_amt_m,       -------------6:12时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_cnt_m,     -------------6:12时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_avg_amt_m,------6:12时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_max_amt_m,------6:12时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.9) as mo_debit_m09_amt_m,------6:12时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.8) as mo_debit_m08_amt_m,------6:12时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.7) as mo_debit_m07_amt_m,------6:12时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.6) as mo_debit_m06_amt_m,------6:12时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.5) as mo_debit_m05_amt_m,------6:12时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.4) as mo_debit_m04_amt_m,------6:12时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.3) as mo_debit_m03_amt_m,------6:12时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.2) as mo_debit_m02_amt_m,------6:12时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end,0.1) as mo_debit_m01_amt_m,------6:12时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='060000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'120000')  then trans_amt end) as mo_debit_min_amt_m, ------6:12时间借记卡最小交易额 
+           
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_amt_m,  -----12:18时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_cnt_m,  -----12:18时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_avg_amt_m,  -----12:18时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_max_amt_m,  -----12:18时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.9) as af_m09_amt_m,------12:18时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.8) as af_m08_amt_m,------12:18时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.7) as af_m07_amt_m,------12:18时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.6) as af_m06_amt_m,------12:18时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.5) as af_m05_amt_m,------12:18时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.4) as af_m04_amt_m,------12:18时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.3) as af_m03_amt_m,------12:18时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.2) as af_m02_amt_m,------12:18时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end,0.1) as af_m01_amt_m,------12:18时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then trans_amt end) as af_min_amt_m,  -----12:18时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then ymd end) as af_days_m, --12:18时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then cardno end) as af_cards_m, --12:18时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000') then cardno end) as af_cards_credit_m,  --12:18时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_amt_m,    -------------12:18时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_cnt_m,    -------------12:18时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_avg_amt_m,------12:18时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_max_amt_m,------12:18时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.9) as af_credit_m09_amt_m,------12:18时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.8) as af_credit_m08_amt_m,------12:18时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.7) as af_credit_m07_amt_m,------12:18时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.6) as af_credit_m06_amt_m,------12:18时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.5) as af_credit_m05_amt_m,------12:18时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.4) as af_credit_m04_amt_m,------12:18时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.3) as af_credit_m03_amt_m,------12:18时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.2) as af_credit_m02_amt_m,------12:18时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.1) as af_credit_m01_amt_m,------12:18时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_credit_min_amt_m, ------12:18时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then cardno end) as af_cards_debit_m,  --12:18时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_amt_m,       -------------12:18时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_cnt_m,     -------------12:18时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_avg_amt_m,------12:18时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_max_amt_m,------12:18时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.9) as af_debit_m09_amt_m,------12:18时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.8) as af_debit_m08_amt_m,------12:18时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.7) as af_debit_m07_amt_m,------12:18时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.6) as af_debit_m06_amt_m,------12:18时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.5) as af_debit_m05_amt_m,------12:18时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.4) as af_debit_m04_amt_m,------12:18时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.3) as af_debit_m03_amt_m,------12:18时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.2) as af_debit_m02_amt_m,------12:18时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end,0.1) as af_debit_m01_amt_m,------12:18时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='120000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'180000')  then trans_amt end) as af_debit_min_amt_m, ------12:18时间借记卡最小交易额 
+
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_amt_m,  -----18:24时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_cnt_m,  -----18:24时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_avg_amt_m,  -----18:24时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_max_amt_m,  -----18:24时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.9) as ev_m09_amt_m,------18:24时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.8) as ev_m08_amt_m,------18:24时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.7) as ev_m07_amt_m,------18:24时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.6) as ev_m06_amt_m,------18:24时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.5) as ev_m05_amt_m,------18:24时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.4) as ev_m04_amt_m,------18:24时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.3) as ev_m03_amt_m,------18:24时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.2) as ev_m02_amt_m,------18:24时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end,0.1) as ev_m01_amt_m,------18:24时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then trans_amt end) as ev_min_amt_m,  -----18:24时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then ymd end) as ev_days_m, --18:24时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then cardno end) as ev_cards_m, --18:24时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000') then cardno end) as ev_cards_credit_m,  --18:24时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_amt_m,    -------------18:24时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_cnt_m,    -------------18:24时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_avg_amt_m,------18:24时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_max_amt_m,------18:24时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.9) as ev_credit_m09_amt_m,------18:24时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.8) as ev_credit_m08_amt_m,------18:24时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.7) as ev_credit_m07_amt_m,------18:24时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.6) as ev_credit_m06_amt_m,------18:24时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.5) as ev_credit_m05_amt_m,------18:24时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.4) as ev_credit_m04_amt_m,------18:24时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.3) as ev_credit_m03_amt_m,------18:24时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.2) as ev_credit_m02_amt_m,------18:24时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.1) as ev_credit_m01_amt_m,------18:24时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_credit_min_amt_m, ------18:24时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then cardno end) as ev_cards_debit_m,  --18:24时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_amt_m,       -------------18:24时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_cnt_m,     -------------18:24时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_avg_amt_m,------18:24时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_max_amt_m,------18:24时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.9) as ev_debit_m09_amt_m,------18:24时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.8) as ev_debit_m08_amt_m,------18:24时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.7) as ev_debit_m07_amt_m,------18:24时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.6) as ev_debit_m06_amt_m,------18:24时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.5) as ev_debit_m05_amt_m,------18:24时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.4) as ev_debit_m04_amt_m,------18:24时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.3) as ev_debit_m03_amt_m,------18:24时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.2) as ev_debit_m02_amt_m,------18:24时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end,0.1) as ev_debit_m01_amt_m,------18:24时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='180000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'240000')  then trans_amt end) as ev_debit_min_amt_m, ------18:24时间借记卡最小交易额 
+                    
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_amt_m,  -----00:06时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_cnt_m,  -----00:06时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_avg_amt_m,  -----00:06时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_max_amt_m,  -----00:06时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.9) as mn_m09_amt_m,------00:06时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.8) as mn_m08_amt_m,------00:06时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.7) as mn_m07_amt_m,------00:06时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.6) as mn_m06_amt_m,------00:06时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.5) as mn_m05_amt_m,------00:06时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.4) as mn_m04_amt_m,------00:06时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.3) as mn_m03_amt_m,------00:06时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.2) as mn_m02_amt_m,------00:06时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end,0.1) as mn_m01_amt_m,------00:06时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then trans_amt end) as mn_min_amt_m,  -----00:06时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then ymd end) as mn_days_m, --00:06时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then cardno end) as mn_cards_m, --00:06时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000') then cardno end) as mn_cards_credit_m,  --00:06时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_amt_m,    -------------00:06时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_cnt_m,    -------------00:06时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_avg_amt_m,------00:06时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_max_amt_m,------00:06时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.9) as mn_credit_m09_amt_m,------00:06时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.8) as mn_credit_m08_amt_m,------00:06时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.7) as mn_credit_m07_amt_m,------00:06时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.6) as mn_credit_m06_amt_m,------00:06时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.5) as mn_credit_m05_amt_m,------00:06时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.4) as mn_credit_m04_amt_m,------00:06时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.3) as mn_credit_m03_amt_m,------00:06时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.2) as mn_credit_m02_amt_m,------00:06时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.1) as mn_credit_m01_amt_m,------00:06时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_credit_min_amt_m, ------00:06时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then cardno end) as mn_cards_debit_m,  --00:06时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_amt_m,       -------------00:06时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_cnt_m,     -------------00:06时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_avg_amt_m,------00:06时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_max_amt_m,------00:06时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.9) as mn_debit_m09_amt_m,------00:06时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.8) as mn_debit_m08_amt_m,------00:06时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.7) as mn_debit_m07_amt_m,------00:06时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.6) as mn_debit_m06_amt_m,------00:06时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.5) as mn_debit_m05_amt_m,------00:06时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.4) as mn_debit_m04_amt_m,------00:06时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.3) as mn_debit_m03_amt_m,------00:06时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.2) as mn_debit_m02_amt_m,------00:06时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end,0.1) as mn_debit_m01_amt_m,------00:06时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='000000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'060000')  then trans_amt end) as mn_debit_min_amt_m, ------00:06时间借记卡最小交易额 
+            
+           sum(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_amt_m,  -----1130:1330午餐时间时间交易金额
+           count(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_cnt_m,  -----1130:1330午餐时间交易笔数
+           avg(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_avg_amt_m,  -----1130:1330午餐时间笔均交易金额           
+           max(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_max_amt_m,  -----1130:1330午餐时间最大交易金额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.9) as no_m09_amt_m,------1130:1330午餐时间9分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.8) as no_m08_amt_m,------1130:1330午餐时间8分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.7) as no_m07_amt_m,------1130:1330午餐时间7分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.6) as no_m06_amt_m,------1130:1330午餐时间6分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.5) as no_m05_amt_m,------1130:1330午餐时间5分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.4) as no_m04_amt_m,------1130:1330午餐时间4分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.3) as no_m03_amt_m,------1130:1330午餐时间3分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.2) as no_m02_amt_m,------1130:1330午餐时间2分位交易额
+           percentile(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end,0.1) as no_m01_amt_m,------1130:1330午餐时间1分位交易额           
+           min(case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then trans_amt end) as no_min_amt_m,  -----1130:1330午餐时间最小交易金额
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then ymd end) as no_days_m, --1130:1330午餐时间交易天数
+           count(distinct case when (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then cardno end) as no_cards_m, --1130:1330午餐时间交易卡数           
+           count(distinct case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000') then cardno end) as no_cards_credit_m,  --1130:1330午餐时间信用卡数           
+           sum(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_amt_m,    -------------1130:1330午餐时间信用卡交易额
+           count(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_cnt_m,    -------------1130:1330午餐时间信用卡交易笔数
+           avg(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_avg_amt_m,------1130:1330午餐时间信用卡笔均交易额
+           max(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_max_amt_m,------1130:1330午餐时间信用卡最大交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.9) as no_credit_m09_amt_m,------1130:1330午餐时间信用卡9分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.8) as no_credit_m08_amt_m,------1130:1330午餐时间信用卡8分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.7) as no_credit_m07_amt_m,------1130:1330午餐时间信用卡7分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.6) as no_credit_m06_amt_m,------1130:1330午餐时间信用卡6分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.5) as no_credit_m05_amt_m,------1130:1330午餐时间信用卡5分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.4) as no_credit_m04_amt_m,------1130:1330午餐时间信用卡4分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.3) as no_credit_m03_amt_m,------1130:1330午餐时间信用卡3分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.2) as no_credit_m02_amt_m,------1130:1330午餐时间信用卡2分位交易额
+           percentile(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.1) as no_credit_m01_amt_m,------1130:1330午餐时间信用卡1分位交易额
+           min(case when card_kind='C' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_credit_min_amt_m, ------1130:1330午餐时间信用卡最小交易额          
+           count(distinct case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then cardno end) as no_cards_debit_m,  --1130:1330午餐时间借记卡数           
+           sum(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_amt_m,       -------------1130:1330午餐时间借记卡交易额
+           count(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_cnt_m,     -------------1130:1330午餐时间借记卡交易笔数
+           avg(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_avg_amt_m,------1130:1330午餐时间借记卡笔均交易额 
+           max(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_max_amt_m,------1130:1330午餐时间借记卡最大交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.9) as no_debit_m09_amt_m,------1130:1330午餐时间借记卡9分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.8) as no_debit_m08_amt_m,------1130:1330午餐时间借记卡8分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.7) as no_debit_m07_amt_m,------1130:1330午餐时间借记卡7分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.6) as no_debit_m06_amt_m,------1130:1330午餐时间借记卡6分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.5) as no_debit_m05_amt_m,------1130:1330午餐时间借记卡5分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.4) as no_debit_m04_amt_m,------1130:1330午餐时间借记卡4分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.3) as no_debit_m03_amt_m,------1130:1330午餐时间借记卡3分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.2) as no_debit_m02_amt_m,------1130:1330午餐时间借记卡2分位交易额
+           percentile(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end,0.1) as no_debit_m01_amt_m,------1130:1330午餐时间借记卡1分位交易额
+           min(case when card_kind='D' and (from_unixtime(unix_timestamp(txn_data),'HHmmss')>='113000' and from_unixtime(unix_timestamp(txn_data),'HHmmss')<'133000')  then trans_amt end) as no_debit_min_amt_m, ------1130:1330午餐时间借记卡最小交易额   
+   orgid,substr(ymd,1,6) as mon
+    from (
+      select t1.*
+      from 
+      (select * from hdw.lklpos_atmtxnjnl_success 
+      where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}'      
+      union all
+      select * from hdw.wbpos_atmtxnjnl_success 
+      where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}' 
+      )t1 
+      join (select * from edm.d_base_t_date where workday=0) t2 
+      on substr(t1.txn_data,1,10)=substr(t2.dateid,1,10) 
+    ) a 
+    group by orgid,mer_id,substr(ymd,1,6);
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME '--------------近2年内商户每个月休息日交易情况表 创建成功--------'$tmp  
+else
+echo $NOWTIME '--------------近2年内商户每个月休息日交易情况表 创建失败--------'$tmp  
+fi 
+
+#done
+
+
+
+
+
+echo '---------------------创建近2年内商户节日交易情况表-------------------'
+sudo -u hdfs hive <<EOF
+create table if not exists merdm.dm_trans_holiday_t1_mon( 
+   mer_id  string, 
+   holiday  string, 
+   cnt_m  bigint, 
+   amt_m  bigint, 
+   days_m  bigint, 
+   cards_m  bigint, 
+   std_amt_m  double, 
+   max_amt_m  bigint, 
+   m09_amt_m  double, 
+   m08_amt_m  double, 
+   m07_amt_m  double, 
+   m06_amt_m  double, 
+   m05_amt_m  double, 
+   m04_amt_m  double, 
+   m03_amt_m  double, 
+   m02_amt_m  double, 
+   m01_amt_m  double, 
+   min_amt_m  bigint, 
+   avg_amt_m  double, 
+   max_ymd_m  string, 
+   min_ymd_m  string, 
+   cards_credit_m  bigint, 
+   credit_amt_m  bigint, 
+   credit_cnt_m  bigint, 
+   credit_avg_amt_m  double, 
+   credit_std_amt_m  double, 
+   credit_max_amt_m  bigint, 
+   credit_m09_amt_m  double, 
+   credit_m08_amt_m  double, 
+   credit_m07_amt_m  double, 
+   credit_m06_amt_m  double, 
+   credit_m05_amt_m  double, 
+   credit_m04_amt_m  double, 
+   credit_m03_amt_m  double, 
+   credit_m02_amt_m  double, 
+   credit_m01_amt_m  double, 
+   credit_min_amt_m  bigint, 
+   cards_debit_m  bigint, 
+   debit_amt_m  bigint, 
+   debit_cnt_m  bigint, 
+   debit_avg_amt_m  double, 
+   debit_std_amt_m  double, 
+   debit_max_amt_m  bigint, 
+   debit_m09_amt_m  double, 
+   debit_m08_amt_m  double, 
+   debit_m07_amt_m  double, 
+   debit_m06_amt_m  double, 
+   debit_m05_amt_m  double, 
+   debit_m04_amt_m  double, 
+   debit_m03_amt_m  double, 
+   debit_m02_amt_m  double, 
+   debit_m01_amt_m  double, 
+   debit_min_amt_m  bigint)
+   partitioned by (orgid  string, mon string);
+
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME'--------------创建近2年内商户节日交易情况表-----------'$tmp 
+else
+echo $NOWTIME'--------------创建近2年内商户节日交易情况表-----------'$tmp 
+fi
+
+
+
+
+
+echo '---------------近2年内商户节日交易情况表-------------'
+
+#while true 
+#do 
+
+sudo -u hdfs hive <<EOF 
+
+set hive.auto.convert.join=false; 
+set mapreduce.reduce.shuffle.input.buffer.percent=0.1;
+set mapreduce.reduce.shuffle.parallelcopies=9;
+
+set hive.exec.dynamic.partition.mode=nonstrict; 
+set hive.exec.dynamic.partition=true;
+set hive.exec.max.dynamic.partitions=5000;
+set hive.exec.max.dynamic.partitions.pernode=5000;
+
+
+set hive.exec.parallel=true;
+set hive.exec.parallel.thread.number=5;
+set hive.exec.max.created.files=655350;
+set mapreduce.map.memory.mb=2000;
+set mapreduce.reduce.memory.mb=2000;
+set mapreduce.map.java.opts=-Djava.net.preferIPv4Stack=true -Xms1200m -Xmx1200m;
+
+insert overwrite table merdm.dm_trans_holiday_t1_mon partition (orgid,mon)
+select     mer_id,
+           holiday,
+           count(*) as cnt_m,
+           sum(trans_amt) as amt_m,
+           count(distinct ymd) as days_m, --交易天数
+           count(distinct cardno) as cards_m, --卡数
+           stddev(trans_amt) as std_amt_m,------交易额标准差
+           max(trans_amt) as max_amt_m,------最大交易额
+           percentile(trans_amt,0.9) as m09_amt_m,------9分位交易额
+           percentile(trans_amt,0.8) as m08_amt_m,------8分位交易额
+           percentile(trans_amt,0.7) as m07_amt_m,------7分位交易额
+           percentile(trans_amt,0.6) as m06_amt_m,------6分位交易额
+           percentile(trans_amt,0.5) as m05_amt_m,------5分位交易额
+           percentile(trans_amt,0.4) as m04_amt_m,------4分位交易额
+           percentile(trans_amt,0.3) as m03_amt_m,------3分位交易额
+           percentile(trans_amt,0.2) as m02_amt_m,------2分位交易额
+           percentile(trans_amt,0.1) as m01_amt_m,------1分位交易额
+           min(trans_amt) as min_amt_m, ------最小交易额
+           avg(trans_amt) as avg_amt_m,------笔均交易额
+           max(ymd) as max_ymd_m,------最大交易时间
+           min(ymd) as min_ymd_m, ------最小交易时间 
+           count(distinct case when card_kind='C' then cardno end) as cards_credit_m,  --信用卡数           
+           sum(case when card_kind='C' then trans_amt end) as credit_amt_m,    -------------信用卡交易额
+           count(case when card_kind='C' then trans_amt end) as credit_cnt_m,    -------------信用卡交易笔数
+           avg(case when card_kind='C' then trans_amt end) as credit_avg_amt_m,------信用卡笔均交易额
+           stddev(case when card_kind='C' then trans_amt end) as credit_std_amt_m,------信用卡交易额标准差
+           max(case when card_kind='C' then trans_amt end) as credit_max_amt_m,------信用卡最大交易额
+           percentile(case when card_kind='C' then trans_amt end,0.9) as credit_m09_amt_m,------信用卡9分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.8) as credit_m08_amt_m,------信用卡8分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.7) as credit_m07_amt_m,------信用卡7分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.6) as credit_m06_amt_m,------信用卡6分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.5) as credit_m05_amt_m,------信用卡5分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.4) as credit_m04_amt_m,------信用卡4分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.3) as credit_m03_amt_m,------信用卡3分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.2) as credit_m02_amt_m,------信用卡2分位交易额
+           percentile(case when card_kind='C' then trans_amt end,0.1) as credit_m01_amt_m,------信用卡1分位交易额
+           min(case when card_kind='C' then trans_amt end) as credit_min_amt_m, ------信用卡最小交易额           
+           count(distinct case when card_kind='D' then cardno end) as cards_debit_m,  --借记卡数           
+           sum(case when card_kind='D' then trans_amt end) as debit_amt_m,       -------------借记卡交易额
+           count(case when card_kind='D' then trans_amt end) as debit_cnt_m,     -------------借记卡交易笔数
+           avg(case when card_kind='D' then trans_amt end) as debit_avg_amt_m,------借记卡笔均交易额
+           stddev(case when card_kind='D' then trans_amt end) as debit_std_amt_m,------借记卡交易额标准差
+           max(case when card_kind='D' then trans_amt end) as debit_max_amt_m,------借记卡最大交易额
+           percentile(case when card_kind='D' then trans_amt end,0.9) as debit_m09_amt_m,------借记卡9分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.8) as debit_m08_amt_m,------借记卡8分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.7) as debit_m07_amt_m,------借记卡7分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.6) as debit_m06_amt_m,------借记卡6分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.5) as debit_m05_amt_m,------借记卡5分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.4) as debit_m04_amt_m,------借记卡4分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.3) as debit_m03_amt_m,------借记卡3分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.2) as debit_m02_amt_m,------借记卡2分位交易额
+           percentile(case when card_kind='D' then trans_amt end,0.1) as debit_m01_amt_m,------借记卡1分位交易额           
+           min(case when card_kind='D' then trans_amt end) as debit_min_amt_m, ------借记卡最小交易额 
+  orgid,substr(ymd,1,6) as mon
+    from (
+      select t1.*,holiday
+      from 
+      (select * from hdw.lklpos_atmtxnjnl_success 
+      where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}'      
+      union all
+      select * from hdw.wbpos_atmtxnjnl_success 
+      where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}' 
+      )t1 
+      join (select * from edm.d_base_t_date where holiday not in ('0','99')) t2 
+      on substr(t1.txn_data,1,10)=substr(t2.dateid,1,10)    
+    ) a 
+    group by orgid,mer_id,substr(ymd,1,6),holiday;
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME '--------------节日交易表 创建成功--------'$tmp  
+else
+echo $NOWTIME '--------------节日交易表 创建失败--------'$tmp  
+fi 
+
+#done
+
+
+
+
+echo '---------------------创建近2年内商户单卡月交易表-------------------'
+sudo -u hdfs hive <<EOF
+create table if not exists merdm.dm_trans_cardtrans_t1_mon( 
+   mer_id  string, 
+   cardno  string, 
+   card_kind  string, 
+   cnt  bigint, 
+   amt  bigint, 
+   avg_amt  double, 
+   std_amt  double, 
+   max_amt  bigint, 
+   m09_amt  double, 
+   m08_amt  double, 
+   m07_amt  double, 
+   m06_amt  double, 
+   m05_amt  double, 
+   m04_amt  double, 
+   m03_amt  double, 
+   m02_amt  double, 
+   m01_amt  double, 
+   min_amt  bigint, 
+   overlim_cnt  bigint, 
+   overlim_amt  bigint, 
+   risk_cnt  bigint, 
+   risk_amt  bigint)
+   partitioned by (orgid  string,mon string);
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME'--------------创建近2年内商户单卡月交易表-----------'$tmp 
+else
+echo $NOWTIME'--------------创建近2年内商户单卡月交易表-----------'$tmp 
+fi
+
+
+
+
+
+echo '---------------近2年内商户单卡月交易表-------------'
+
+#while true 
+#do 
+
+sudo -u hdfs hive <<EOF 
+
+set hive.auto.convert.join=false; 
+set mapreduce.reduce.shuffle.input.buffer.percent=0.1;
+set mapreduce.reduce.shuffle.parallelcopies=9;
+
+set hive.exec.dynamic.partition.mode=nonstrict; 
+set hive.exec.dynamic.partition=true;
+set hive.exec.max.dynamic.partitions=5000;
+set hive.exec.max.dynamic.partitions.pernode=5000;
+
+set hive.exec.parallel=true;
+set hive.exec.parallel.thread.number=5;
+set hive.exec.max.created.files=655350;
+set mapreduce.map.memory.mb=2000;
+set mapreduce.reduce.memory.mb=2000;
+set mapreduce.map.java.opts=-Djava.net.preferIPv4Stack=true -Xms1200m -Xmx1200m;
+
+insert overwrite table merdm.dm_trans_cardtrans_t1_mon partition (orgid,mon)
+select 
+       mer_id,
+       cardno,
+       card_kind,
+       count(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end) as cnt,
+       sum(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end) as amt,
+       avg(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end) as avg_amt,
+       stddev(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end) std_amt,
+       max(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end) max_amt,
+       percentile(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end,0.9) as m09_amt,------9分位交易额
+       percentile(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end,0.8) as m08_amt,------8分位交易额
+       percentile(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end,0.7) as m07_amt,------7分位交易额
+       percentile(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end,0.6) as m06_amt,------6分位交易额
+       percentile(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end,0.5) as m05_amt,------5分位交易额
+       percentile(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end,0.4) as m04_amt,------4分位交易额
+       percentile(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end,0.3) as m03_amt,------3分位交易额
+       percentile(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end,0.2) as m02_amt,------2分位交易额
+       percentile(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end,0.1) as m01_amt,------1分位交易额
+       min(case when txn_typ='N' and txn_sts='S' and txn_cd in ('012001','012006','022001','022006') then trans_amt end) as min_amt,
+       count(case when cpscod in ('R5','R4','R3','R2','K6','K5','K4','K3','K2','R6','R7','R8','R9','RC','RD','RE','RF','RG',
+             'RK','RL','RM','RN','RO','RP','Rg','Rh','Rp','Rq','Rr','Rs','W1','W2','W3','W4','W5','W6' ) then trans_amt end) as overlim_cnt,
+       sum(case when cpscod in ('R5','R4','R3','R2','K6','K5','K4','K3','K2','R6','R7','R8','R9','RC','RD','RE','RF','RG',
+             'RK','RL','RM','RN','RO','RP','Rg','Rh','Rp','Rq','Rr','Rs','W1','W2','W3','W4','W5','W6' ) then trans_amt end) as overlim_amt,
+       count(case when cpscod in ('04','07','14','33','34','35','36','37','38','41','42','43','44','59','60','62','63','66','67','75','93') then trans_amt end) as risk_cnt,
+       sum(case when cpscod in ('04','07','14','33','34','35','36','37','38','41','42','43','44','59','60','62','63','66','67','75','93') then trans_amt end) as risk_amt ,
+       orgid,substr(ymd,1,6) as mon
+    from (
+      select * from hdw.lklpos_atmtxnjnl where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}'
+      union all
+      select * from hdw.wbpos_atmtxnjnl where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}'
+    ) a 
+    group by orgid,mer_id,substr(ymd,1,6),cardno,card_kind;
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME '--------------近2年内商户单卡月交易表 创建成功--------'$tmp  
+else
+echo $NOWTIME '--------------近2年内商户单卡月交易表 创建失败--------'$tmp  
+fi 
+
+#done
+
+
+
+
+
+echo '---------------------创建近2年内商户异常交易中间表(退款/撤销/超限额/高风险)-------------------'
+sudo -u hdfs hive <<EOF
+create table if not exists merdm.dm_trans_abnormal_t1_mon( 
+   mer_id  string, 
+   re_cnt_m  bigint, 
+   re_amt_m  bigint, 
+   cancel_cnt_m  bigint, 
+   cancel_amt_m  bigint, 
+   overlim_cnt  bigint, 
+   overlim_amt  bigint, 
+   overlim_max_amt  int, 
+   overlim_min_amt  int, 
+   risk_cnt  bigint, 
+   risk_amt  bigint, 
+   risk_max_amt  int, 
+   risk_min_amt  int)
+   partitioned by (orgid  string,mon string);
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME'--------------创建近2年内商户异常交易中间表-----------'$tmp 
+else
+echo $NOWTIME'--------------创建近2年内商户异常交易中间表-----------'$tmp 
+fi
+
+
+
+echo '---------------2年内商户异常交易中间表(退款/撤销/超限额/高风险)-------------'
+
+
+#while true 
+#do 
+
+sudo -u hdfs hive <<EOF 
+
+
+
+set hive.auto.convert.join=false; 
+set mapreduce.reduce.shuffle.input.buffer.percent=0.1;
+set mapreduce.reduce.shuffle.parallelcopies=9;
+set hive.map.aggr=true;
+set hive.groupby.skewindata=true; 
+
+set hive.exec.dynamic.partition.mode=nonstrict; 
+set hive.exec.dynamic.partition=true;
+set hive.exec.max.dynamic.partitions=5000;
+set hive.exec.max.dynamic.partitions.pernode=5000;
+
+set hive.exec.parallel=true;
+set hive.exec.parallel.thread.number=5;
+set hive.exec.max.created.files=655350;
+set mapreduce.map.memory.mb=2000;
+set mapreduce.reduce.memory.mb=2000;
+set mapreduce.map.java.opts=-Djava.net.preferIPv4Stack=true -Xms1200m -Xmx1200m;
+
+
+insert overwrite table merdm.dm_trans_abnormal_t1_mon partition (orgid,mon)
+select mer_id,
+       count(case when txn_typ='N' and txn_sts='S' then refamt end) as re_cnt_m,-----------退单交易次数
+       sum(case when txn_typ='N' and txn_sts='S' then refamt end) as re_amt_m,-----------退单交易金额
+       count(case when txn_typ='N' and txn_sts='S' and TXN_CD in ('012076','012402','012005','022005','012018','022002','022018','016009','016010') then trans_amt end) as cancel_cnt_m,-----------撤销交易次数
+       sum(case when txn_typ='N' and txn_sts='S' and TXN_CD in ('012076','012402','012005','022005','012018','022002','022018','016009','016010') then trans_amt end) as cancel_amt_m,-----------撤销交易金额
+       count(case when cpscod in ('R5','R4','R3','R2','K6','K5','K4','K3','K2','R6','R7','R8','R9','RC','RD','RE','RF','RG',
+             'RK','RL','RM','RN','RO','RP','Rg','Rh','Rp','Rq','Rr','Rs','W1','W2','W3','W4','W5','W6' ) then trans_amt end) as overlim_cnt,
+       sum(case when cpscod in ('R5','R4','R3','R2','K6','K5','K4','K3','K2','R6','R7','R8','R9','RC','RD','RE','RF','RG',
+             'RK','RL','RM','RN','RO','RP','Rg','Rh','Rp','Rq','Rr','Rs','W1','W2','W3','W4','W5','W6' ) then trans_amt end) as overlim_amt,
+       max(case when cpscod in ('R5','R4','R3','R2','K6','K5','K4','K3','K2','R6','R7','R8','R9','RC','RD','RE','RF','RG',
+             'RK','RL','RM','RN','RO','RP','Rg','Rh','Rp','Rq','Rr','Rs','W1','W2','W3','W4','W5','W6' ) then trans_amt end) as overlim_max_amt,
+       min(case when cpscod in ('R5','R4','R3','R2','K6','K5','K4','K3','K2','R6','R7','R8','R9','RC','RD','RE','RF','RG',
+             'RK','RL','RM','RN','RO','RP','Rg','Rh','Rp','Rq','Rr','Rs','W1','W2','W3','W4','W5','W6' ) then trans_amt end) as overlim_min_amt,
+       count(case when cpscod in ('04','07','14','33','34','35','36','37','38','41','42','43','44','59','60','62','63','66','67','75','93') then trans_amt end) as risk_cnt,
+       sum(case when cpscod in ('04','07','14','33','34','35','36','37','38','41','42','43','44','59','60','62','63','66','67','75','93') then trans_amt end) as risk_amt,
+       max(case when cpscod in ('04','07','14','33','34','35','36','37','38','41','42','43','44','59','60','62','63','66','67','75','93') then trans_amt end) as risk_max_amt,
+       min(case when cpscod in ('04','07','14','33','34','35','36','37','38','41','42','43','44','59','60','62','63','66','67','75','93') then trans_amt end) as risk_min_amt,
+       orgid,substr(ymd,1,6) as mon
+from (
+  select *
+  from hdw.lklpos_atmtxnjnl where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}'
+  union all
+  select *
+  from hdw.wbpos_atmtxnjnl where trans_amt>0 and ymd>='${DATE_1M_0D}' and ymd<'${DATE_0M_0D}' 
+  ) t
+group by orgid,mer_id,substr(ymd,1,6);  
+
+
+EOF
+tmp=$?
+NOWTIME=$(date +%Y-%m-%d/%H:%M:%S)
+if test $tmp -eq 0; then
+echo $NOWTIME '--------------2年内商户异常交易中间表  创建成功--------'$tmp  
+else
+echo $NOWTIME '--------------2年内商户异常交易中间表  创建失败--------'$tmp  
+sleep 5m 
+fi 
+
+#done
+
+
+
+
+

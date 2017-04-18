@@ -1,0 +1,126 @@
+10.2.60.1   sjb_0601^&*1412
+
+10.1.80.181   123_lakala
+
+数据部测试集群
+
+hadoop001	10.5.13.21
+hadoop002	10.5.13.22
+hadoop003	10.5.13.23
+hadoop004	10.5.13.24
+
+root/sjlkl_123
+
+
+
+
+考拉征信测试集群
+
+trs-11		10.5.28.11
+trs-12		10.5.28.12
+trs-13		10.5.28.13
+trs-14		10.5.28.14
+
+root/trs@lakala
+
+
+cloudera manager
+		http://trs-13:7180/cmf/login
+		admin/hadoop@kaola
+
+hue
+		http://trs-13:8888/
+		admin/hadoop@kaola
+
+
+
+
+生产环境集群
+
+hadoop01		10.1.80.60
+hadoop02		10.1.80.61
+hadoop03		10.1.80.62
+hadoop04		10.1.80.63
+hadoop05		10.1.80.64
+hadoop06		10.1.80.65
+hadoop07		10.1.80.66
+hadoop08		10.1.80.67
+hadoop09		10.1.80.68
+hadoop10		10.1.80.69
+
+
+hadoop11		10.1.80.161
+hadoop12		10.1.80.162
+hadoop13		10.1.80.163
+hadoop14		10.1.80.164
+hadoop15		10.1.80.165
+
+
+hadoop16		10.1.80.171
+hadoop17		10.1.80.172
+hadoop18		10.1.80.173
+hadoop19		10.1.80.174
+hadoop20		10.1.80.175
+hadoop21		10.1.80.176
+hadoop22		10.1.80.177
+hadoop23		10.1.80.178
+
+
+root/hadoop@lakala
+
+
+cloudera manager
+		http://hadoop06:7180/cmf/home
+		admin/hadoop@lakala
+
+hue
+		http://hadoop15:8888/accounts/login/?next=/
+		hdfs/hadoop@lakala
+
+		caofei/caofei
+		wangmin/wangmin
+		zhaogang/zhaogang
+		jinxudong/jinxudong
+		chenglong/chenglong
+		jiangzhuo/jiangzhuo	
+
+
+Cronhub		http://10.1.80.171:8080/
+
+
+
+hadoop23	密码全是Hadoop@lkl2016
+		zhengxin
+		caofei
+		wangmin
+		zhaogang
+		jinxudong
+		chenglong
+		jiangzhuo
+
+
+
+pdsh  hadoop06
+建用户账号，只在hadoop23上设置密码登录
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

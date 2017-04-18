@@ -1,0 +1,91 @@
+es 测试网地址　10.5.28.13　　　10.5.28.11
+
+１．内部数据
+--------ES 结构定义---------------
+
+curl -XPOST http://localhost:9200/lklpos_atm_risk_control
+curl -XPOST http://localhost:9200/lklpos_atm_risk_control/lklpos_atmtxnjnl/_mapping -d'{
+"lklpos_atmtxnjnl":{"properties":{"body":{"properties":{
+"mer_id":{"index":"not_analyzed","type":"string"},
+"cardflg":{"type":"string"},
+"bank_code":{"type":"string"},
+"trans_amt":{"type":"string"},
+"txn_date_stamp":{"index":"not_analyzed","type":"long"},
+"txn_date":{"index":"not_analyzed","type":"string"},
+"ccycod":{"type":"string"},
+"refund_identification":{"type":"string"},
+"log_no":{"type":"string"},
+"txn_sts":{"type":"string"},
+"txn_cd":{"type":"string"}
+}}},"_all":{"analyzer":"ik"}}
+}'
+
+
+－－－－－－ｈｉｖｅ　对应的数据源－－－－－－－－
+select md5(mer_id),card_type,bank_short_name,trans_amt,
+unix_timestamp(txn_data) as txn_date_stamp,
+txn_data,
+ccycod,
+case
+   when txn_nm like '%退款%' then 1
+   else 0 end as refund_identification,
+log_no,txn_sts,txn_cd
+from hdw.lklpos_atmtxnjnl where ymd ='20161214' limit 10;
+
+
+２．外部数据
+curl -XPOST http://localhost:9200/lklpos_atm_risk_control/wbpos_atmtxnjnl/_mapping -d'{
+"wbpos_atmtxnjnl":{"properties":{"body":{"properties":{
+"mer_id":{"index":"not_analyzed","type":"string"},
+"cardflg":{"type":"string"},
+"bank_code":{"type":"string"},
+"trans_amt":{"type":"string"},
+"txn_date_stamp":{"index":"not_analyzed","type":"long"},
+"txn_date":{"index":"not_analyzed","type":"string"},
+"ccycod":{"type":"string"},
+"refund_identification":{"type":"string"},
+"log_no":{"type":"string"},
+"txn_sts":{"type":"string"},
+"txn_cd":{"type":"string"}
+}}},"_all":{"analyzer":"ik"}}
+}'
+
+
+－－－－－－ｈｉｖｅ　对应的数据源－－－－－－－－
+select md5(mer_id),card_type,bank_short_name,trans_amt,
+unix_timestamp(txn_data) as txn_date_stamp,
+txn_data,ccycod,
+case 
+    when txn_nm like '%退款%' then 1
+    else 0 end as refund_identification,
+log_no,txn_sts,txn_cd
+from hdw.wbpos_atmtxnjnl; 
+
+
+３。风险控制
+curl -XPOST http://localhost:9200/lklpos_atm_risk_control/risk_control_consulation/_mapping -d'{
+"risk_control_consulation":{"properties":{"body":{"properties":{
+"case_id":{"type":"string"},
+"mon_id":{"index":"not_analyzed","type":"string"},
+"case_dt_stamp":{"index":"not_analyzed","type":"long"},
+"case_dt":{"index":"not_analyzed","type":"string"},
+"rrc_typ":{"type":"string"},
+"rsk_lvl":{"index":"not_analyzed","type":"long"},
+"proc_rst":{"type":"string"},
+"is_rsk":{"type":"string"},
+"rcg_rrc_typ":{"type":"string"},
+"rsk_lvl_dsc":{"type":"string"},
+"tm_smp":{"type":"string"}
+}}},"_all":{"analyzer":"ik"}}
+}'
+
+
+－－－－－－ｈｉｖｅ　对应的数据源－－－－－－－－
+select tbr.case_id,md5(tbr.mon_id),
+unix_timestamp(tbr.case_dt,'yyyyMMdd') as case_dt_stamp,
+tbr.case_dt,tbr.rrc_typ,tbr.rsk_lvl,tbr.proc_rst,tbr.is_rsk,rcg.rrc_typ,lvl.rsk_lvl_dsc,tbr.tm_smp
+from ods.xfx_posprrc_rrctcasebr tbr
+left join ods.xfx_posprrc_rrctcasegath rcg 
+   on tbr.case_no_fa=rcg.case_no_fa
+left join ods.xfx_posprrc_rrctrsklvl lvl
+   on tbr.rsk_lvl=lvl.rsk_lvl limit 10;

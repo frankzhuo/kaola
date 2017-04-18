@@ -1,0 +1,29 @@
+数据部测试集群
+
+hadoop001	10.5.13.21
+hadoop002	10.5.13.22
+hadoop003	10.5.13.23
+hadoop004	10.5.13.24
+
+root/sjlkl_123
+
+
+
+
+考拉征信测试集群
+
+trs-11		10.5.28.11
+trs-12		10.5.28.12
+trs-13		10.5.28.13
+trs-14		10.5.28.14
+
+root/trs@lakala
+
+
+cloudera manager
+		http://trs-13:7180/cmf/login
+		admin/hadoop@kaola
+
+hue
+		http://trs-13:8888/
+		admin/hadoop@kaola
